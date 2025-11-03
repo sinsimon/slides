@@ -1,0 +1,12 @@
+# Tokens/creds local to tools
+.token.json
+.credentials/
+.env
+output/
+
+# node artifacts
+node_modules
+
+
+
+
