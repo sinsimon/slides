@@ -1,7 +1,8 @@
 Progetto
 
+- Repository personale di Simone Mazzotti (Tech Director @ Jump) per presentazioni e documenti.
 - Hub di presentazioni: SPA per presentazioni/analisi modulari.
-- Struttura: slide in `src/slides/**`, presentazioni in `src/presentations/**`, componenti riutilizzabili in `src/components/**`, stili con CSS Modules.
+- Struttura: documenti non-slide in `src/documents/**`, slide in `src/slides/**`, presentazioni in `src/presentations/**`, componenti riutilizzabili in `src/components/**`, stili con CSS Modules.
 - Navigazione: gestione indice slide via query string `?slide=<n>`; deploy su Netlify con redirect SPA.
 
 Tecnologie
