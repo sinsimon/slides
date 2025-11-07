@@ -6,6 +6,8 @@ dist/
 
 # Env
 .env*
+src/data/avacy/.env
+src/data/avacy/env
 
 # Logs
 npm-debug.log*

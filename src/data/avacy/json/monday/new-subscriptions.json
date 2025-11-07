@@ -1,0 +1,436 @@
+[
+  {
+    "date": "2024-01-01",
+    "count": 4,
+    "totalAmountCents": 18334,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "KUVERA S.P.A.",
+        "subscriptionName": "Custom",
+        "amountCents": 4167,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "INTICOM S.P.A.",
+        "subscriptionName": "Custom",
+        "amountCents": 4167,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "ARMERIA INNOCENTI DI INNOCENTI FRANCO E C. SNC",
+        "subscriptionName": "Custom",
+        "amountCents": 6667,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "BONAVITA SERVIZI S.R.L.",
+        "subscriptionName": "Custom",
+        "amountCents": 3333,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-02-01",
+    "count": 1,
+    "totalAmountCents": 23000,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "KM ZERO WEB MARKETING S.R.L. SEMPLIFICATA",
+        "subscriptionName": "Basic",
+        "amountCents": 23000,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-03-01",
+    "count": 4,
+    "totalAmountCents": 49000,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "MOONEY GROUP S.P.A.",
+        "subscriptionName": "Custom",
+        "amountCents": 30000,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "MICRODATA GROUP S.R.L.",
+        "subscriptionName": "Custom",
+        "amountCents": 3167,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "TUMIDEI S.R.L.",
+        "subscriptionName": "Custom",
+        "amountCents": 3333,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "KOLINPHARMA S.P.A.",
+        "subscriptionName": "Custom",
+        "amountCents": 12500,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-06-01",
+    "count": 1,
+    "totalAmountCents": 3333,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "P.I. 2000 S.R.L.",
+        "subscriptionName": "Enterprise",
+        "amountCents": 3333,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-07-01",
+    "count": 1,
+    "totalAmountCents": 5000,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "BAOBAB COMMUNICATION S.R.L.",
+        "subscriptionName": "Basic",
+        "amountCents": 5000,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-08-01",
+    "count": 1,
+    "totalAmountCents": 3333,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "CENTO FIORI SRL",
+        "subscriptionName": "Custom",
+        "amountCents": 3333,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-09-01",
+    "count": 1,
+    "totalAmountCents": 7358,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "IDEALE - GRAFICA WEB DESIGN DI ROSA ALESSIA",
+        "subscriptionName": "Plus",
+        "amountCents": 7358,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-10-01",
+    "count": 1,
+    "totalAmountCents": 8000,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "THOMAS BANDINI SRL",
+        "subscriptionName": "Plus",
+        "amountCents": 8000,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-11-01",
+    "count": 1,
+    "totalAmountCents": 37717,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "CONSISTO SRL CONSISTO GMBH",
+        "subscriptionName": "Basic",
+        "amountCents": 37717,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-01-01",
+    "count": 4,
+    "totalAmountCents": 18334,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "KUVERA S.P.A.",
+        "subscriptionName": "Custom",
+        "amountCents": 4167,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "INTICOM S.P.A.",
+        "subscriptionName": "Custom",
+        "amountCents": 4167,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "ARMERIA INNOCENTI DI INNOCENTI FRANCO E C. SNC",
+        "subscriptionName": "Custom",
+        "amountCents": 6667,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "BONAVITA SERVIZI S.R.L.",
+        "subscriptionName": "Custom",
+        "amountCents": 3333,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-02-01",
+    "count": 1,
+    "totalAmountCents": 23000,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "KM ZERO WEB MARKETING S.R.L. SEMPLIFICATA",
+        "subscriptionName": "Basic",
+        "amountCents": 23000,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-03-01",
+    "count": 3,
+    "totalAmountCents": 19000,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "MICRODATA GROUP S.R.L.",
+        "subscriptionName": "Custom",
+        "amountCents": 3167,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "TUMIDEI S.R.L.",
+        "subscriptionName": "Custom",
+        "amountCents": 3333,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      },
+      {
+        "email": "KOLINPHARMA S.P.A.",
+        "subscriptionName": "Custom",
+        "amountCents": 12500,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-05-01",
+    "count": 1,
+    "totalAmountCents": 7729,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "PLAS MEDIA S.R.L.",
+        "subscriptionName": "Plus",
+        "amountCents": 7729,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-06-01",
+    "count": 1,
+    "totalAmountCents": 3333,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "P.I. 2000 S.R.L.",
+        "subscriptionName": "Enterprise",
+        "amountCents": 3333,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-01",
+    "count": 1,
+    "totalAmountCents": 5000,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "BAOBAB COMMUNICATION S.R.L.",
+        "subscriptionName": "Basic",
+        "amountCents": 5000,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-08-01",
+    "count": 1,
+    "totalAmountCents": 3333,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "CENTO FIORI SRL",
+        "subscriptionName": "Custom",
+        "amountCents": 3333,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-09-01",
+    "count": 1,
+    "totalAmountCents": 7358,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "IDEALE - GRAFICA WEB DESIGN DI ROSA ALESSIA",
+        "subscriptionName": "Plus",
+        "amountCents": 7358,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-01",
+    "count": 1,
+    "totalAmountCents": 37717,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "CONSISTO SRL CONSISTO GMBH",
+        "subscriptionName": "Basic",
+        "amountCents": 37717,
+        "currency": "EUR",
+        "metadata": {
+          "source": "monday",
+          "interventionsEligible": "true"
+        }
+      }
+    ]
+  }
+]

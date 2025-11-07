@@ -1,0 +1,636 @@
+[
+  {
+    "date": "2023-05-12",
+    "count": 7,
+    "totalAmountCents": 10500,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "test@production.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-05-12T08:41:57.000Z",
+        "metadata": {
+          "document_date": "2023-05-12",
+          "name": "default",
+          "tenant": "jumpgroup"
+        }
+      },
+      {
+        "email": "cristiano.f+billing25@jumpgroup.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-05-12T08:41:54.000Z",
+        "metadata": {
+          "document_date": "2023-05-11",
+          "name": "default",
+          "tenant": "tenant3"
+        }
+      },
+      {
+        "email": "cristiano.f+billing25@jumpgroup.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-05-12T08:41:49.000Z",
+        "metadata": {
+          "document_date": "2023-05-11",
+          "name": "default",
+          "tenant": "tenant3"
+        }
+      },
+      {
+        "email": "cristiano.f+billing25@jumpgroup.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-05-12T08:41:46.000Z",
+        "metadata": {
+          "document_date": "2023-05-11",
+          "name": "default",
+          "tenant": "tenant3"
+        }
+      },
+      {
+        "email": "cristiano.f+billing25@jumpgroup.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-05-12T08:41:41.000Z",
+        "metadata": {
+          "document_date": "2023-05-09",
+          "name": "default",
+          "tenant": "tenant3"
+        }
+      },
+      {
+        "email": "cristiano.f+billing14@jumpgroup.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-05-12T08:41:37.000Z",
+        "metadata": {
+          "name": "default",
+          "sdi_code": "0000000",
+          "tenant": "tenant3"
+        }
+      },
+      {
+        "email": "cristiano.f+tenant@jumpgroup.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-05-12T08:41:30.000Z",
+        "metadata": {
+          "name": "default",
+          "tenant": "tenant3"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2023-06-09",
+    "count": 5,
+    "totalAmountCents": 7500,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "info@test.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-06-09T13:09:35.000Z",
+        "metadata": {
+          "document_date": "2023-06-09",
+          "name": "default",
+          "subscription_period_end": "09/07/2023",
+          "subscription_period_start": "09/06/2023",
+          "tenant": "federico-spa"
+        }
+      },
+      {
+        "email": "cris.federico.92@gmail.com",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-06-09T13:09:39.000Z",
+        "metadata": {
+          "document_date": "2023-06-09",
+          "name": "default",
+          "subscription_period_end": "09/07/2023",
+          "subscription_period_start": "09/06/2023",
+          "tenant": "federico-spa"
+        }
+      },
+      {
+        "email": "cristiano.federico.92@gmail.com",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-06-09T13:09:52.000Z",
+        "metadata": {
+          "document_date": "2023-06-09",
+          "name": "default",
+          "subscription_period_end": "09/07/2023",
+          "subscription_period_start": "09/06/2023",
+          "tenant": "federico-spa"
+        }
+      },
+      {
+        "email": "cristiano.f@jumpgroup.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-06-09T13:09:42.000Z",
+        "metadata": {
+          "document_date": "2023-06-09",
+          "name": "default",
+          "subscription_period_end": "09/07/2023",
+          "subscription_period_start": "09/06/2023",
+          "tenant": "federico-spa"
+        }
+      },
+      {
+        "email": "cristiano.f@jumpgroup.it",
+        "subscriptionName": "Piano basic",
+        "canceledAt": "2023-06-09T07:24:51.000Z",
+        "metadata": {
+          "document_date": "2023-06-09",
+          "name": "default",
+          "subscription_period_end": "09/07/2023",
+          "subscription_period_start": "09/06/2023",
+          "tenant": "federico-spa"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2023-06-16",
+    "count": 1,
+    "totalAmountCents": 3000,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "riccardo.minghetti90@gmail.com",
+        "subscriptionName": "Piano premium",
+        "canceledAt": "2023-06-16T13:01:41.000Z",
+        "metadata": {
+          "document_date": "2023-06-13",
+          "name": "default",
+          "subscription_period_end": "13/07/2023",
+          "subscription_period_start": "13/06/2023",
+          "tenant": "riccardo-minghetti"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2023-08-25",
+    "count": 1,
+    "totalAmountCents": 3000,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "cristiano.f@jumpgroup.it",
+        "subscriptionName": "Piano premium",
+        "canceledAt": "2023-08-25T07:46:52.000Z",
+        "metadata": {
+          "document_date": "2023-06-14",
+          "name": "default",
+          "subscription_period_end": "14/07/2023",
+          "subscription_period_start": "14/06/2023",
+          "tenant": "federico-spa"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-01-05",
+    "count": 1,
+    "totalAmountCents": 599,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "subscriptionName": "Avacy Basic - 1 spazio web",
+        "canceledAt": "2024-01-05T16:58:40.000Z",
+        "metadata": {
+          "document_date": "2023-12-04",
+          "name": "default",
+          "subscription_period_end": "03/01/2024",
+          "subscription_period_start": "04/12/2023",
+          "tenant": "viaggio-della-speranza"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-01-29",
+    "count": 1,
+    "totalAmountCents": 1999,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "ekuonews@gmail.com",
+        "subscriptionName": "Avacy Piano Plus",
+        "canceledAt": "2024-01-29T15:22:56.000Z",
+        "metadata": {
+          "document_date": "2023-11-13",
+          "name": "default",
+          "subscription_period_end": "13/12/2023",
+          "subscription_period_start": "13/11/2023",
+          "tenant": "ekuo-srl"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-05-06",
+    "count": 1,
+    "totalAmountCents": 825,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "studio@gpiur.com",
+        "subscriptionName": "Avacy Basic - 5 spazi web",
+        "canceledAt": "2024-05-06T08:51:12.000Z",
+        "metadata": {
+          "business_name": "GpiuR",
+          "document_date": "2024-05-03",
+          "name": "default",
+          "subscription_period_end": "02/06/2024",
+          "subscription_period_start": "03/05/2024",
+          "tenant": "gpiur"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-05-25",
+    "count": 1,
+    "totalAmountCents": 825,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "federicotasso1980@me.com",
+        "subscriptionName": "Avacy Basic - 5 spazi web",
+        "canceledAt": "2024-05-25T09:43:36.000Z",
+        "metadata": {
+          "business_name": "Locale",
+          "document_date": "2024-04-18",
+          "name": "default",
+          "subscription_period_end": "18/05/2024",
+          "subscription_period_start": "18/04/2024",
+          "tenant": "locale"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-06-13",
+    "count": 1,
+    "totalAmountCents": 25758,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "invoice@consisto.it",
+        "subscriptionName": "Avacy Basic - 200 spazi web",
+        "canceledAt": "2024-06-13T11:49:20.000Z",
+        "metadata": {
+          "business_name": "Consisto",
+          "document_date": "2024-02-21",
+          "name": "default",
+          "subscription_period_end": "22/03/2024",
+          "subscription_period_start": "21/02/2024",
+          "tenant": "consisto"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-07-30",
+    "count": 4,
+    "totalAmountCents": 25,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "rewardful.crossdomain@test.info",
+        "subscriptionName": null,
+        "canceledAt": "2024-07-30T10:48:42.000Z",
+        "metadata": {
+          "business_name": "Rewardful Cross Domain",
+          "document_date": "2024-07-30",
+          "name": "default",
+          "subscription_period_end": "29/08/2024",
+          "subscription_period_start": "30/07/2024",
+          "tenant": "rewardful-cross-domain"
+        }
+      },
+      {
+        "email": "referral.prod@email.info",
+        "subscriptionName": null,
+        "canceledAt": "2024-07-30T09:59:59.000Z",
+        "metadata": {
+          "business_name": "Rewardful Test",
+          "document_date": "2024-07-30",
+          "name": "default",
+          "subscription_period_end": "29/08/2024",
+          "subscription_period_start": "30/07/2024",
+          "tenant": "rewardful-test"
+        }
+      },
+      {
+        "email": "referral.prod@email.info",
+        "subscriptionName": null,
+        "canceledAt": "2024-07-30T09:28:54.000Z",
+        "metadata": {
+          "business_name": "Referral Test 2",
+          "document_date": "2024-07-30",
+          "name": "default",
+          "subscription_period_end": "29/08/2024",
+          "subscription_period_start": "30/07/2024",
+          "tenant": "referral-test-2"
+        }
+      },
+      {
+        "email": "referral.prod@email.info",
+        "subscriptionName": null,
+        "canceledAt": "2024-07-30T09:24:33.000Z",
+        "metadata": {
+          "business_name": "Referral Test",
+          "document_date": "2024-07-30",
+          "name": "default",
+          "subscription_period_end": "29/08/2024",
+          "subscription_period_start": "30/07/2024",
+          "tenant": "referral-test"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-08-13",
+    "count": 1,
+    "totalAmountCents": 550,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "info@tagliapietraimpiantisportivi.it",
+        "subscriptionName": "Avacy Basic - 1 spazio web",
+        "canceledAt": "2024-08-13T09:47:38.000Z",
+        "metadata": {
+          "business_name": "Tagliapietra",
+          "document_date": "2024-07-18",
+          "name": "default",
+          "subscription_period_end": "17/08/2024",
+          "subscription_period_start": "18/07/2024",
+          "tenant": "tagliapietra"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-11-06",
+    "count": 1,
+    "totalAmountCents": 599,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "info@forli-cesena.awn.it",
+        "subscriptionName": "Avacy Piano Basic",
+        "canceledAt": "2024-11-06T16:47:19.000Z",
+        "metadata": {
+          "document_date": "2023-11-16",
+          "name": "default",
+          "subscription_period_end": "16/12/2023",
+          "subscription_period_start": "16/11/2023",
+          "tenant": "ordine-degli-architetti-ppc-prov-di-fc"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2024-12-09",
+    "count": 1,
+    "totalAmountCents": 825,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "andrea@umix.agency",
+        "subscriptionName": "Avacy Basic - 5 spazi web",
+        "canceledAt": "2024-12-09T17:09:09.000Z",
+        "metadata": {
+          "business_name": "UMIX",
+          "document_date": "2024-12-02",
+          "name": "default",
+          "subscription_period_end": "01/01/2025",
+          "subscription_period_start": "02/12/2024",
+          "tenant": "umix"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-01-02",
+    "count": 1,
+    "totalAmountCents": 599,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "lig1410@gmail.com",
+        "subscriptionName": "Avacy Basic - 1 spazio web",
+        "canceledAt": "2025-01-02T08:13:14.000Z",
+        "metadata": {
+          "business_name": "Team idee",
+          "document_date": "2024-12-16",
+          "name": "default",
+          "subscription_period_end": "15/01/2025",
+          "subscription_period_start": "16/12/2024",
+          "tenant": "team-idee"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-01-11",
+    "count": 1,
+    "totalAmountCents": 3775,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "pinkopallo.lab@gmail.com",
+        "subscriptionName": "Avacy Basic - 25 spazi web",
+        "canceledAt": "2025-01-11T09:10:08.000Z",
+        "metadata": {
+          "business_name": "Pinkopallo",
+          "document_date": "2024-07-05",
+          "name": "default",
+          "subscription_period_end": "04/08/2024",
+          "subscription_period_start": "05/07/2024",
+          "tenant": "pinkopallo"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-03-20",
+    "count": 1,
+    "totalAmountCents": 599,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "jem20242025@gmail.com",
+        "subscriptionName": "Avacy Basic - 1 spazio web",
+        "canceledAt": "2025-03-20T00:04:31.000Z",
+        "metadata": {
+          "business_name": "Programme télé ce soir",
+          "document_date": "2025-03-14",
+          "name": "default",
+          "subscription_period_end": "13/04/2025",
+          "subscription_period_start": "14/03/2025",
+          "tenant": "programme-tele-ce-soir"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-04-24",
+    "count": 1,
+    "totalAmountCents": 599,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "aleporro92@gmail.com",
+        "subscriptionName": "Avacy Basic - 1 spazio web",
+        "canceledAt": "2025-04-24T04:37:37.000Z",
+        "metadata": {
+          "business_name": "Alessandro Porro",
+          "document_date": "2025-03-23",
+          "name": "default",
+          "subscription_period_end": "22/04/2025",
+          "subscription_period_start": "23/03/2025",
+          "tenant": "alessandro-porro"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-05-07",
+    "count": 1,
+    "totalAmountCents": 743,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "studio@gpiur.com",
+        "subscriptionName": null,
+        "canceledAt": "2025-05-07T07:08:46.000Z",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "date": "2025-07-10",
+    "count": 1,
+    "totalAmountCents": 5517,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "amministrazione@arkys.agency",
+        "subscriptionName": "Avacy Plus - 15 spazi web",
+        "canceledAt": "2025-07-10T12:10:50.000Z",
+        "metadata": {
+          "business_name": "Arkys",
+          "document_date": "2024-07-10",
+          "name": "default",
+          "subscription_period_end": "09/08/2024",
+          "subscription_period_start": "10/07/2024",
+          "tenant": "arkys"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-07-25",
+    "count": 1,
+    "totalAmountCents": 825,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "andrea@34pixels.it",
+        "subscriptionName": "Avacy Basic - 5 spazi web",
+        "canceledAt": "2025-07-25T10:54:40.000Z",
+        "metadata": {
+          "business_name": "34pixels",
+          "document_date": "2024-06-07",
+          "name": "default",
+          "subscription_period_end": "07/07/2024",
+          "subscription_period_start": "07/06/2024",
+          "tenant": "34pixels"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-08-06",
+    "count": 1,
+    "totalAmountCents": 599,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "info@depositoasta.it",
+        "subscriptionName": "Avacy Basic - 1 spazio web",
+        "canceledAt": "2025-08-06T10:33:24.000Z",
+        "metadata": {
+          "business_name": "depositoasta.it",
+          "document_date": "2025-06-16",
+          "name": "default",
+          "subscription_period_end": "16/07/2025",
+          "subscription_period_start": "16/06/2025",
+          "tenant": "depositoastait"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-09-30",
+    "count": 1,
+    "totalAmountCents": 900,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "fulviocacciabue@icloud.com",
+        "subscriptionName": "Avacy Basic - 5 spazi web",
+        "canceledAt": "2025-09-30T18:40:21.000Z",
+        "metadata": {
+          "business_name": "Fulvio Cacciabue",
+          "document_date": "2024-08-31",
+          "name": "default",
+          "subscription_period_end": "30/09/2024",
+          "subscription_period_start": "31/08/2024",
+          "tenant": "fulvio-cacciabue"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-10-09",
+    "count": 1,
+    "totalAmountCents": 2300,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "tool@yoloplus.it",
+        "subscriptionName": "Avacy Basic - 15 spazi web",
+        "canceledAt": "2025-10-09T14:39:45.000Z",
+        "metadata": {
+          "business_name": "Yolo",
+          "document_date": "2025-06-16",
+          "name": "default",
+          "subscription_period_end": "16/07/2025",
+          "subscription_period_start": "16/06/2025",
+          "tenant": "yolo"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-06-12",
+    "count": 1,
+    "totalAmountCents": 1833,
+    "currency": "EUR",
+    "cancellations": [
+      {
+        "email": "easycleaning.net@gmail.com",
+        "subscriptionName": "Avacy Plus - 1 spazio web",
+        "canceledAt": "2025-06-12T09:36:06.000Z",
+        "cancelAt": "2026-06-12T08:23:13.000Z",
+        "metadata": {
+          "business_name": "Easy-cleaning",
+          "document_date": "2024-06-12",
+          "name": "default",
+          "subscription_period_end": "12/07/2024",
+          "subscription_period_start": "12/06/2024",
+          "tenant": "easy-cleaning"
+        }
+      }
+    ]
+  }
+]
