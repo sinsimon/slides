@@ -1,6 +1,4 @@
 import { fetch } from 'undici';
-import { mkdirSync, writeFileSync } from 'fs';
-import { join } from 'path';
 
 function getEnv(name: string): string {
   const value = process.env[name];
@@ -160,10 +158,6 @@ export async function fetchActiveCampaignContacts(): Promise<void> {
     type: field.type,
   }));
 
-  const outDir = join(process.cwd(), 'src', 'data', 'avacy', 'json', 'active-campaign');
-  mkdirSync(outDir, { recursive: true });
-  const outputPath = join(outDir, 'contacts.json');
-
   const payload = {
     fetchedAt: new Date().toISOString(),
     total: contacts.length,
@@ -171,8 +165,9 @@ export async function fetchActiveCampaignContacts(): Promise<void> {
     contacts: contactsWithCustom,
   };
 
-  writeFileSync(outputPath, JSON.stringify(payload, null, 2), 'utf8');
-  console.log(`Saved ${contacts.length} contacts (with custom fields) to ${outputPath}`);
+  const { saveJsonFile } = await import('../s3-utils');
+  await saveJsonFile('active-campaign/contacts.json', payload);
+  console.log(`Saved ${contacts.length} contacts (with custom fields)`);
 }
 
 export default fetchActiveCampaignContacts;

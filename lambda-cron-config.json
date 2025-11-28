@@ -1,0 +1,12 @@
+{
+  "pollers": [
+    { "name": "stripe:new-subscriptions", "schedule": "cron(0 3 * * ? *)" },
+    { "name": "stripe:cancellations", "schedule": "cron(0 3 * * ? *)" },
+    { "name": "monday:enterprise-accounts", "schedule": "cron(0 3 * * ? *)" },
+    { "name": "active-campaign:contacts", "schedule": "cron(0 3 * * ? *)" },
+    { "name": "vapor:tenants", "schedule": "cron(0 3 * * ? *)" },
+    { "name": "vapor:users-funnel", "schedule": "cron(0 3 * * ? *)" }
+  ]
+}
+
+

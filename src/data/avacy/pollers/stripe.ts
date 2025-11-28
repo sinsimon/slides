@@ -1,7 +1,6 @@
 import { fetch } from 'undici';
-import { writeFileSync, mkdirSync } from 'fs';
-import { dirname, join } from 'path';
 import * as dotenv from 'dotenv';
+import { saveJsonFile } from './s3-utils';
 
 // carica env dalla root (.env)
 dotenv.config();
@@ -125,9 +124,7 @@ export async function fetchNewSubscriptions(): Promise<void> {
 			purchases: purchasesByDate[d] ?? [],
 		}));
 
-	const outDir = join(process.cwd(), 'src', 'data', 'avacy', 'json', 'stripe');
-	mkdirSync(outDir, { recursive: true });
-	writeFileSync(join(outDir, 'new-subscriptions.json'), JSON.stringify(series, null, 2), 'utf8');
+	await saveJsonFile('stripe/new-subscriptions.json', series);
 }
 
 export type StripeCancellationPoint = {
@@ -268,9 +265,7 @@ export async function fetchCancellations(): Promise<void> {
             cancellations: cancellationsByDate[d] ?? [],
         }));
 
-    const outDir = join(process.cwd(), 'src', 'data', 'avacy', 'json', 'stripe');
-    mkdirSync(outDir, { recursive: true });
-    writeFileSync(join(outDir, 'cancellations.json'), JSON.stringify(series, null, 2), 'utf8');
+    await saveJsonFile('stripe/cancellations.json', series);
 }
 
 

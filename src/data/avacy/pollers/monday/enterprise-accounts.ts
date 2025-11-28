@@ -1,6 +1,4 @@
 import { fetch } from 'undici';
-import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
 
 type MondayColumnValue = {
   id: string;
@@ -518,11 +516,9 @@ export async function fetchEnterpriseAccounts(): Promise<void> {
   const cancellations = Object.values(cancellationsByDate).sort((a, b) => a.date.localeCompare(b.date));
 
   // Salva i file JSON
-  const outDir = join(process.cwd(), 'src', 'data', 'avacy', 'json', 'monday');
-  mkdirSync(outDir, { recursive: true });
-  
-  writeFileSync(join(outDir, 'new-subscriptions.json'), JSON.stringify(newSubscriptions, null, 2), 'utf8');
-  writeFileSync(join(outDir, 'cancellations.json'), JSON.stringify(cancellations, null, 2), 'utf8');
+  const { saveJsonFile } = await import('../s3-utils');
+  await saveJsonFile('monday/new-subscriptions.json', newSubscriptions);
+  await saveJsonFile('monday/cancellations.json', cancellations);
 
   console.log(`Saved ${newSubscriptions.length} new subscriptions to src/data/avacy/json/monday/new-subscriptions.json`);
   console.log(`Saved ${cancellations.length} cancellations to src/data/avacy/json/monday/cancellations.json`);
