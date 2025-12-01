@@ -1,5 +1,7 @@
 import * as dotenv from 'dotenv';
 import type { Context } from 'aws-lambda';
+// @ts-ignore
+import { getSecrets } from '@jumpgroup/secret-fetcher';
 
 // Carica env dalla root del progetto (default .env)
 dotenv.config();
@@ -20,6 +22,36 @@ export async function handler(event: { poller: string }, context: Context) {
 	}
 
 	console.log(`[Lambda] Executing poller: ${pollerName}`);
+
+	// Fetch secrets in real-time
+	const groupKey = process.env.GROUP_KEY;
+	const groupSecret = process.env.GROUP_SECRET;
+	const envName = process.env.SECRETS_ENV || 'production';
+
+	if (groupKey && groupSecret) {
+		try {
+			console.log(`[Lambda] Fetching secrets for env: ${envName}...`);
+			const secrets = await getSecrets({
+				groupKey,
+				groupSecret,
+				env: envName
+			});
+
+			const envSecrets = secrets[envName];
+			if (envSecrets) {
+				console.log(`[Lambda] Secrets fetched successfully. Injecting into process.env...`);
+				Object.assign(process.env, envSecrets);
+			} else {
+				console.warn(`[Lambda] No secrets found for env: ${envName}`);
+			}
+		} catch (error) {
+			console.error(`[Lambda] Failed to fetch secrets:`, error);
+			throw error; // Fail hard if secrets cannot be loaded
+		}
+	} else {
+		console.log('[Lambda] No GROUP_KEY/GROUP_SECRET provided, skipping secret fetcher.');
+	}
+
 	const startTime = Date.now();
 
 	try {

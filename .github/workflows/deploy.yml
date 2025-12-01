@@ -82,6 +82,9 @@ jobs:
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_LAMBDA_ROLE_ARN: ${{ secrets.AWS_LAMBDA_ROLE_ARN }}
+          GROUP_KEY: ${{ secrets.GROUP_KEY }}
+          GROUP_SECRET: ${{ secrets.GROUP_SECRET }}
+          SECRETS_ENV: production
         run: |
           chmod +x scripts/deploy-lambdas.sh
           ./scripts/deploy-lambdas.sh

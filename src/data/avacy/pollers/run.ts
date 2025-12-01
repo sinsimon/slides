@@ -1,9 +1,35 @@
 import * as dotenv from 'dotenv';
+// @ts-ignore
+import { getSecrets } from '@jumpgroup/secret-fetcher';
 
 // Carica env dalla root del progetto (default .env)
 dotenv.config();
 
 async function main() {
+  // Fetch secrets locally if configured
+  const groupKey = process.env.GROUP_KEY;
+  const groupSecret = process.env.GROUP_SECRET;
+  const envName = process.env.SECRETS_ENV || 'production';
+
+  if (groupKey && groupSecret) {
+    try {
+      console.log(`[Local] Fetching secrets for env: ${envName}...`);
+      const secrets = await getSecrets({
+        groupKey,
+        groupSecret,
+        env: envName
+      });
+      const envSecrets = secrets[envName];
+      if (envSecrets) {
+        console.log(`[Local] Secrets fetched. Injecting into process.env...`);
+        Object.assign(process.env, envSecrets);
+      }
+    } catch (err) {
+      console.warn(`[Local] Failed to fetch secrets:`, err);
+      // Continue, maybe vars are in .env
+    }
+  }
+
   const arg = process.argv[2] || '';
   if (!arg) {
     console.error('Usage: npm run poll -- <poller[:task]>');
@@ -36,6 +62,20 @@ async function main() {
     const { fetchActiveCampaignContacts } = await import('./active-campaign/contacts');
     await fetchActiveCampaignContacts();
     console.log('Done: active-campaign:contacts');
+    return;
+  }
+
+  if (arg === 'vapor:tenants') {
+    const { fetchVaporTenants } = await import('./vapor/tenants');
+    await fetchVaporTenants();
+    console.log('Done: vapor:tenants');
+    return;
+  }
+
+  if (arg === 'vapor:users-funnel') {
+    const { fetchUsersFunnel } = await import('./vapor/users-funnel');
+    await fetchUsersFunnel();
+    console.log('Done: vapor:users-funnel');
     return;
   }
 

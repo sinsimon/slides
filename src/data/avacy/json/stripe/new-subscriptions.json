@@ -8,6 +8,8 @@
       {
         "email": "Lorenzo.godoli@gmail.com",
         "subscriptionName": "Piano basic",
+        "amountCents": 1500,
+        "currency": "EUR",
         "metadata": {
           "document_date": "2023-06-19",
           "name": "default",
@@ -27,6 +29,8 @@
       {
         "email": "acquisti@tasgroup.eu",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 508,
+        "currency": "EUR",
         "metadata": {
           "document_date": "2023-11-22",
           "name": "default",
@@ -46,6 +50,8 @@
       {
         "email": "adesiato@scat.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {
           "document_date": "2023-12-07",
           "name": "default",
@@ -65,6 +71,8 @@
       {
         "email": "fatture@venetamineraria.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 508,
+        "currency": "EUR",
         "metadata": {
           "document_date": "2023-12-15",
           "name": "default",
@@ -84,6 +92,8 @@
       {
         "email": "alsea@alsea.mi.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 508,
+        "currency": "EUR",
         "metadata": {
           "document_date": "2024-01-22",
           "name": "default",
@@ -103,6 +113,8 @@
       {
         "email": "info@bergoimpianti.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 508,
+        "currency": "EUR",
         "metadata": {
           "document_date": "2024-01-24",
           "name": "default",
@@ -122,6 +134,8 @@
       {
         "email": "gregorio.ginestri@ginestri.it",
         "subscriptionName": "Avacy Plus - 5 spazi web",
+        "amountCents": 4000,
+        "currency": "EUR",
         "metadata": {
           "document_date": "2024-01-30",
           "name": "default",
@@ -141,6 +155,8 @@
       {
         "email": "savelli@wheelab.com",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1999,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Wheelab",
           "document_date": "2024-02-12",
@@ -153,6 +169,8 @@
       {
         "email": "acquisti@tasgroup.eu",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 508,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Marketing",
           "document_date": "2024-02-12",
@@ -173,6 +191,8 @@
       {
         "email": "baronigiulio@yahoo.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {
           "business_name": "CAN CAN",
           "document_date": "2024-03-21",
@@ -193,6 +213,8 @@
       {
         "email": "l.angilico@need-strategy.com",
         "subscriptionName": "Avacy Basic - 5 spazi web",
+        "amountCents": 900,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Need Strategy",
           "document_date": "2024-03-26",
@@ -213,6 +235,8 @@
       {
         "email": "INFO@FONDAZIONECASSARAVENNA.IT",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1999,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Palazzo Guiccioli",
           "document_date": "2024-04-10",
@@ -233,6 +257,8 @@
       {
         "email": "monica@flamigni.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "FLAMIGNI SRL",
           "document_date": "2024-04-12",
@@ -253,6 +279,8 @@
       {
         "email": "mfiorellini@goodkarma.it",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1833,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Consulenti Privacy",
           "document_date": "2024-05-15",
@@ -266,25 +294,15 @@
   },
   {
     "date": "2024-05-30",
-    "count": 2,
-    "totalAmountCents": 1198,
+    "count": 1,
+    "totalAmountCents": 599,
     "currency": "EUR",
     "purchases": [
       {
-        "email": "andrea.trotta@elevatee.io",
-        "subscriptionName": "Avacy Basic - 1 spazio web",
-        "metadata": {
-          "business_name": "Elevatee",
-          "document_date": "2024-05-30",
-          "name": "default",
-          "subscription_period_end": "29/06/2024",
-          "subscription_period_start": "30/05/2024",
-          "tenant": "elevatee"
-        }
-      },
-      {
         "email": "vitans@iol.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Vitans",
           "document_date": "2024-05-30",
@@ -305,6 +323,8 @@
       {
         "email": "easycleaning.net@gmail.com",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1833,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Easy-cleaning",
           "document_date": "2024-06-12",
@@ -325,6 +345,8 @@
       {
         "email": "a.lagorara@proximaformazione.it",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1833,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Proxima e-commerce",
           "document_date": "2024-06-27",
@@ -345,6 +367,8 @@
       {
         "email": "jasminecsofia@gmail.com",
         "subscriptionName": "Avacy Plus - 15 spazi web",
+        "amountCents": 5517,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Pinkopallo Agency",
           "document_date": "2024-06-28",
@@ -365,6 +389,8 @@
       {
         "email": "info@icelab.eu",
         "subscriptionName": "Avacy Basic - 15 spazi web",
+        "amountCents": 2300,
+        "currency": "EUR",
         "metadata": {
           "business_name": "IceLab",
           "document_date": "2024-07-09",
@@ -377,6 +403,8 @@
       {
         "email": "info@homodigital.it",
         "subscriptionName": "Avacy Plus - 15 spazi web",
+        "amountCents": 6000,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Homo Digital",
           "document_date": "2024-07-09",
@@ -397,6 +425,8 @@
       {
         "email": "andaleproject@gmail.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "glanzhof",
           "document_date": "2024-08-06",
@@ -417,6 +447,8 @@
       {
         "email": "admin@adeogroup.it",
         "subscriptionName": "Avacy Plus - 5 spazi web",
+        "amountCents": 3683,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Adeo Group",
           "document_date": "2024-10-07",
@@ -437,6 +469,8 @@
       {
         "email": "info@myvisionbigger.com",
         "subscriptionName": "Avacy Plus - 5 spazi web",
+        "amountCents": 4000,
+        "currency": "EUR",
         "metadata": {
           "business_name": "MyVisionBigger",
           "document_date": "2024-10-08",
@@ -457,6 +491,8 @@
       {
         "email": "m.melloni@poliedrosconsulting.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Poliedros Consulting",
           "document_date": "2024-10-12",
@@ -477,6 +513,8 @@
       {
         "email": "web@dynamocamp.org",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1999,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Dynamo Camp",
           "document_date": "2024-10-21",
@@ -497,6 +535,8 @@
       {
         "email": "info@yesworkapp.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {
           "business_name": "YesWork",
           "document_date": "2024-10-23",
@@ -517,6 +557,8 @@
       {
         "email": "costantino.ruggiero@gmail.com",
         "subscriptionName": "Avacy Basic - 5 spazi web",
+        "amountCents": 825,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Costantino Ruggiero",
           "document_date": "2024-11-05",
@@ -537,6 +579,8 @@
       {
         "email": "fabrizio.lallo95@gmail.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "TechCompenso",
           "document_date": "2024-11-14",
@@ -557,6 +601,8 @@
       {
         "email": "amministrazione@ocalab.it",
         "subscriptionName": "Avacy Basic - 25 spazi web",
+        "amountCents": 3775,
+        "currency": "EUR",
         "metadata": {
           "business_name": "OCALAB",
           "document_date": "2024-12-02",
@@ -577,6 +623,8 @@
       {
         "email": "amministrazione@generalsystem.net",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "General System",
           "document_date": "2024-12-09",
@@ -597,6 +645,8 @@
       {
         "email": "andrea@umix.agency",
         "subscriptionName": "Avacy Plus - 15 spazi web",
+        "amountCents": 5517,
+        "currency": "EUR",
         "metadata": {
           "business_name": "UMIX",
           "document_date": "2024-12-10",
@@ -617,6 +667,8 @@
       {
         "email": "corrado@lc13.it",
         "subscriptionName": "Avacy Basic - 15 spazi web",
+        "amountCents": 2500,
+        "currency": "EUR",
         "metadata": {
           "business_name": "lc13",
           "document_date": "2025-01-09",
@@ -637,6 +689,8 @@
       {
         "email": "catia.ubaldi@alimentaproduzioni.it",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1833,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Alimenta Produzioni",
           "document_date": "2025-01-13",
@@ -657,6 +711,8 @@
       {
         "email": "info@lacampana.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "LaCampana",
           "document_date": "2025-01-27",
@@ -677,6 +733,8 @@
       {
         "email": "info@magentacomunicazione.it",
         "subscriptionName": "Avacy Basic - 15 spazi web",
+        "amountCents": 2300,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Magenta",
           "document_date": "2025-01-29",
@@ -697,6 +755,8 @@
       {
         "email": "info@oumliving.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Oum Living",
           "document_date": "2025-02-11",
@@ -717,6 +777,8 @@
       {
         "email": "fatture@archimedia.it",
         "subscriptionName": "Avacy Plus - 25 spazi web",
+        "amountCents": 7358,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Archimedia SRl",
           "document_date": "2025-02-13",
@@ -737,6 +799,8 @@
       {
         "email": "ced@bonificarenana.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "BonificaRenana",
           "document_date": "2025-02-28",
@@ -757,6 +821,8 @@
       {
         "email": "dibussoloandrea@gmail.com",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1999,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Andrea Di Bussolo",
           "document_date": "2025-03-01",
@@ -777,6 +843,8 @@
       {
         "email": "amministrazione@imarsilenziatori.com",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1833,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Imar2",
           "document_date": "2025-03-04",
@@ -789,6 +857,8 @@
       {
         "email": "pm@indigitaleweb.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "HBC",
           "document_date": "2025-03-04",
@@ -809,6 +879,8 @@
       {
         "email": "produzione@sineglossa.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Sineglossa ETS",
           "document_date": "2025-03-05",
@@ -829,6 +901,8 @@
       {
         "email": "info@forli-cesena.awn.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {}
       }
     ]
@@ -842,6 +916,8 @@
       {
         "email": "amministrazione@blendstudio.it",
         "subscriptionName": "Avacy Basic - 25 spazi web",
+        "amountCents": 3775,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Blend Studio",
           "document_date": "2025-03-18",
@@ -862,6 +938,8 @@
       {
         "email": "info@giapponepertutti.it",
         "subscriptionName": "Avacy Basic - 25 spazi web",
+        "amountCents": 3775,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Fabrizio Montoleone",
           "document_date": "2025-03-25",
@@ -882,6 +960,8 @@
       {
         "email": "team.tecnico@mircogasparotto.com",
         "subscriptionName": "Avacy Basic - 5 spazi web",
+        "amountCents": 900,
+        "currency": "EUR",
         "metadata": {
           "business_name": "IMPRENDITORE VERO",
           "document_date": "2025-03-31",
@@ -902,6 +982,8 @@
       {
         "email": "kenosuper25@gmail.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Rambot AI",
           "document_date": "2025-04-11",
@@ -922,6 +1004,8 @@
       {
         "email": "am@command.srl",
         "subscriptionName": "Avacy Basic - 15 spazi web",
+        "amountCents": 2500,
+        "currency": "EUR",
         "metadata": {
           "business_name": "BTODATA",
           "document_date": "2025-05-07",
@@ -934,6 +1018,8 @@
       {
         "email": "manage-avacy@expert.ai",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1999,
+        "currency": "EUR",
         "metadata": {
           "business_name": "expertaispa",
           "document_date": "2025-05-07",
@@ -954,6 +1040,8 @@
       {
         "email": "info@lifetronic.it",
         "subscriptionName": "Avacy Plus - 5 spazi web",
+        "amountCents": 4000,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Lifetronic Srl",
           "document_date": "2025-05-08",
@@ -974,6 +1062,8 @@
       {
         "email": "info@toys-planet.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "toys planet",
           "document_date": "2025-05-21",
@@ -994,6 +1084,8 @@
       {
         "email": "info@futureshopping.it",
         "subscriptionName": "Avacy Plus - 25 spazi web",
+        "amountCents": 8000,
+        "currency": "EUR",
         "metadata": {
           "business_name": "FuturE-Shop",
           "document_date": "2025-06-09",
@@ -1014,6 +1106,8 @@
       {
         "email": "info@spazio-design.eu",
         "subscriptionName": "Avacy Basic - 5 spazi web",
+        "amountCents": 825,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Arch. Michele Frigerio",
           "document_date": "2025-06-18",
@@ -1034,6 +1128,8 @@
       {
         "email": "p.chiarini@robinsonpetshop.it",
         "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1833,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Robinson Pet Shop",
           "document_date": "2025-06-19",
@@ -1054,6 +1150,8 @@
       {
         "email": "k.alvino@reductsalt.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "REDUCT SALT",
           "document_date": "2025-07-02",
@@ -1074,6 +1172,8 @@
       {
         "email": "vincenzo.sanzone.135@gmail.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Appartamenti Pellegrino",
           "document_date": "2025-07-05",
@@ -1094,6 +1194,8 @@
       {
         "email": "shop@vallihome.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Valli Home Srl",
           "document_date": "2025-07-07",
@@ -1101,26 +1203,6 @@
           "subscription_period_end": "06/08/2025",
           "subscription_period_start": "07/07/2025",
           "tenant": "valli-home-srl"
-        }
-      }
-    ]
-  },
-  {
-    "date": "2025-07-17",
-    "count": 1,
-    "totalAmountCents": 550,
-    "currency": "EUR",
-    "purchases": [
-      {
-        "email": "claraintermediaavacy@yoloplus.it",
-        "subscriptionName": "Avacy Basic - 1 spazio web",
-        "metadata": {
-          "business_name": "Clara Intermedia",
-          "document_date": "2025-07-17",
-          "name": "default",
-          "subscription_period_end": "16/08/2025",
-          "subscription_period_start": "17/07/2025",
-          "tenant": "clara-intermedia"
         }
       }
     ]
@@ -1134,6 +1216,8 @@
       {
         "email": "lacucchiaratrattoria@gmail.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "La Cucchiara Pizzeria",
           "document_date": "2025-07-28",
@@ -1154,6 +1238,8 @@
       {
         "email": "info@hrzn.it",
         "subscriptionName": "Avacy Basic - 5 spazi web",
+        "amountCents": 825,
+        "currency": "EUR",
         "metadata": {
           "business_name": "HORIZON COMUNICAZIONE",
           "document_date": "2025-08-05",
@@ -1174,6 +1260,8 @@
       {
         "email": "info@ideolabsolution.it",
         "subscriptionName": "Avacy Basic - 5 spazi web",
+        "amountCents": 825,
+        "currency": "EUR",
         "metadata": {
           "business_name": "IDEOLAB",
           "document_date": "2025-08-07",
@@ -1194,6 +1282,8 @@
       {
         "email": "Lucia.Seminara@unige.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "TACTA",
           "document_date": "2025-08-15",
@@ -1214,6 +1304,8 @@
       {
         "email": "web@cagnetta.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Cagnetta.it",
           "document_date": "2025-08-19",
@@ -1234,6 +1326,8 @@
       {
         "email": "lucadibaa@gmail.com",
         "subscriptionName": "Avacy Basic - 15 spazi web",
+        "amountCents": 2500,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Luca Di Bari",
           "document_date": "2025-08-20",
@@ -1241,70 +1335,6 @@
           "subscription_period_end": "19/09/2025",
           "subscription_period_start": "20/08/2025",
           "tenant": "luca-di-bari"
-        }
-      }
-    ]
-  },
-  {
-    "date": "2025-09-12",
-    "count": 1,
-    "totalAmountCents": 550,
-    "currency": "EUR",
-    "purchases": [
-      {
-        "email": "lubeteamavacy@yoloplus.it",
-        "subscriptionName": "Avacy Basic - 1 spazio web",
-        "metadata": {
-          "business_name": "Lubeteam",
-          "document_date": "2025-09-12",
-          "name": "default",
-          "subscription_period_end": "12/10/2025",
-          "subscription_period_start": "12/09/2025",
-          "tenant": "lubeteam"
-        }
-      }
-    ]
-  },
-  {
-    "date": "2025-09-17",
-    "count": 3,
-    "totalAmountCents": 1650,
-    "currency": "EUR",
-    "purchases": [
-      {
-        "email": "yourexportstudioavacy@yoloplus.it",
-        "subscriptionName": "Avacy Basic - 1 spazio web",
-        "metadata": {
-          "business_name": "YOUR EXPORT STUDIO",
-          "document_date": "2025-09-17",
-          "name": "default",
-          "subscription_period_end": "17/10/2025",
-          "subscription_period_start": "17/09/2025",
-          "tenant": "your-export-studio"
-        }
-      },
-      {
-        "email": "yesconnectavacy@yoloplus.it",
-        "subscriptionName": "Avacy Basic - 1 spazio web",
-        "metadata": {
-          "business_name": "Yes Connect",
-          "document_date": "2025-09-17",
-          "name": "default",
-          "subscription_period_end": "17/10/2025",
-          "subscription_period_start": "17/09/2025",
-          "tenant": "yes-connect"
-        }
-      },
-      {
-        "email": "dearwatsonavacy@yoloplus.it",
-        "subscriptionName": "Avacy Basic - 1 spazio web",
-        "metadata": {
-          "business_name": "DEAR WATSON",
-          "document_date": "2025-09-17",
-          "name": "default",
-          "subscription_period_end": "17/10/2025",
-          "subscription_period_start": "17/09/2025",
-          "tenant": "dear-watson"
         }
       }
     ]
@@ -1318,6 +1348,8 @@
       {
         "email": "janda@alpaka.cz",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Jiri Janda",
           "document_date": "2025-09-24",
@@ -1325,38 +1357,6 @@
           "subscription_period_end": "24/10/2025",
           "subscription_period_start": "24/09/2025",
           "tenant": "jiri-janda"
-        }
-      }
-    ]
-  },
-  {
-    "date": "2025-09-26",
-    "count": 2,
-    "totalAmountCents": 1100,
-    "currency": "EUR",
-    "purchases": [
-      {
-        "email": "miwamobileavacy@yoloplus.it",
-        "subscriptionName": "Avacy Basic - 1 spazio web",
-        "metadata": {
-          "business_name": "Miwa Mobile",
-          "document_date": "2025-09-26",
-          "name": "default",
-          "subscription_period_end": "26/10/2025",
-          "subscription_period_start": "26/09/2025",
-          "tenant": "miwa-mobile"
-        }
-      },
-      {
-        "email": "miwaenergiaavacy@yoloplus.it",
-        "subscriptionName": "Avacy Basic - 1 spazio web",
-        "metadata": {
-          "business_name": "Miwa Energia",
-          "document_date": "2025-09-26",
-          "name": "default",
-          "subscription_period_end": "26/10/2025",
-          "subscription_period_start": "26/09/2025",
-          "tenant": "miwa-energia"
         }
       }
     ]
@@ -1370,6 +1370,8 @@
       {
         "email": "marketing@apaloosa.it",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Week4Kids",
           "document_date": "2025-10-02",
@@ -1390,6 +1392,8 @@
       {
         "email": "postmaster@mycicero.it",
         "subscriptionName": "Avacy Plus - 5 spazi web",
+        "amountCents": 3683,
+        "currency": "EUR",
         "metadata": {
           "business_name": "mycecero1",
           "document_date": "2025-10-03",
@@ -1410,6 +1414,8 @@
       {
         "email": "info@vergaplast.com",
         "subscriptionName": "Avacy Plus - 5 spazi web",
+        "amountCents": 4000,
+        "currency": "EUR",
         "metadata": {
           "business_name": "VERGA-Plast",
           "document_date": "2025-10-06",
@@ -1430,6 +1436,8 @@
       {
         "email": "tool@yoloplus.it",
         "subscriptionName": "Avacy Basic - 15 spazi web",
+        "amountCents": 2300,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Yolo",
           "document_date": "2025-10-09",
@@ -1450,6 +1458,8 @@
       {
         "email": "info@panastudio.it",
         "subscriptionName": "Avacy Basic - 5 spazi web",
+        "amountCents": 900,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Panastudio",
           "document_date": "2025-10-24",
@@ -1470,6 +1480,8 @@
       {
         "email": "lorenzodenicola@gmail.com",
         "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 550,
+        "currency": "EUR",
         "metadata": {
           "business_name": "Paradisiartificiali",
           "document_date": "2025-10-25",
@@ -1490,6 +1502,8 @@
       {
         "email": "info@codiceclick.it",
         "subscriptionName": "Avacy Plus - 25 spazi web",
+        "amountCents": 7358,
+        "currency": "EUR",
         "metadata": {
           "business_name": "CodiceClick",
           "document_date": "2025-11-04",
@@ -1502,6 +1516,8 @@
       {
         "email": "amministrazione@ocalab.it",
         "subscriptionName": "Avacy Basic - 5 spazi web",
+        "amountCents": 825,
+        "currency": "EUR",
         "metadata": {
           "business_name": "OCACODE_1",
           "document_date": "2025-11-04",
@@ -1509,6 +1525,50 @@
           "subscription_period_end": "04/12/2025",
           "subscription_period_start": "04/11/2025",
           "tenant": "ocacode"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-17",
+    "count": 1,
+    "totalAmountCents": 1999,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "antevertis@oncologo.it",
+        "subscriptionName": "Avacy Plus - 1 spazio web",
+        "amountCents": 1999,
+        "currency": "EUR",
+        "metadata": {
+          "business_name": "oncologo.it",
+          "document_date": "2025-11-17",
+          "name": "default",
+          "subscription_period_end": "17/12/2025",
+          "subscription_period_start": "17/11/2025",
+          "tenant": "oncologoit"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2025-11-20",
+    "count": 1,
+    "totalAmountCents": 599,
+    "currency": "EUR",
+    "purchases": [
+      {
+        "email": "info@gustavogomez.it",
+        "subscriptionName": "Avacy Basic - 1 spazio web",
+        "amountCents": 599,
+        "currency": "EUR",
+        "metadata": {
+          "business_name": "Gustavo",
+          "document_date": "2025-11-20",
+          "name": "default",
+          "subscription_period_end": "20/12/2025",
+          "subscription_period_start": "20/11/2025",
+          "tenant": "gustavo"
         }
       }
     ]
