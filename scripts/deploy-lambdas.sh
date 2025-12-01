@@ -139,7 +139,6 @@ HANDLER_EOF
     --rule "$rule_name" \
     --targets "$target_json" \
     --region "$AWS_REGION" > /dev/null
-    --targets "$target_json" \
   
   echo "✅ Deployed $function_name with schedule $schedule"
 }
