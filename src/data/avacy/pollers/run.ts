@@ -1,4 +1,5 @@
 import * as dotenv from 'dotenv';
+import * as fs from 'fs';
 // @ts-ignore
 import { getSecrets } from '@jumpgroup/secret-fetcher';
 
@@ -13,6 +14,12 @@ async function main() {
 
   if (groupKey && groupSecret) {
     try {
+        // Create dummy .secret-fetcher file for local dev if it doesn't exist
+        // This is required by the secret-fetcher library
+        if (!fs.existsSync('.secret-fetcher')) {
+            fs.writeFileSync('.secret-fetcher', '');
+        }
+
       console.log(`[Local] Fetching secrets for env: ${envName}...`);
       const secrets = await getSecrets({
         groupKey,
@@ -24,6 +31,9 @@ async function main() {
         console.log(`[Local] Secrets fetched. Injecting into process.env...`);
         Object.assign(process.env, envSecrets);
       }
+      
+      // Cleanup dummy file if we created it
+      // fs.unlinkSync('.secret-fetcher'); 
     } catch (err) {
       console.warn(`[Local] Failed to fetch secrets:`, err);
       // Continue, maybe vars are in .env
