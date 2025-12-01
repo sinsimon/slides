@@ -4,20 +4,20 @@ on:
   push:
     branches: [master, main]
     paths:
-      - 'src/**'
-      - 'scripts/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'vite.config.ts'
-      - 'lambda-cron-config.json'
-      - '.github/workflows/deploy.yml'
+      - "src/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - "vite.config.ts"
+      - "lambda-cron-config.json"
+      - ".github/workflows/deploy.yml"
 
 jobs:
   deploy-frontend:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: '.'
+        working-directory: "."
     steps:
       - uses: actions/checkout@v4
 
@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -52,6 +52,7 @@ jobs:
           aws s3 sync ./dist s3://${{ env.AWS_S3_BUCKET }} --delete --exclude "data/*"
 
       - name: Invalidate CloudFront
+        if: env.CLOUDFRONT_DISTRIBUTION_ID != ''
         continue-on-error: true
         uses: chetan/invalidate-cloudfront-action@v2
         env:
@@ -65,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: '.'
+        working-directory: "."
     steps:
       - uses: actions/checkout@v4
 
@@ -73,7 +74,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci

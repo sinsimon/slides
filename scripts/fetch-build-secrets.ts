@@ -39,7 +39,7 @@ async function main() {
             'AWS_REGION',
             'AWS_S3_BUCKET',
             'AWS_LAMBDA_ROLE_ARN',
-            'CLOUDFRONT_DISTRIBUTION_ID'
+            // 'CLOUDFRONT_DISTRIBUTION_ID' // Optional
         ];
 
         const githubEnvFile = process.env.GITHUB_ENV;
@@ -59,6 +59,15 @@ async function main() {
             } else {
                 console.warn(`   ⚠️  Missing ${key} in secrets!`);
             }
+        }
+
+        // Handle optional CloudFront ID separately without warning if missing
+        const cfId = envSecrets['CLOUDFRONT_DISTRIBUTION_ID'];
+        if (cfId) {
+            if (githubEnvFile) {
+                fs.appendFileSync(githubEnvFile, `CLOUDFRONT_DISTRIBUTION_ID=${cfId}\n`);
+            }
+            console.log(`   -> Exported CLOUDFRONT_DISTRIBUTION_ID`);
         }
 
         if (exportedCount === 0) {
