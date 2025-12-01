@@ -1,12 +1,18 @@
 
 import * as fs from 'fs';
 import * as dotenv from 'dotenv';
+// @ts-ignore
 import { getSecrets } from '@jumpgroup/secret-fetcher';
 
 dotenv.config();
 
 async function main() {
     console.log('🚀 Fetching build secrets...');
+
+    // Create dummy .secret-fetcher file to satisfy library requirement
+    if (!fs.existsSync('.secret-fetcher')) {
+        fs.writeFileSync('.secret-fetcher', '');
+    }
 
     const groupKey = process.env.GROUP_KEY;
     const groupSecret = process.env.GROUP_SECRET;
