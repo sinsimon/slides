@@ -97,6 +97,12 @@ HANDLER_EOF
       --zip-file "fileb://lambda-packages/${function_name}.zip" \
       --region "$AWS_REGION" > /dev/null
     
+    # Aspetta che l'aggiornamento del codice sia completato
+    echo "⏳ Waiting for update to complete..."
+    aws lambda wait function-updated \
+      --function-name "$function_name" \
+      --region "$AWS_REGION"
+
     aws lambda update-function-configuration \
       --function-name "$function_name" \
       --timeout 900 \
