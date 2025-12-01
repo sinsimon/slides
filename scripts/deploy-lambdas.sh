@@ -132,10 +132,14 @@ HANDLER_EOF
     --region "$AWS_REGION" 2>/dev/null || true
   
   # Collega la rule alla Lambda
+  # Costruisci il JSON per il target (formato array JSON)
+  local input_json="{\"poller\":\"${poller_name}\"}"
+  local target_json="[{\"Id\":\"1\",\"Arn\":\"arn:aws:lambda:${AWS_REGION}:*:function:${function_name}\",\"Input\":\"${input_json}\"}]"
   aws events put-targets \
     --rule "$rule_name" \
-    --targets "Id=1,Arn=arn:aws:lambda:${AWS_REGION}:*:function:${function_name},Input={\"poller\":\"${poller_name}\"}" \
+    --targets "$target_json" \
     --region "$AWS_REGION" > /dev/null
+    --targets "$target_json" \
   
   echo "✅ Deployed $function_name with schedule $schedule"
 }
