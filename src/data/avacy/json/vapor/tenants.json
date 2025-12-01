@@ -1,0 +1,8374 @@
+[
+  {
+    "id": "webtea",
+    "createdAt": "2025-11-20T19:24:53.000Z",
+    "name": "WebTea",
+    "email": "hi@webtea.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "luca-donnini",
+    "createdAt": "2025-11-19T14:32:19.000Z",
+    "name": "Luca Donnini",
+    "email": "aliquo1970@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.studiodonnini.org"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "il-tuo-caffe-in-cialde",
+    "createdAt": "2025-11-19T09:14:59.000Z",
+    "name": "Il Tuo Caffè in Cialde",
+    "email": "info@iltuocaffe.shop",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://iltuocaffe.shop"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "oncologoit",
+    "createdAt": "2025-11-17T20:25:38.000Z",
+    "name": "oncologo.it",
+    "email": "antevertis@oncologo.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 1,
+      "names": "https://WWW.ONCOLOGO.IT"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ttoni",
+    "createdAt": "2025-11-17T19:35:13.000Z",
+    "name": "ttoni",
+    "email": "lavistatoni65@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "test-estero-produzione",
+    "createdAt": "2025-11-17T09:58:28.000Z",
+    "name": "Test Estero Produzione",
+    "email": "test@email.cz",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "visionhair-salon",
+    "createdAt": "2025-11-17T07:55:34.000Z",
+    "name": "Visionhair Salon",
+    "email": "info@visionshop.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://visionshop.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sojson",
+    "createdAt": "2025-11-17T01:11:42.000Z",
+    "name": "sojson",
+    "email": "pjie0702@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.sojson.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "easymedia",
+    "createdAt": "2025-11-16T14:13:19.000Z",
+    "name": "Easymedia",
+    "email": "webmaster@easy-media.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.corradiniserramenti.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "chut-italie-sro",
+    "createdAt": "2025-11-16T09:33:56.000Z",
+    "name": "Chut Italie s.r.o.",
+    "email": "alessandro.romano@prahavino.cz",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "posizione-assoluta",
+    "createdAt": "2025-11-15T16:48:43.000Z",
+    "name": "Posizione Assoluta",
+    "email": "giotto.digital@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.posizioneassoluta.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "guido-elia-barberia",
+    "createdAt": "2025-11-14T10:11:45.000Z",
+    "name": "Guido Elia Barberia",
+    "email": "info@guidoeliabarberia.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://guidoeliabarberia.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sara-gioielli",
+    "createdAt": "2025-11-12T08:31:28.000Z",
+    "name": "Sara Gioielli",
+    "email": "info@saragioielli.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://saragioielli.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "karapami",
+    "createdAt": "2025-11-11T07:38:03.000Z",
+    "name": "Karapami",
+    "email": "info@karapamieventi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://karapamieventi.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "kebici",
+    "createdAt": "2025-11-10T12:48:28.000Z",
+    "name": "KEBICI",
+    "email": "kebicigdpr@fabioton.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.kebici.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pwnteam",
+    "createdAt": "2025-11-10T05:41:30.000Z",
+    "name": "PWNTEAM",
+    "email": "pwnhunter@proton.me",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://localhost"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "saless",
+    "createdAt": "2025-11-09T13:46:55.000Z",
+    "name": "Saless",
+    "email": "Leosales094@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "azienda-agricola-zecchini",
+    "createdAt": "2025-11-07T10:06:22.000Z",
+    "name": "Azienda Agricola Zecchini",
+    "email": "salumi.zecchini@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.salumizecchini.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "qua-pizzeria",
+    "createdAt": "2025-11-06T10:13:06.000Z",
+    "name": "Quà Pizzeria",
+    "email": "quapizzeriapomigliano@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://quapizzeria.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "blumenwerkstatt-zenzi",
+    "createdAt": "2025-11-05T16:37:05.000Z",
+    "name": "Blumenwerkstatt Zenzi",
+    "email": "info@blumenwerkstattzenzi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://blumenwerkstattzenzi.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "brandbox-studio",
+    "createdAt": "2025-11-04T13:15:33.000Z",
+    "name": "Brandbox Studio",
+    "email": "brandboxitalia@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://brandboxstudio.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "codiceclick",
+    "createdAt": "2025-11-04T11:12:53.000Z",
+    "name": "CodiceClick",
+    "email": "info@codiceclick.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 15,
+      "names": "https://itesoridimodena.it, https://agriturismoilborgodellupo.com, https://cuserina.it, https://lapaciarella.it, https://montepulcianohouse.it, https://rentalroomsgroup.it, https://sonilashome.it, https://autonoleggiogiramondo.it, https://cignusetleonis.com, https://poderepaganico.it, https://pastrimotors.it, https://www.puntaalaluxuryservice.com, https://www.autonoleggiogiramondo.it, https://www.cignusetleonis.com, https://www.poderepaganico.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ocacode",
+    "createdAt": "2025-11-04T10:39:09.000Z",
+    "name": "OCACODE_1",
+    "email": "admin1@ocalab.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 2,
+      "names": "https://2979studio.com, https://www.phoenix-italy.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "minedout",
+    "createdAt": "2025-10-30T19:10:14.000Z",
+    "name": "minedout",
+    "email": "micheletanzi146@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.minedout.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "revoluxhome",
+    "createdAt": "2025-10-28T19:39:09.000Z",
+    "name": "Revoluxhome",
+    "email": "info@revoluxhome.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://WWW.REVOLUXHOME.IT"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "alchimia-blog",
+    "createdAt": "2025-10-27T11:14:20.000Z",
+    "name": "Alchimia Blog",
+    "email": "alchimia.blog.wp@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.alchimiablog.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bitmania",
+    "createdAt": "2025-10-25T18:29:16.000Z",
+    "name": "Bitmania",
+    "email": "fernandomasiello@virgilio.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "paradisiartificiali",
+    "createdAt": "2025-10-25T07:39:18.000Z",
+    "name": "Paradisiartificiali",
+    "email": "lorenzodenicola@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.paradisiartificiali.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "seghezzi-web-design",
+    "createdAt": "2025-10-24T16:48:58.000Z",
+    "name": "Seghezzi Web Design",
+    "email": "seghezziandrea.webdesign@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://bergamaschimeccanica.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "celio",
+    "createdAt": "2025-10-23T14:16:36.000Z",
+    "name": "Celio",
+    "email": "francescoromani@hotmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://celioterzaa.altervista.org"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "in3c",
+    "createdAt": "2025-10-23T06:21:28.000Z",
+    "name": "IN3C",
+    "email": "info@in3c.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://in3c.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sa-pedra",
+    "createdAt": "2025-10-21T18:05:12.000Z",
+    "name": "Sa Pedra",
+    "email": "info.sapedra@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.sapedraholidayhome.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "deep-marketing",
+    "createdAt": "2025-10-19T14:20:59.000Z",
+    "name": "Deep Marketing",
+    "email": "francesco@deepmarketing.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.deepmarketing.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "due-diligence",
+    "createdAt": "2025-10-17T08:22:37.000Z",
+    "name": "due diligence",
+    "email": "duediligenceprivacy@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.duediligenceprivacy.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "panastudio",
+    "createdAt": "2025-10-16T06:18:15.000Z",
+    "name": "Panastudio",
+    "email": "graficapanastudio@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 3,
+      "names": "https://www.ilmoderatore.it, https://www.panastudio.it, https://www.ecucreativelab.eu"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lo-scrigno-di-venere",
+    "createdAt": "2025-10-14T07:10:05.000Z",
+    "name": "Lo scrigno di venere",
+    "email": "loscrignodivenere@svola.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://loscrignodivenere.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "filippo-ingarao",
+    "createdAt": "2025-10-13T13:27:19.000Z",
+    "name": "Filippo Ingarao",
+    "email": "f.ingarao@libero.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.centroforense.net"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "centro-commerciale-treviglio",
+    "createdAt": "2025-10-13T06:50:07.000Z",
+    "name": "Centro Commerciale Treviglio",
+    "email": "centrocommercialetreviglio@svola.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://centrocommercialetreviglio.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "scappo-via",
+    "createdAt": "2025-10-11T05:02:34.000Z",
+    "name": "Scappo Via",
+    "email": "lindabrunelli.webwriter@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "steven-basalari",
+    "createdAt": "2025-10-10T13:36:20.000Z",
+    "name": "Steven Basalari",
+    "email": "info@stevenbasalari.eu",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://stevenbasalari.eu"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lorena",
+    "createdAt": "2025-10-09T14:42:06.000Z",
+    "name": "lorena",
+    "email": "lfailla88@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sorrentopress",
+    "createdAt": "2025-10-08T18:01:56.000Z",
+    "name": "Sorrentopress",
+    "email": "antdesp@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.sorrentopress.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "studio-tecnico-dalla-barba",
+    "createdAt": "2025-10-08T06:57:32.000Z",
+    "name": "Studio tecnico Dalla Barba",
+    "email": "info@studiotecnicodallabarba.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "verga-plast",
+    "createdAt": "2025-10-06T15:22:13.000Z",
+    "name": "VERGA-Plast",
+    "email": "info@vergaplast.com",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 2,
+      "names": "https://verga1958.it, https://vergaplast.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "appartamento-stella",
+    "createdAt": "2025-10-06T09:06:13.000Z",
+    "name": "Appartamento Stella",
+    "email": "stellaandalo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://stelladolomiti.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "paolof",
+    "createdAt": "2025-10-04T18:04:45.000Z",
+    "name": "PaoloF",
+    "email": "p.frabetti@tiscali.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mycecero1",
+    "createdAt": "2025-10-03T05:22:03.000Z",
+    "name": "mycecero1",
+    "email": "postmaster@mycicero.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 11,
+      "names": "https://www.romapass.it, https://mycicero.it, https://testexperience.mycicero.it, https://testromapass.mycicero.it, https://collaudo.romapass.it, https://testmetepicene.mycicero.it, https://testvisitpesaro.mycicero.it, https://testintosud.mycicero.it, https://testmooneygoturismo.mycicero.it, https://tua.mycicero.it, https://tua.mycicero.it/mioplu"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "week4kids",
+    "createdAt": "2025-10-02T11:49:17.000Z",
+    "name": "Week4Kids",
+    "email": "Marketing@apaloosa.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://week4kids.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "ilcentroservizi",
+    "createdAt": "2025-10-01T05:55:20.000Z",
+    "name": "IlCentroServizi",
+    "email": "info@ilcentroservizi.eu",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://ilcentroservizi.eu"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "malfattiimmobiliare",
+    "createdAt": "2025-09-30T18:20:23.000Z",
+    "name": "malfattiimmobiliare",
+    "email": "support@developress.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://malfattiimmobiliare.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "cp-innova",
+    "createdAt": "2025-09-30T10:28:41.000Z",
+    "name": "CP INNOVA",
+    "email": "social.cpinnova@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://cpinnova.agency"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tublat",
+    "createdAt": "2025-09-27T20:08:17.000Z",
+    "name": "Tublat",
+    "email": "giannotta@tublat.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://tublat.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "jiri-janda",
+    "createdAt": "2025-09-24T09:36:03.000Z",
+    "name": "Jiri Janda",
+    "email": "janda@alpaka.cz",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.memento-historia.cz"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "solede",
+    "createdAt": "2025-09-19T03:32:03.000Z",
+    "name": "Solede",
+    "email": "lorenzo@solede.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.solede.ch"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fedro",
+    "createdAt": "2025-09-18T15:08:46.000Z",
+    "name": "fedro",
+    "email": "fedrodigital@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://concept.fedrodigital.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "chiara-coach",
+    "createdAt": "2025-09-16T12:54:45.000Z",
+    "name": "Chiara Coach",
+    "email": "privacy@chiaracoach.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.chiaracoach.com"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "sms-automotive",
+    "createdAt": "2025-09-16T12:34:26.000Z",
+    "name": "SMS Automotive",
+    "email": "info@smsautomotive.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.smsautomotive.digital"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pm-woman",
+    "createdAt": "2025-09-12T11:50:12.000Z",
+    "name": "Pm woman",
+    "email": "alessia.bugelli90@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://pmwoman-gestioneaffittibrevi.systeme.io/d8314bc4"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "azienda-agricola-romagnoli",
+    "createdAt": "2025-09-12T07:47:13.000Z",
+    "name": "Azienda Agricola Romagnoli",
+    "email": "agricolaromagnoli.privacy@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.aziendaagricolaromagnoli.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gullotta",
+    "createdAt": "2025-09-11T10:06:11.000Z",
+    "name": "gullotta",
+    "email": "info@gullotta-service.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://gullotta-service.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "iremia",
+    "createdAt": "2025-09-05T12:33:59.000Z",
+    "name": "Iremia",
+    "email": "ecildk9au@mozmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "studio-legale-genova-italo-romeno",
+    "createdAt": "2025-09-04T17:18:31.000Z",
+    "name": "Studio Legale Genova Italo Romeno",
+    "email": "studiolegalegenova.it.ro@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.studiolegalegenovaitalo-romeni.eu"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "salentoelisir",
+    "createdAt": "2025-09-04T13:37:00.000Z",
+    "name": "SalentoElisir",
+    "email": "paterariccardo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://Salentoelisir.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "condomio",
+    "createdAt": "2025-09-03T11:42:02.000Z",
+    "name": "Condomio",
+    "email": "alessandrobardotti99@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "alesiti",
+    "createdAt": "2025-09-01T10:55:11.000Z",
+    "name": "alesiti",
+    "email": "info.avrm@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "duegi",
+    "createdAt": "2025-08-31T20:55:10.000Z",
+    "name": "Duegi",
+    "email": "pendolino470@yahoo.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ecomasy",
+    "createdAt": "2025-08-31T10:17:45.000Z",
+    "name": "eCOmasy",
+    "email": "info@myvisionbigger.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://eco2masy.com"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "basket-resana",
+    "createdAt": "2025-08-29T13:30:56.000Z",
+    "name": "Basket Resana",
+    "email": "basketresana@davidedinato.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.basketresana.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cs-solar",
+    "createdAt": "2025-08-29T07:34:10.000Z",
+    "name": "CS Solar",
+    "email": "privacy@cs-solar.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cs-solar.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "luca-di-bari",
+    "createdAt": "2025-08-20T11:14:51.000Z",
+    "name": "Luca Di Bari",
+    "email": "lucadibari.web@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 2,
+      "names": "https://bellonearredamenti.it, https://athenaconsulting.net"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cagnettait",
+    "createdAt": "2025-08-19T12:52:08.000Z",
+    "name": "Cagnetta.it",
+    "email": "web@cagnetta.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cagnetta.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "consonanza",
+    "createdAt": "2025-08-18T09:54:44.000Z",
+    "name": "Consonanza",
+    "email": "info@consonanzamusicale.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://consonanzamusicale.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "francesca-zambon",
+    "createdAt": "2025-08-14T08:22:37.000Z",
+    "name": "Francesca Zambon",
+    "email": "koshiatar@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tacta",
+    "createdAt": "2025-08-13T06:14:56.000Z",
+    "name": "TACTA",
+    "email": "Lucia.Seminara@unige.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.tacta.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "clicbon",
+    "createdAt": "2025-08-12T08:16:45.000Z",
+    "name": "Clicbon",
+    "email": "clicbon.italia@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://clicbon.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "giannihaze",
+    "createdAt": "2025-08-06T13:25:56.000Z",
+    "name": "GianniHaze",
+    "email": "akman91@hotmail.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.biliardigallerani.biliardigallerani.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "policy-casa-sintesi",
+    "createdAt": "2025-08-06T11:20:40.000Z",
+    "name": "Policy Casa Sintesi",
+    "email": "policy@casasintesistore.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://casasintesistore.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "horizon-comunicazione",
+    "createdAt": "2025-08-04T10:42:45.000Z",
+    "name": "HORIZON COMUNICAZIONE",
+    "email": "info@hrzn.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 4,
+      "names": "https://onisswiss.ch, https://yverdonsport.onisswiss.ch, https://teamshop.onisswiss.ch, https://onisitalia.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "eros",
+    "createdAt": "2025-08-02T12:21:32.000Z",
+    "name": "EROS",
+    "email": "onofri.eros@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sinat",
+    "createdAt": "2025-07-29T20:41:09.000Z",
+    "name": "sinat",
+    "email": "m.dilullo@sinat.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://glamous.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ald",
+    "createdAt": "2025-07-29T06:39:53.000Z",
+    "name": "ALD",
+    "email": "m.dispaldro@web-direction.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.aldarreda.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "exanet",
+    "createdAt": "2025-07-28T11:00:22.000Z",
+    "name": "Exanet",
+    "email": "mac@exanet.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "la-cucchiara-pizzeria",
+    "createdAt": "2025-07-28T10:56:29.000Z",
+    "name": "La Cucchiara Pizzeria",
+    "email": "lacucchiaratrattoria@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.pizzerialacucchiara.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "prometeo-media",
+    "createdAt": "2025-07-28T08:07:44.000Z",
+    "name": "Pizzeria La Cucchiara",
+    "email": "info@vincenzopaparella.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "luca",
+    "createdAt": "2025-07-28T04:32:46.000Z",
+    "name": "Luca",
+    "email": "luca.rubin1971@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.lucarubin.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "nico",
+    "createdAt": "2025-07-27T12:23:48.000Z",
+    "name": "nico",
+    "email": "nicobartoli06@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://fabbrionline.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "1",
+    "createdAt": "2025-07-26T09:34:50.000Z",
+    "name": "1",
+    "email": "malcangiomichele@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "solver",
+    "createdAt": "2025-07-24T19:07:19.000Z",
+    "name": "solver",
+    "email": "mail@privacysolver.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.privacysolver.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "610",
+    "createdAt": "2025-07-24T13:07:59.000Z",
+    "name": "610",
+    "email": "610@schmidtconsulting.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.schmidtconsulting.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "anna",
+    "createdAt": "2025-07-24T10:33:20.000Z",
+    "name": "Anna",
+    "email": "INFO@LUCIO-BUBACCO.COM",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.lucio-bubacco.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "energia",
+    "createdAt": "2025-07-24T06:40:34.000Z",
+    "name": "Energia",
+    "email": "kreeogestoreprofili@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://energiaquasigratis.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tiramani",
+    "createdAt": "2025-07-23T13:19:54.000Z",
+    "name": "Tiramani",
+    "email": "gftiramani@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "grandi-sport-24",
+    "createdAt": "2025-07-20T09:26:04.000Z",
+    "name": "Grandi Sport 24",
+    "email": "andreagrecoarchitetto@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.grandisport24.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lericettedinonnapaola",
+    "createdAt": "2025-07-19T12:31:33.000Z",
+    "name": "lericettedinonnapaola",
+    "email": "giuliamarcuccetti@yahoo.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://lericettedinonnapaola.netsons.org"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tcarts",
+    "createdAt": "2025-07-09T11:00:39.000Z",
+    "name": "TCarts",
+    "email": "yurifidelio@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tfc-green",
+    "createdAt": "2025-07-08T06:07:49.000Z",
+    "name": "TFC Green",
+    "email": "web@tfcgreen.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://tfcgreen.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "scuola-web",
+    "createdAt": "2025-07-08T05:13:28.000Z",
+    "name": "scuola-web",
+    "email": "romsabba@tiscali.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "helixversemc",
+    "createdAt": "2025-07-07T01:03:04.000Z",
+    "name": "HelixVerseMC",
+    "email": "gamergabriele.19994@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.helixversemc.site"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "trustbuy",
+    "createdAt": "2025-07-03T07:47:00.000Z",
+    "name": "trustbuy",
+    "email": "admin@trustbuy.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://trustbuy.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "reduct-salt",
+    "createdAt": "2025-07-02T09:30:20.000Z",
+    "name": "REDUCT SALT",
+    "email": "k.alvino@reductsalt.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.reductsalt.com"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "yume",
+    "createdAt": "2025-06-30T05:31:47.000Z",
+    "name": "Yume",
+    "email": "alexanderguitarist@hotmail.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "yudy",
+    "createdAt": "2025-06-27T10:12:56.000Z",
+    "name": "yudy",
+    "email": "yudelkiscoello10@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "appartamenti-pellegrino",
+    "createdAt": "2025-06-26T10:05:50.000Z",
+    "name": "Appartamenti Pellegrino",
+    "email": "vincenzo.sanzone.135@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.appartamentipellegrino.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "axeptio",
+    "createdAt": "2025-06-25T07:47:26.000Z",
+    "name": "Axeptio",
+    "email": "romain@axeptio.eu",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://axeptio.eu"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "centoform",
+    "createdAt": "2025-06-24T05:43:21.000Z",
+    "name": "Centoform",
+    "email": "federico.cavalleretti@centoform.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "diagnostica-spire",
+    "createdAt": "2025-06-20T09:35:43.000Z",
+    "name": "Diagnostica Spire",
+    "email": "infodigitalfuturum@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "valli-home-srl",
+    "createdAt": "2025-06-19T13:55:27.000Z",
+    "name": "Valli Home Srl",
+    "email": "shop@vallihome.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "http://vallihomebergamo.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "robinson-pet-shop",
+    "createdAt": "2025-06-19T07:14:56.000Z",
+    "name": "Robinson Pet Shop",
+    "email": "p.chiarini@robinsonpetshop.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ciuridimari",
+    "createdAt": "2025-06-18T14:54:46.000Z",
+    "name": "Ciuridimari",
+    "email": "info@ciuridimari.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "unnimaffissu",
+    "createdAt": "2025-06-18T07:26:50.000Z",
+    "name": "Unnimaffissu",
+    "email": "SalvoWebDeveloper@proton.me",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://unnimaffissu.it/shop"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "arch-michele-frigerio",
+    "createdAt": "2025-06-18T04:45:26.000Z",
+    "name": "Arch. Michele Frigerio",
+    "email": "info@architettofrigerio.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 3,
+      "names": "https://www.azzurrafitnessclub.com, https://architettofrigerio.it, https://spazio-design.eu"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "girlsrestart",
+    "createdAt": "2025-06-16T14:04:38.000Z",
+    "name": "GirlsRestart",
+    "email": "staff@girlsrestart.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "yolo",
+    "createdAt": "2025-06-16T11:49:56.000Z",
+    "name": "Yolo",
+    "email": "tool@yoloplus.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 8,
+      "names": "https://yoloplus.it, https://www.yourexportstudio.it, https://claraintermedia.it, https://lubeteam.it, https://dearwatson.pub, https://yesconnect.it, https://www.miwaenergia.com, https://miwamobile.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "depositoastait",
+    "createdAt": "2025-06-16T09:36:08.000Z",
+    "name": "depositoasta.it",
+    "email": "servizi@depositoasta.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 2,
+      "names": "https://depositoasta.it, https://www.depositoasta.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "freecompenso",
+    "createdAt": "2025-06-16T09:21:32.000Z",
+    "name": "FreeCompenso",
+    "email": "ceccarinisilvio8@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.liberipro.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "maxim-rusu",
+    "createdAt": "2025-06-14T16:24:15.000Z",
+    "name": "Maxim Rusu",
+    "email": "maximrs.marketing@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.maximrusu.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "phoenix-multimedia",
+    "createdAt": "2025-06-13T09:30:11.000Z",
+    "name": "Phoenix Multimedia",
+    "email": "edmondolanteri@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.phoenixmultimedia.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "isa",
+    "createdAt": "2025-06-12T08:59:32.000Z",
+    "name": "Isa",
+    "email": "soru.isabella@outlook.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "offerteclub",
+    "createdAt": "2025-06-11T10:50:17.000Z",
+    "name": "offerteclub",
+    "email": "offertepuntoclub@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://offerte.club"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pagocert",
+    "createdAt": "2025-06-11T09:32:33.000Z",
+    "name": "PAGOCERT",
+    "email": "direzione@pagocert.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.pagocert.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "paolo-bulzacca",
+    "createdAt": "2025-06-08T18:07:30.000Z",
+    "name": "Paolo Bulzacca",
+    "email": "paolo.bulzacca@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://paolobulzacca.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "imprint-italia",
+    "createdAt": "2025-06-08T16:11:21.000Z",
+    "name": "imprint italia",
+    "email": "info@imprintitalia.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.imprintitalia.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mosmax",
+    "createdAt": "2025-06-08T09:48:54.000Z",
+    "name": "Mosmax",
+    "email": "mosmax@me.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "team-giovanniti",
+    "createdAt": "2025-06-07T07:45:07.000Z",
+    "name": "team giovanniti",
+    "email": "giovannitiventimiglia@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "vortexteam",
+    "createdAt": "2025-06-06T20:15:12.000Z",
+    "name": "VortexTeam",
+    "email": "icefireytfn@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "future-shop",
+    "createdAt": "2025-06-06T11:34:26.000Z",
+    "name": "FuturE-Shop",
+    "email": "info@futureshopping.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 24,
+      "names": "https://www.virtualfoto.it, https://www.sarrimoto.it, https://www.agmotoricambi.com, https://www.allforcamping.it, https://www.casillowine.com, https://www.tabacchicambria.com/it, https://www.gioielleriadiblasi.com, https://www.foreverfashion.it, https://www.auguripersonalizzati.it, https://www.epossidica.com, https://www.benesserestore.it, https://www.cameraottica.com, https://www.infanziastore.it, https://www.loscrignobazar.com, https://www.sammaparts.com, https://www.briconew.com, https://www.martashop.it, https://www.lage.it, https://www.postermania.it, https://www.piadinaciliegia.it, https://www.goposter.it, https://www.cartaepiu.it, https://www.immaginimoda.com, https://zeusprofumi.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "urban",
+    "createdAt": "2025-06-05T12:42:15.000Z",
+    "name": "urban",
+    "email": "nayappirouge-4162@yopmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://comune.misterbianco.ct.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "laweb",
+    "createdAt": "2025-06-05T12:24:31.000Z",
+    "name": "Laweb",
+    "email": "luigiabenante627@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "giuseppina-campana",
+    "createdAt": "2025-06-05T07:54:44.000Z",
+    "name": "Giuseppina Campana",
+    "email": "info@giuseppinacampana.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bernardi-christian-deniz",
+    "createdAt": "2025-06-05T05:14:08.000Z",
+    "name": "Bernardi Christian Deniz",
+    "email": "denizmosaico@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.denizbernardi.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "dieta-positiva",
+    "createdAt": "2025-06-03T16:18:20.000Z",
+    "name": "dieta positiva",
+    "email": "hypebodycoach@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.dietapositiva.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "quadrivision",
+    "createdAt": "2025-06-02T15:57:42.000Z",
+    "name": "Quadrivision",
+    "email": "quadrivision24@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.quadrivision.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ag",
+    "createdAt": "2025-06-02T12:38:04.000Z",
+    "name": "AG",
+    "email": "gallery.afrique@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.a-frique.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "am",
+    "createdAt": "2025-06-02T11:28:42.000Z",
+    "name": "AM",
+    "email": "antoniomalendze.com@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.antoniomalendze.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tiberiusconsult-srls",
+    "createdAt": "2025-05-29T10:53:24.000Z",
+    "name": "Tiberiusconsult S.r.l.s.",
+    "email": "Tiberiusconsult@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.tiberiusconsult.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tiberiusconsult",
+    "createdAt": "2025-05-29T10:47:32.000Z",
+    "name": "Tiberiusconsult",
+    "email": "Tiberiusconsult@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mbimpianti",
+    "createdAt": "2025-05-28T14:37:11.000Z",
+    "name": "MBimpianti",
+    "email": "loris.barbieri00@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bombardieri-riedito-1995",
+    "createdAt": "2025-05-27T18:35:24.000Z",
+    "name": "Bombardieri Riedito 1995",
+    "email": "taglietti.org@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://bombardieri-riedito.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lac",
+    "createdAt": "2025-05-27T09:12:56.000Z",
+    "name": "LAC",
+    "email": "legaperlabolizionedellacaccia@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.abolizionecaccia.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "opra-studio-di-joanne-marie-lucie-mezzarobba",
+    "createdAt": "2025-05-25T21:11:47.000Z",
+    "name": "Opra Studio di Joanne Marie Lucie Mezzarobba",
+    "email": "info@oprastudio.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gustavo",
+    "createdAt": "2025-05-22T06:51:57.000Z",
+    "name": "Gustavo",
+    "email": "gustavopsiche@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://gustavogomez.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "elleeeu",
+    "createdAt": "2025-05-22T06:47:23.000Z",
+    "name": "ellee.eu",
+    "email": "enrico.lavarini@ellee.eu",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.ellee.eu"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "toys-planet",
+    "createdAt": "2025-05-21T05:39:40.000Z",
+    "name": "toys planet",
+    "email": "info@toys-planet.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.toys-planet.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "forklift",
+    "createdAt": "2025-05-20T11:59:43.000Z",
+    "name": "Forklift",
+    "email": "goface1935@neuraxo.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "web-direction",
+    "createdAt": "2025-05-20T06:21:42.000Z",
+    "name": "Web Direction",
+    "email": "info@web-direction.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://tsiitalia.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "zilaghe",
+    "createdAt": "2025-05-20T03:20:11.000Z",
+    "name": "zilaghe",
+    "email": "zilaghe@libero.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.zilaghe.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "vestitidimarca",
+    "createdAt": "2025-05-17T08:29:24.000Z",
+    "name": "VestitidiMarca",
+    "email": "info@vestitidimarca.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://vestitidimarca.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mua",
+    "createdAt": "2025-05-15T13:18:51.000Z",
+    "name": "MUA",
+    "email": "noemispera1993@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://noemispera.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "openex",
+    "createdAt": "2025-05-13T07:23:49.000Z",
+    "name": "openex",
+    "email": "info@openex.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "francesco",
+    "createdAt": "2025-05-13T05:50:52.000Z",
+    "name": "Francesco",
+    "email": "francescogemmellaro444@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.upsodem.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ore11",
+    "createdAt": "2025-05-12T23:56:11.000Z",
+    "name": "ore11",
+    "email": "sasadeja66@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.ore11.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "funny-planet-srl",
+    "createdAt": "2025-05-12T08:30:08.000Z",
+    "name": "Funny Planet",
+    "email": "Privacy@funnyplanetromanina.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.funnyplanetromanina.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lorenzo-strazza",
+    "createdAt": "2025-05-12T06:48:30.000Z",
+    "name": "Lorenzo Strazza",
+    "email": "lorenzostrazza3@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "alessia",
+    "createdAt": "2025-05-12T04:19:30.000Z",
+    "name": "Alessia",
+    "email": "amministrazione@illuminazioneshop.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.illuminazioneshop.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "valsesia-fly-fishing",
+    "createdAt": "2025-05-11T17:17:10.000Z",
+    "name": "VALSESIA FLY FISHING",
+    "email": "paolo.roberto.valsesia@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.valsesiaflyfishing.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mondodentro",
+    "createdAt": "2025-05-10T15:48:44.000Z",
+    "name": "mondodentro",
+    "email": "vtaranto95@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lifetronic-srl",
+    "createdAt": "2025-05-08T10:32:21.000Z",
+    "name": "Lifetronic Srl",
+    "email": "info@lifetronic.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 9,
+      "names": "https://lcg-lifetronic.it, https://www.luccacomicsandgames.com, https://cookietest.lcg-lifetronic.it, https://lucca2025.luccacomicsandgames.com, https://2025.lcg-lifetronic.it, https://maps2025.luccacomicsandgames.com, https://sweethomeforvantage.com, https://shstaging.lifetronic-dev.it, https://alertfleet.com"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "top-car-service-srl",
+    "createdAt": "2025-05-08T08:52:40.000Z",
+    "name": "Top Car Service SRL",
+    "email": "info@topcarservicesrl.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://topcarservicesrl.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "rent-fashion-car",
+    "createdAt": "2025-05-08T08:48:26.000Z",
+    "name": "Rent Fashion CAr",
+    "email": "info@rentfashioncar.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.rentfashioncar.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "president-rent-car",
+    "createdAt": "2025-05-08T08:38:25.000Z",
+    "name": "President Rent Car",
+    "email": "info@presidentrentcar.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://presidentrentcar.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "movirent",
+    "createdAt": "2025-05-08T08:31:37.000Z",
+    "name": "MoviRent",
+    "email": "info@movirentsrl.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.movirentsrl.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "giuseppe-zannone",
+    "createdAt": "2025-05-08T08:24:13.000Z",
+    "name": "Giuseppe Zannone",
+    "email": "info@giuseppezannone.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.giuseppezannone.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "che-auto-rent",
+    "createdAt": "2025-05-08T08:18:19.000Z",
+    "name": "Che Auto Rent",
+    "email": "info@cheautorent.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cheautorent.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cesena-sub",
+    "createdAt": "2025-05-08T08:07:50.000Z",
+    "name": "Cesena Sub",
+    "email": "info@cesenasub.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://cesenasub.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "partenope-experience",
+    "createdAt": "2025-05-08T07:58:53.000Z",
+    "name": "Partenope Experience",
+    "email": "info@partenopexperience.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://partenopexperience.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pulzoni-antonelli-by-autosat",
+    "createdAt": "2025-05-08T07:54:44.000Z",
+    "name": "Pulzoni Antonelli by Autosat",
+    "email": "info@pulzoniantonelli.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.pulzoniantonelli.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "centro-odontoiatrico-campano",
+    "createdAt": "2025-05-08T07:48:02.000Z",
+    "name": "Centro Odontoiatrico Campano",
+    "email": "info@centroodontoiatricocampano.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.centroodontoiatricocampano.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "broker-noleggio",
+    "createdAt": "2025-05-08T07:44:46.000Z",
+    "name": "Broker Noleggio",
+    "email": "info@brokernoleggio.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "asd-sporting-arechi",
+    "createdAt": "2025-05-08T06:08:12.000Z",
+    "name": "ASD Sporting Arechi",
+    "email": "info@asdsportingarechi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://asdsportingarechi.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "dna-creative",
+    "createdAt": "2025-05-08T05:46:05.000Z",
+    "name": "DNA Creative",
+    "email": "info@dnacreativeagency.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.dnacreativeagency.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "yourda",
+    "createdAt": "2025-05-08T02:36:56.000Z",
+    "name": "Yourda",
+    "email": "luca.prudenzi@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "btodata",
+    "createdAt": "2025-05-07T11:56:51.000Z",
+    "name": "BTODATA",
+    "email": "am@command.srl",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 6,
+      "names": "https://registroaziende.it, https://btomail.it, https://btomail.com, https://database-email-aziende.it, https://btolead.it, https://btomail.es"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "expertaispa",
+    "createdAt": "2025-05-07T08:01:18.000Z",
+    "name": "expertaispa",
+    "email": "manage-avacy@expert.ai",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 2,
+      "names": "https://www.expert.ai, https://content.expert.ai"
+    },
+    "users": {
+      "count": 5
+    }
+  },
+  {
+    "id": "expertai",
+    "createdAt": "2025-05-07T06:40:15.000Z",
+    "name": "expert.ai",
+    "email": "cvinci@expert.ai",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "danilo-signorelli",
+    "createdAt": "2025-05-07T05:28:39.000Z",
+    "name": "Danilo Signorelli",
+    "email": "Info@danilosignorelli.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.danilosignorelli.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "moving-mobility",
+    "createdAt": "2025-05-06T15:25:06.000Z",
+    "name": "Moving Mobility",
+    "email": "noreplay@movingmobility.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://movingmobility.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lorenzo",
+    "createdAt": "2025-05-06T05:51:08.000Z",
+    "name": "Lorenzo",
+    "email": "info@bianchinilorenzo.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.bianchinilorenzo.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "royalclubpadovait",
+    "createdAt": "2025-05-04T17:43:39.000Z",
+    "name": "Royalclubpadova.it",
+    "email": "lucaflorian77@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "all-termoidraulica",
+    "createdAt": "2025-05-03T07:21:13.000Z",
+    "name": "all termoidraulica",
+    "email": "roberto.lanzeni@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://alltermoidraulica.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lalala",
+    "createdAt": "2025-04-30T04:06:45.000Z",
+    "name": "Lalala",
+    "email": "michelecraparo537@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "britchronicle",
+    "createdAt": "2025-04-29T13:54:50.000Z",
+    "name": "BritChronicle",
+    "email": "samuelcarballogarcia8@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://britchronicle.co.uk"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "geride",
+    "createdAt": "2025-04-29T13:42:43.000Z",
+    "name": "Geride",
+    "email": "remuflone@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "dimora-bellini",
+    "createdAt": "2025-04-29T07:45:25.000Z",
+    "name": "Dimora Bellini",
+    "email": "info@swa-adv.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://dimorabellini.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "salvia",
+    "createdAt": "2025-04-28T13:59:18.000Z",
+    "name": "Salvia",
+    "email": "cookie@salviacafe.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.salviacafe.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "iriam-bettera-design",
+    "createdAt": "2025-04-28T12:42:55.000Z",
+    "name": "Iriam Bettera Design",
+    "email": "stefano@iriambettera.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.iriambettera.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "teamhub",
+    "createdAt": "2025-04-24T11:10:47.000Z",
+    "name": "teamhub",
+    "email": "vicky789yu@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "thecookmike",
+    "createdAt": "2025-04-24T07:12:42.000Z",
+    "name": "Thecookmike",
+    "email": "iscrizioni@thecookmike.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.thecookmike.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "simone-buonavita",
+    "createdAt": "2025-04-23T15:49:07.000Z",
+    "name": "Simone Buonavita",
+    "email": "advertisingoodlife@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.linea55.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "punto-click",
+    "createdAt": "2025-04-23T13:06:33.000Z",
+    "name": "Punto Click",
+    "email": "betpointrigoria@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://puntoclick.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lilo",
+    "createdAt": "2025-04-23T07:46:28.000Z",
+    "name": "lilo",
+    "email": "teferici.halil@outlook.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://dailygag.me"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fipainnovation",
+    "createdAt": "2025-04-22T12:37:31.000Z",
+    "name": "Fipainnovation",
+    "email": "andrea.trotta@fipainnovation.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.fipainnovation.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "binario-14",
+    "createdAt": "2025-04-22T09:26:25.000Z",
+    "name": "Binario 14",
+    "email": "info@binario14.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.binario14.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gstudio",
+    "createdAt": "2025-04-22T08:24:31.000Z",
+    "name": "G.Studio",
+    "email": "giadazanella2@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://gstudio.digital"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "maria-petruzzi",
+    "createdAt": "2025-04-22T06:07:58.000Z",
+    "name": "Maria Petruzzi",
+    "email": "segreteria@mariapetruzzi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "jaijai",
+    "createdAt": "2025-04-20T15:20:11.000Z",
+    "name": "JaiJai",
+    "email": "silviadaini@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.zabajon.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "steve",
+    "createdAt": "2025-04-17T16:48:01.000Z",
+    "name": "Steve",
+    "email": "agostef@yahoo.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.stefanoagostini.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "emotion-house",
+    "createdAt": "2025-04-17T05:28:45.000Z",
+    "name": "Emotion House",
+    "email": "giorgiocangelosi77@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.emotionhouse.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "stellar-blueprint",
+    "createdAt": "2025-04-16T12:54:25.000Z",
+    "name": "Stellar Blueprint",
+    "email": "luisa.abate@outlook.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.stellarblueprint.net"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "opportunity-manager",
+    "createdAt": "2025-04-16T07:44:18.000Z",
+    "name": "Opportunity Manager",
+    "email": "opportunitymanagermonitoraggi@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://opportunitymanager.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "nicola-passerini",
+    "createdAt": "2025-04-16T06:45:40.000Z",
+    "name": "Nicola Passerini",
+    "email": "monitoraggipasserini@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.avvocatodelfranchising.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "programma-futuro",
+    "createdAt": "2025-04-12T05:21:54.000Z",
+    "name": "Programma Futuro",
+    "email": "giuseppe.mudaro@virgilio.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.nellosgambato.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "rambot-ai",
+    "createdAt": "2025-04-11T12:20:44.000Z",
+    "name": "Rambot AI",
+    "email": "kenosuper25@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.rambot.ai"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "alexandre",
+    "createdAt": "2025-04-11T11:22:46.000Z",
+    "name": "Alexandre",
+    "email": "alexandre.picc@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://xandesign.altervista.org"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gali-web-factory",
+    "createdAt": "2025-04-10T21:12:25.000Z",
+    "name": "Gali Web Factory",
+    "email": "galiwebfactory@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.galiwebfactory.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "test-team",
+    "createdAt": "2025-04-10T12:56:37.000Z",
+    "name": "Test - Team",
+    "email": "andreadb3011@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pianeta-bimbo",
+    "createdAt": "2025-04-09T14:28:36.000Z",
+    "name": "pianeta bimbo",
+    "email": "infopianeta-bimbo@libero.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "un-fiore-per-la-vita",
+    "createdAt": "2025-04-09T10:50:17.000Z",
+    "name": "un fiore per la vita",
+    "email": "segreteria@unfioreperlavita.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.unfioreperlavita.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "accademia",
+    "createdAt": "2025-04-08T14:13:26.000Z",
+    "name": "Accademia",
+    "email": "rdeidda@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.corso-ipnosi-rapida.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ideolab",
+    "createdAt": "2025-04-08T07:45:33.000Z",
+    "name": "IDEOLAB",
+    "email": "info@ideolabsolution.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 3,
+      "names": "https://www.3gparquet.it, https://fishingexperience.it, https://www.serviziora.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "isola-delle-tartarughe",
+    "createdAt": "2025-04-08T07:16:23.000Z",
+    "name": "Isola delle Tartarughe",
+    "email": "privacy@isoladelletartarughe.org",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://isoladelletartarughe.org"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "montemaggio",
+    "createdAt": "2025-04-07T19:45:33.000Z",
+    "name": "MonteMaggio",
+    "email": "francorausei@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://WWW.MONTEMAGGIO.IT"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "nexgen-automation",
+    "createdAt": "2025-04-07T06:33:46.000Z",
+    "name": "Nexgen automation",
+    "email": "mgivannini@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.nexgenautomation.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "marta-cuppari-visual",
+    "createdAt": "2025-04-05T09:48:17.000Z",
+    "name": "Marta Cuppari Visual",
+    "email": "marta.cuppari@libero.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.martacupparivisual.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "casapass-europa",
+    "createdAt": "2025-04-05T07:47:59.000Z",
+    "name": "Casapass Europa",
+    "email": "casapasseuropa@libero.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "http://www.casapasseuropa.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "thaiwarriors-crotone",
+    "createdAt": "2025-04-04T14:59:45.000Z",
+    "name": "Thaiwarriors Crotone",
+    "email": "asd.thaiwarriors.crotone@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://thaiwarriors.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "asdthaiwarriorscrotone",
+    "createdAt": "2025-04-04T14:27:29.000Z",
+    "name": "asd.thaiwarriors.crotone",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "sdfs",
+    "createdAt": "2025-04-03T12:00:54.000Z",
+    "name": "sdfs",
+    "email": "linhnt7.lcmtrade@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "passionefioriit",
+    "createdAt": "2025-04-03T09:08:38.000Z",
+    "name": "passionefiori.it",
+    "email": "sivecsrl@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://PASSIONEFIORI.IT"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "anspi",
+    "createdAt": "2025-04-02T20:00:49.000Z",
+    "name": "ANSPI",
+    "email": "strina70@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.anspisanquintino.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "oltrenubi",
+    "createdAt": "2025-04-02T14:31:04.000Z",
+    "name": "Oltrenubi",
+    "email": "michele@oltrenubi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "snackup",
+    "createdAt": "2025-04-02T13:30:41.000Z",
+    "name": "SnackUp",
+    "email": "vitalifabio15@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "valentina-crivelli",
+    "createdAt": "2025-04-02T13:18:18.000Z",
+    "name": "vALENTINA cRIVELLI",
+    "email": "vcrivelli71@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "valentina",
+    "createdAt": "2025-04-02T12:47:14.000Z",
+    "name": "valentina",
+    "email": "vcrivelli71@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "istituto-eneide",
+    "createdAt": "2025-04-01T13:17:46.000Z",
+    "name": "Istituto Eneide",
+    "email": "info@istitutoeneide.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://istitutoeneide.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "imprenditore-vero",
+    "createdAt": "2025-03-31T06:52:00.000Z",
+    "name": "IMPRENDITORE VERO",
+    "email": "team.tecnico@mircogasparotto.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 2,
+      "names": "https://mircogasparotto.com, https://imprenditore-vero.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "vadym-caterina",
+    "createdAt": "2025-03-28T21:48:52.000Z",
+    "name": "Vadym & Caterina",
+    "email": "info@vadymecaterina.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sc",
+    "createdAt": "2025-03-28T12:09:49.000Z",
+    "name": "S&C",
+    "email": "stefanocherchi29@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "anapro",
+    "createdAt": "2025-03-28T09:31:09.000Z",
+    "name": "Anapro",
+    "email": "cristina.tessandri@anapro.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.anapro.it/QuickHubDemo"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cavalli-music",
+    "createdAt": "2025-03-26T11:40:16.000Z",
+    "name": "Cavalli Music",
+    "email": "jacopocavalli1993@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cavallibeats.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "una-contro-tre",
+    "createdAt": "2025-03-24T18:03:56.000Z",
+    "name": "Una contro tre",
+    "email": "andrea@umix.agency",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://associazioneunacontrotre.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "alessandro-porro",
+    "createdAt": "2025-03-23T12:53:10.000Z",
+    "name": "Alessandro Porro",
+    "email": "aleporro92@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.studioarvense.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fabrizio-montoleone",
+    "createdAt": "2025-03-21T16:28:54.000Z",
+    "name": "Fabrizio Montoleone",
+    "email": "info@giapponepertutti.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 18,
+      "names": "https://www.japanrailpass.it, https://www.cambogiapertutti.it, https://www.coreapertutti.it, https://www.uzbekistanpertutti.it, https://www.giapponepertutti.it, https://www.cinapertutti.it, https://www.giordaniapertutti.it, https://www.islandapertutti.it, https://www.maroccopertutti.it, https://www.messicopertutti.it, https://www.statiunitipertutti.it, https://www.thailandiapertutti.it, https://www.turchiapertutti.it, https://www.vietnampertutti.it, https://www.lejaponpourtous.fr, https://www.caucasopertutti.it, https://www.japonparatodos.es, https://www.malesiapertutti.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "andrea",
+    "createdAt": "2025-03-21T12:59:40.000Z",
+    "name": "Andrea",
+    "email": "info@masinistudio.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "la-fontana",
+    "createdAt": "2025-03-21T11:43:14.000Z",
+    "name": "La Fontana",
+    "email": "analisi.lafontana@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.la-fontana.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cucinadelbenessere",
+    "createdAt": "2025-03-20T13:26:38.000Z",
+    "name": "cucinadelbenessere",
+    "email": "andrea.akconsulenze@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://cucinadelbenessere.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cooperativa-pericoti",
+    "createdAt": "2025-03-20T07:41:49.000Z",
+    "name": "Cooperativa Pericoti",
+    "email": "pericoti@kreeo.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://cooperativapericoti.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bit-group",
+    "createdAt": "2025-03-19T13:38:52.000Z",
+    "name": "Bit Group",
+    "email": "bitgroupweb@libero.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "panege7649",
+    "createdAt": "2025-03-19T13:10:48.000Z",
+    "name": "panege7649",
+    "email": "panege7649@bankrau.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "todi",
+    "createdAt": "2025-03-18T23:28:10.000Z",
+    "name": "todi",
+    "email": "antonio.todisco03@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "luca-tronchin",
+    "createdAt": "2025-03-18T17:27:19.000Z",
+    "name": "Luca Tronchin",
+    "email": "tronchinluca72@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://lucatronchin.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "blend-studio",
+    "createdAt": "2025-03-18T10:18:40.000Z",
+    "name": "Blend Studio",
+    "email": "info@blendstudio.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 13,
+      "names": "https://www.casamorgana.it, https://www.medirocca.it, https://www.milltex.it, https://www.moodbeautylab.it, https://www.centrolisteticoniko.it, https://www.sarabani.it, https://www.leyel.it, https://www.trm.it, https://www.poggiolisrl.it, https://www.ninogandolfo.com, https://piacenza.arancucine.it, https://www.servicefirst.it, https://www.smartvisionstore.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sportzone-kids",
+    "createdAt": "2025-03-17T19:12:13.000Z",
+    "name": "Sportzone kids",
+    "email": "sportzonekids.info@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.sportzonekids.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "voucherly",
+    "createdAt": "2025-03-16T19:47:02.000Z",
+    "name": "Voucherly",
+    "email": "francesco.bognini@voucherly.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bellenda-studio",
+    "createdAt": "2025-03-16T09:57:35.000Z",
+    "name": "Bellenda Studio",
+    "email": "info@bellendastudio.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.bellendastudio.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bellanda-studio",
+    "createdAt": "2025-03-16T09:57:19.000Z",
+    "name": "Bellanda Studio",
+    "email": "info@bellendastudio.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "double-bridge",
+    "createdAt": "2025-03-14T13:56:55.000Z",
+    "name": "DOUBLE BRIDGE",
+    "email": "privacy@ebawards.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.ebawards.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "filtec",
+    "createdAt": "2025-03-14T12:22:48.000Z",
+    "name": "Filtec",
+    "email": "alberto.b@ocalab.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fabrizio-caprotti-magni",
+    "createdAt": "2025-03-14T12:16:34.000Z",
+    "name": "Fabrizio Caprotti Magni",
+    "email": "caprottimagnifabrizio@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "jcweb",
+    "createdAt": "2025-03-14T08:47:04.000Z",
+    "name": "JCweb",
+    "email": "jay@jcweb.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "stand-out",
+    "createdAt": "2025-03-14T06:21:14.000Z",
+    "name": "Stand Out",
+    "email": "standoutagencymilano@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.ebawards.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "schmidt-consulting",
+    "createdAt": "2025-03-13T09:12:50.000Z",
+    "name": "Schmidt Consulting",
+    "email": "marketingmakostudio@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://makostudio.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "micury",
+    "createdAt": "2025-03-12T17:50:17.000Z",
+    "name": "Micury",
+    "email": "angelo.scialo@micury.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tuttofidelis",
+    "createdAt": "2025-03-11T20:01:42.000Z",
+    "name": "TuttoFidelis",
+    "email": "nicola.massaro94@live.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "p5hzehxa",
+    "createdAt": "2025-03-11T00:35:05.000Z",
+    "name": "p5hzehxa",
+    "email": "hehhb9777@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "hotel-antonella",
+    "createdAt": "2025-03-10T16:53:48.000Z",
+    "name": "Hotel Antonella",
+    "email": "antonella.gatteomare@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.hotelantonella.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lifeteam",
+    "createdAt": "2025-03-08T07:49:20.000Z",
+    "name": "LifeTeam",
+    "email": "life70014@lapugliainuntrullo.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://life70014.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "queensrl",
+    "createdAt": "2025-03-07T13:44:41.000Z",
+    "name": "QueenSrl",
+    "email": "assistenza@qss.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.queensrl.net"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "xbacco",
+    "createdAt": "2025-03-07T12:48:54.000Z",
+    "name": "Xbacco",
+    "email": "info@xbaccosolution.net",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "grande-italia",
+    "createdAt": "2025-03-07T09:10:15.000Z",
+    "name": "Grande Italia",
+    "email": "lg4lab@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "acqua-bianca-tartufi",
+    "createdAt": "2025-03-07T07:54:45.000Z",
+    "name": "Acqua Bianca Tartufi",
+    "email": "acquabiancatartufi@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://WWW.ACQUABIANCATARTUFI.COM"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "dgnet-srl",
+    "createdAt": "2025-03-07T07:11:08.000Z",
+    "name": "Dgnet SRL",
+    "email": "m.messeri@dgnet.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.internationalgarage.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "wallo-and-friends",
+    "createdAt": "2025-03-06T19:38:19.000Z",
+    "name": "Wallo and Friends",
+    "email": "mmartorello@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.walloandfriends.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "simply-positano",
+    "createdAt": "2025-03-06T07:37:34.000Z",
+    "name": "Simply Positano",
+    "email": "simplyamalfi@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://simplypositanodaytour.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sineglossa-ets",
+    "createdAt": "2025-03-05T07:35:23.000Z",
+    "name": "Sineglossa ETS",
+    "email": "produzione@sineglossa.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://sineglossa.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "hbc",
+    "createdAt": "2025-03-04T07:52:37.000Z",
+    "name": "HBC",
+    "email": "pm@indigitaleweb.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.humanbiocare.com"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "poderelalfina",
+    "createdAt": "2025-03-02T18:40:24.000Z",
+    "name": "Poderelalfina",
+    "email": "info@poderelalfina.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "assaicer",
+    "createdAt": "2025-03-02T08:59:39.000Z",
+    "name": "ASSAICER",
+    "email": "assaicer@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.aicer.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "andrea-di-bussolo",
+    "createdAt": "2025-02-28T23:37:13.000Z",
+    "name": "Andrea Di Bussolo",
+    "email": "dibussoloandrea@gmail.com",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 1,
+      "names": "https://agenziasaravasto.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "claraparish",
+    "createdAt": "2025-02-28T17:42:54.000Z",
+    "name": "ClaraParish",
+    "email": "davidoconnell@duck.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "quadro",
+    "createdAt": "2025-02-28T16:03:27.000Z",
+    "name": "Quadro",
+    "email": "walid.qodsi10@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bonificarenana",
+    "createdAt": "2025-02-28T10:54:07.000Z",
+    "name": "BonificaRenana",
+    "email": "ced@bonificarenana.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 2,
+      "names": "https://www.bonificarenana.it, https://servizi.bonificarenana.it"
+    },
+    "users": {
+      "count": 4
+    }
+  },
+  {
+    "id": "aovam-staff",
+    "createdAt": "2025-02-27T12:30:55.000Z",
+    "name": "AOVAM staff",
+    "email": "marcocappelli56@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.aovam.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "schema-dump-test",
+    "createdAt": "2025-02-24T15:04:34.000Z",
+    "name": "Schema Dump Test",
+    "email": "riccardo.minghetti90@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pinkopallo-di-jcs",
+    "createdAt": "2025-02-20T17:21:33.000Z",
+    "name": "Pinkopallo di JCS",
+    "email": "jasminecsofia@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cj",
+    "createdAt": "2025-02-20T14:39:04.000Z",
+    "name": "CJ",
+    "email": "coach.is.in@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.malcomunicazione.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "giorvy",
+    "createdAt": "2025-02-20T03:54:57.000Z",
+    "name": "giorvy",
+    "email": "ocarinawind5@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "giacomo-mensio-guitars",
+    "createdAt": "2025-02-19T14:26:07.000Z",
+    "name": "Giacomo Mensio Guitars",
+    "email": "giacomomensio@hotmail.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://giacomomensioguitars.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ag-laser",
+    "createdAt": "2025-02-18T12:07:05.000Z",
+    "name": "AG Laser",
+    "email": "giamoco2@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "alfredo",
+    "createdAt": "2025-02-17T23:19:09.000Z",
+    "name": "Alfredo",
+    "email": "alfredoegiorgiaperilmondo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://alfredoegiorgiaperilmondo.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lol",
+    "createdAt": "2025-02-17T21:32:10.000Z",
+    "name": "Lol",
+    "email": "jesus34_899@yucua.org",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "iloris-ads",
+    "createdAt": "2025-02-14T13:34:06.000Z",
+    "name": "Iloris ads",
+    "email": "jvc59em@yahoo.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://iloris.net"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tedxrovigo",
+    "createdAt": "2025-02-13T08:03:53.000Z",
+    "name": "TedXRovigo",
+    "email": "pastorello@archimedia.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "la-palestra-del-lettore",
+    "createdAt": "2025-02-11T15:28:37.000Z",
+    "name": "La Palestra Del Lettore",
+    "email": "giuliano.nanni@virgilio.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.lapalestradelettore.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "iloris-emat",
+    "createdAt": "2025-02-11T12:13:59.000Z",
+    "name": "Iloris Emat",
+    "email": "jvc59em@yahoo.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://iloris.net"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "il-traversone",
+    "createdAt": "2025-02-10T17:04:09.000Z",
+    "name": "il Traversone",
+    "email": "foto@manolibera.eu",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://iltraversone.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "horteary",
+    "createdAt": "2025-02-09T22:52:17.000Z",
+    "name": "Horteary",
+    "email": "sku88.mark@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.horteary.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gestione-stabili",
+    "createdAt": "2025-02-09T11:17:01.000Z",
+    "name": "GESTIONE STABILI",
+    "email": "gestionestabiliwebsite@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.gestionestabili.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "george-lucian-chiriac",
+    "createdAt": "2025-02-08T17:07:24.000Z",
+    "name": "George Lucian Chiriac",
+    "email": "lucian.chiriac95@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.georgelucianchiriac.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fisio-sportzone",
+    "createdAt": "2025-02-08T12:22:15.000Z",
+    "name": "Fisio SportZone",
+    "email": "fisio.sportzone@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.fisiosportzone.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "giulia-tafuto",
+    "createdAt": "2025-02-08T08:57:06.000Z",
+    "name": "Giulia Tafuto",
+    "email": "info@nutrizionistagiuliatafuto.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.nutrizionistagiuliatafuto.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ericaProva",
+    "createdAt": "2025-02-06T15:09:07.000Z",
+    "name": "ciaone",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "555",
+    "createdAt": "2025-02-06T15:02:34.000Z",
+    "name": "ciaone",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "paolopaoli",
+    "createdAt": "2025-02-06T10:03:13.000Z",
+    "name": "PaoloPaoli",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "test45345",
+    "createdAt": "2025-02-06T09:58:32.000Z",
+    "name": "Test45345",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "test6feb1",
+    "createdAt": "2025-02-06T08:28:38.000Z",
+    "name": "Test6Feb1",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "test6feb",
+    "createdAt": "2025-02-06T08:27:27.000Z",
+    "name": "Test6Feb",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "giorgia",
+    "createdAt": "2025-02-05T17:15:35.000Z",
+    "name": "Giorgia",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "alla-nonna-bb",
+    "createdAt": "2025-02-05T17:11:28.000Z",
+    "name": "alla nonna BB",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "bb",
+    "createdAt": "2025-02-05T17:06:35.000Z",
+    "name": "B&B",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "team2",
+    "createdAt": "2025-02-05T14:13:47.000Z",
+    "name": "Team2",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "team-srl",
+    "createdAt": "2025-02-05T14:13:03.000Z",
+    "name": "Team SRL",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "team1",
+    "createdAt": "2025-02-05T14:08:30.000Z",
+    "name": "Team1",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "uno",
+    "createdAt": "2025-02-05T14:07:14.000Z",
+    "name": "uno",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "team-alfa",
+    "createdAt": "2025-02-05T14:03:01.000Z",
+    "name": "Team Alfa",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "taskforce",
+    "createdAt": "2025-02-05T13:56:04.000Z",
+    "name": "TaskForce",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "isotecno",
+    "createdAt": "2025-02-05T13:51:14.000Z",
+    "name": "Isotecno",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "isotecno-srl",
+    "createdAt": "2025-02-05T13:50:07.000Z",
+    "name": "Isotecno SRL",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "myteam",
+    "createdAt": "2025-02-05T13:48:46.000Z",
+    "name": "MyTeam",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "antonaci",
+    "createdAt": "2025-02-05T13:46:35.000Z",
+    "name": "antonaci",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "antonaci-mirco",
+    "createdAt": "2025-02-05T13:44:47.000Z",
+    "name": "antonaci mirco",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "mirco",
+    "createdAt": "2025-02-05T13:42:14.000Z",
+    "name": "mirco",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "chic-barcatering",
+    "createdAt": "2025-02-05T07:43:38.000Z",
+    "name": "Chic-barcatering",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "chicbarcatering",
+    "createdAt": "2025-02-05T07:40:35.000Z",
+    "name": "Chic.barcatering",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "alessandro",
+    "createdAt": "2025-02-05T07:39:15.000Z",
+    "name": "alessandro",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "chic",
+    "createdAt": "2025-02-05T07:37:16.000Z",
+    "name": "chic",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "chic-bar-catering",
+    "createdAt": "2025-02-05T07:34:28.000Z",
+    "name": "chic bar catering",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "marcodilena",
+    "createdAt": "2025-02-04T11:29:10.000Z",
+    "name": "MarcoDiLena",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "marco-di-lena",
+    "createdAt": "2025-02-04T06:31:03.000Z",
+    "name": "Marco Di Lena",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "011",
+    "createdAt": "2025-02-03T22:05:12.000Z",
+    "name": "011",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "aistarch-web",
+    "createdAt": "2025-02-03T22:02:21.000Z",
+    "name": "Aistarch web",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "sito-web-aistarch",
+    "createdAt": "2025-02-03T22:01:36.000Z",
+    "name": "Sito web Aistarch",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "aistarch01",
+    "createdAt": "2025-02-03T21:59:26.000Z",
+    "name": "Aistarch01",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "aistarch-2024",
+    "createdAt": "2025-02-03T21:57:12.000Z",
+    "name": "Aistarch 2024",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "01cive",
+    "createdAt": "2025-02-03T21:55:27.000Z",
+    "name": "01cive",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "aistarch1",
+    "createdAt": "2025-02-03T21:54:32.000Z",
+    "name": "Aistarch1",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "cive25",
+    "createdAt": "2025-02-03T21:52:44.000Z",
+    "name": "Cive25",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "sito-aistarch",
+    "createdAt": "2025-02-03T21:51:40.000Z",
+    "name": "Sito Aistarch",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "aistarch",
+    "createdAt": "2025-02-03T21:50:58.000Z",
+    "name": "Aistarch",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "celia-vidal",
+    "createdAt": "2025-02-03T21:50:12.000Z",
+    "name": "Celia Vidal",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "marcofrontend3",
+    "createdAt": "2025-02-03T10:14:16.000Z",
+    "name": "marcofrontend3",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "marcofrontend2",
+    "createdAt": "2025-02-03T10:13:16.000Z",
+    "name": "marcofrontend2",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "team-alla-nonna",
+    "createdAt": "2025-02-03T09:35:53.000Z",
+    "name": "Team Alla Nonna",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "giuseppe",
+    "createdAt": "2025-02-03T09:31:27.000Z",
+    "name": "Giuseppe",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "marcofrontend1",
+    "createdAt": "2025-02-03T09:17:18.000Z",
+    "name": "marcofrontend1",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "marcofrontend",
+    "createdAt": "2025-02-03T09:14:37.000Z",
+    "name": "marcofrontend",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "marco96",
+    "createdAt": "2025-02-03T09:13:00.000Z",
+    "name": "marco96",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "alla-nonna",
+    "createdAt": "2025-02-03T09:05:50.000Z",
+    "name": "alla nonna",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "allanonna",
+    "createdAt": "2025-02-03T08:54:33.000Z",
+    "name": "Allanonna",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "dauniameteo",
+    "createdAt": "2025-02-02T15:36:50.000Z",
+    "name": "dauniameteo",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "urbano",
+    "createdAt": "2025-02-02T14:21:11.000Z",
+    "name": "urbano",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "luceralive",
+    "createdAt": "2025-02-02T14:19:02.000Z",
+    "name": "luceralive",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "qfe4wtregsae",
+    "createdAt": "2025-02-02T08:07:41.000Z",
+    "name": "qfe4wtregsae",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "iafc-team",
+    "createdAt": "2025-02-02T08:06:36.000Z",
+    "name": "IAFC-Team",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "iafc",
+    "createdAt": "2025-02-02T08:05:51.000Z",
+    "name": "IAFC",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "ita-airways-fan-club",
+    "createdAt": "2025-02-02T08:04:51.000Z",
+    "name": "ITA Airways Fan Club",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "leo1",
+    "createdAt": "2025-01-30T21:19:52.000Z",
+    "name": "Leo1",
+    "email": "leandrodimaria@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "leo",
+    "createdAt": "2025-01-30T21:18:33.000Z",
+    "name": "APF",
+    "email": "leandrodimaria@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.familytherapyacademy.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "marco",
+    "createdAt": "2025-01-30T10:26:34.000Z",
+    "name": "marco",
+    "email": "marchetto86@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sandroteam",
+    "createdAt": "2025-01-30T09:43:43.000Z",
+    "name": "SandroTeam",
+    "email": "alexunonoveottosei@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.wpinprogress.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "classicalive",
+    "createdAt": "2025-01-29T20:01:58.000Z",
+    "name": "ClassicaLive",
+    "email": "classicalive.it@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.classicalive.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "paolo-angioni-consulente-digital-marketing",
+    "createdAt": "2025-01-29T10:02:02.000Z",
+    "name": "Paolo Angioni - Consulente Digital Marketing",
+    "email": "paoloanjoangioni@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "magenta",
+    "createdAt": "2025-01-29T07:54:31.000Z",
+    "name": "Magenta",
+    "email": "info@magentacomunicazione.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 10,
+      "names": "https://fullcut.co, https://bellavistarelax.it, https://redlabsolution.com, https://depilazionevicenza.it, https://grafichesumisura.it, https://www.magentacomunicazione.it/ghost, https://wordpressguru.it, https://socialando.it, https://www.wine-therapy.it, https://thewinesetter.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "policarpo",
+    "createdAt": "2025-01-26T19:14:18.000Z",
+    "name": "policarpo",
+    "email": "coseassurde85@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "io",
+    "createdAt": "2025-01-26T19:12:51.000Z",
+    "name": "io",
+    "email": "coseassurde85@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "laura-scattarelli",
+    "createdAt": "2025-01-24T15:52:03.000Z",
+    "name": "Laura Scattarelli",
+    "email": "laurascattarelli@yahoo.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.digilady.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "carrozzeria",
+    "createdAt": "2025-01-23T15:32:17.000Z",
+    "name": "carrozzeria",
+    "email": "info@carrozzeria24.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://carrozzeria24.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "carrozzeria24",
+    "createdAt": "2025-01-23T15:31:51.000Z",
+    "name": "Carrozzeria24",
+    "email": "info@carrozzeria24.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "teama",
+    "createdAt": "2025-01-22T09:42:59.000Z",
+    "name": "Teama",
+    "email": "rotewi8362@downlor.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.ciaoischia.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "77pixel",
+    "createdAt": "2025-01-21T13:29:54.000Z",
+    "name": "77PIXEL",
+    "email": "info@77pixel.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://77pixel.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lapugliainuntrullo",
+    "createdAt": "2025-01-21T11:33:41.000Z",
+    "name": "Lapugliainuntrullo",
+    "email": "info@lapugliainuntrullo.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://lapugliainuntrullo.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "davide-pernice",
+    "createdAt": "2025-01-20T15:31:15.000Z",
+    "name": "Davide Pernice",
+    "email": "dottordavidepernice@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://davidepernice.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "toscoweb",
+    "createdAt": "2025-01-18T04:48:32.000Z",
+    "name": "Toscoweb",
+    "email": "info@toscoweb.net",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.proctologocatania.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "giuseppe-sanfilippo",
+    "createdAt": "2025-01-17T17:13:34.000Z",
+    "name": "Giuseppe SAnfilippo",
+    "email": "info@sanfilippogiuseppe.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fondazione-enaip",
+    "createdAt": "2025-01-17T09:12:11.000Z",
+    "name": "Fondazione En.A.I.P.",
+    "email": "d.zani@enaip.forli-cesena.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://enaip.corsiprofessionalizzanti.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "suite136",
+    "createdAt": "2025-01-16T09:47:02.000Z",
+    "name": "Suite136",
+    "email": "info@suite136.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://suite136.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ristrutturandonet-srls",
+    "createdAt": "2025-01-15T08:08:08.000Z",
+    "name": "Ristrutturando.net srls",
+    "email": "ristrutturandonet@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ristorante-da-mennella",
+    "createdAt": "2025-01-14T16:16:33.000Z",
+    "name": "Ristorante da Mennella",
+    "email": "ristorantedamennella@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.ristorantedamennella.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tessa-srl",
+    "createdAt": "2025-01-14T11:07:59.000Z",
+    "name": "TESSA SRL",
+    "email": "tessa@tessagelisio.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "andreagaleazzicom",
+    "createdAt": "2025-01-14T07:30:11.000Z",
+    "name": "andreagaleazzi.com",
+    "email": "fz@andreagaleazzi.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://andreagaleazzi.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "amici-del-gusto",
+    "createdAt": "2025-01-10T18:25:09.000Z",
+    "name": "amici del gusto",
+    "email": "amicidelgusto92@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.amicidelgusto.net"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lacampana",
+    "createdAt": "2025-01-10T09:56:12.000Z",
+    "name": "LaCampana",
+    "email": "elinichett@hotmail.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.agriturismolacampana.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "archquadro",
+    "createdAt": "2025-01-08T17:41:44.000Z",
+    "name": "archquadro",
+    "email": "antonucci.dante@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "waphyto",
+    "createdAt": "2025-01-08T05:58:19.000Z",
+    "name": "Waphyto",
+    "email": "waphyto.intl@icloud.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://en.waphyto.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "internetsol",
+    "createdAt": "2025-01-02T17:12:10.000Z",
+    "name": "InternetSol",
+    "email": "info@internetsol.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "stefano-colazzo",
+    "createdAt": "2025-01-02T12:45:36.000Z",
+    "name": "Stefano Colazzo",
+    "email": "stefano.colazzo02@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "lc13",
+    "createdAt": "2024-12-29T16:39:31.000Z",
+    "name": "lc13",
+    "email": "corrado@lc13.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 14,
+      "names": "https://lagottoromagnolobeardsandcurls.it, https://pegasoitalia.it, https://ghibliimpianti.it, https://www.adpinformatica.eu, https://ilcasatoimmobili.it, https://rettificalra.it, https://appenlab.it, https://simagtorino.it, https://www.loretifoto.it, https://implastsas.it, https://episervicesrl.it, https://francescadini-mua.it, https://lc13.it, https://sitoevoluzione.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "atelierglam",
+    "createdAt": "2024-12-28T14:29:08.000Z",
+    "name": "atelierglam",
+    "email": "dani.chiar58@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.atelierglamourbijoux.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "me-assicura",
+    "createdAt": "2024-12-25T07:30:05.000Z",
+    "name": "M&E Assicura",
+    "email": "francescabmrk@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pana-group",
+    "createdAt": "2024-12-21T12:46:27.000Z",
+    "name": "Pa.Na. Group",
+    "email": "info@ceramichepana.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.ceramichepana.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "studioimvisual",
+    "createdAt": "2024-12-19T13:21:52.000Z",
+    "name": "studioimvisual",
+    "email": "igna.ma.p@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://studioimvisual.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "post-medication-syndromes",
+    "createdAt": "2024-12-19T00:13:56.000Z",
+    "name": "Post Medication Syndromes",
+    "email": "social@postmedicationsyndromes.org",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gabriella",
+    "createdAt": "2024-12-17T07:50:12.000Z",
+    "name": "Gabriella",
+    "email": "info@laportadelletna.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://laportadelletna.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "team-idee",
+    "createdAt": "2024-12-16T12:53:05.000Z",
+    "name": "Team idee",
+    "email": "lig1410@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cartoline.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "dividendbrek",
+    "createdAt": "2024-12-16T08:20:38.000Z",
+    "name": "Dividendbrek",
+    "email": "info@dividendbrek.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://dividendbrek.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mj",
+    "createdAt": "2024-12-14T21:22:51.000Z",
+    "name": "Mj",
+    "email": "joel.95@hotmail.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.corso-online-extension-ciglia.my.canva.site"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "me",
+    "createdAt": "2024-12-14T13:04:15.000Z",
+    "name": "Me",
+    "email": "info@cserebere.info",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cserebere.info"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fallingames",
+    "createdAt": "2024-12-12T10:55:15.000Z",
+    "name": "fallingames",
+    "email": "aleionic2024@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.fallingames.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "satilab",
+    "createdAt": "2024-12-12T09:54:58.000Z",
+    "name": "Satilab",
+    "email": "social@satilab.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.satilab.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ferrantinet-fr",
+    "createdAt": "2024-12-11T18:51:39.000Z",
+    "name": "ferrantinet-fr",
+    "email": "france@ferrantinet.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.ferrantinet.fr"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "scw",
+    "createdAt": "2024-12-11T15:23:42.000Z",
+    "name": "SCW",
+    "email": "safecrosswalk.tr@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://safecrosswalk.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "team",
+    "createdAt": "2024-12-11T06:09:09.000Z",
+    "name": "team",
+    "email": "info@domenicopepe.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "general-system",
+    "createdAt": "2024-12-09T10:39:15.000Z",
+    "name": "General System",
+    "email": "info.automazione@generalsystem.net",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://generalsystem.net"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "dolcemente-genitori",
+    "createdAt": "2024-12-08T15:00:09.000Z",
+    "name": "DolceMente Genitori",
+    "email": "info@dolcementegenitori.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "waldi-bello",
+    "createdAt": "2024-12-07T06:39:53.000Z",
+    "name": "Waldi Bello",
+    "email": "s67419412@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://waldibello.de"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "emanuele-filpi",
+    "createdAt": "2024-12-06T14:47:18.000Z",
+    "name": "emanuele filpi",
+    "email": "roembeb@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://bebroem.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "alea",
+    "createdAt": "2024-12-05T08:20:05.000Z",
+    "name": "Alea",
+    "email": "marketing@alea.pro",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.adunatalpini.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "armin",
+    "createdAt": "2024-12-04T09:58:52.000Z",
+    "name": "Armin",
+    "email": "armin.ainhauser@sanuslife.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "intelligenza-intuitiva",
+    "createdAt": "2024-12-03T21:23:08.000Z",
+    "name": "intelligenza-intuitiva",
+    "email": "info@intelligenzaintuitiva.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.intelligenzaintuitiva.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ocalab",
+    "createdAt": "2024-12-02T15:27:42.000Z",
+    "name": "OCACODE",
+    "email": "admin@ocalab.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 30,
+      "names": "https://www.eosplast.com, https://www.ocacode.it, https://www.esseoquattro.it, https://www.sigest.org, https://www.filtecsrl.eu, https://mrarredatori.it, https://amaiuris.it, https://www.amajorsb.com, https://pentapack.it, https://alternativenergetiche.it, https://cdcarta.it, https://mondocartagdm.it, https://imbalfox.it, https://fimic.it, https://www.noloexperience.it, https://syncro-group.com, https://ocalab.it, https://travel.fimic.it, https://badexsrl.it, https://www.neuroriab.com, https://www.baroncinicarta.it, https://www.lumien.it, https://sellaimpianti.it, https://mysign.ocacode.it, https://mypdf.ocacode.it, https://www.sy-dry.com, https://dolomiti-pads.com, https://giadimodagency.it, https://app.amajorsb.com, https://collapp.amajorsb.com"
+    },
+    "users": {
+      "count": 13
+    }
+  },
+  {
+    "id": "pagu",
+    "createdAt": "2024-12-02T10:52:09.000Z",
+    "name": "Pagu",
+    "email": "info@paguturi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.paguturi.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sanko",
+    "createdAt": "2024-12-02T07:39:26.000Z",
+    "name": "SANKO",
+    "email": "sankotip@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://sankohastanesi.com.tr"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "umix",
+    "createdAt": "2024-11-28T15:16:48.000Z",
+    "name": "UMIX",
+    "email": "andrea@umix.agency",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 12,
+      "names": "https://www.umix.agency, https://robertirattan.com, https://sciclubvaldobbiadene.com, https://www.fiscalstudio.it, https://sinapsipark.it, https://www.j-effe.it, https://bn-house.it, https://thegreentree.it, https://www.l2group.it, https://studiorocci.com, https://www.metifisioterapia.it, https://stefanopini.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "lot",
+    "createdAt": "2024-11-26T14:27:41.000Z",
+    "name": "Lot",
+    "email": "carlotta.givo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://coachinginfabula.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fantabet",
+    "createdAt": "2024-11-26T13:18:37.000Z",
+    "name": "FantabEt",
+    "email": "capizzi.giuseppeciro@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.studiofantabet.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mensgear",
+    "createdAt": "2024-11-24T15:49:08.000Z",
+    "name": "Mensgear",
+    "email": "gianlucacassarino@tiscali.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.mensgear.eu"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sillemi",
+    "createdAt": "2024-11-24T15:04:58.000Z",
+    "name": "SILLEMI",
+    "email": "info@sillemi.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://sillemi.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "miglioretra",
+    "createdAt": "2024-11-24T12:04:44.000Z",
+    "name": "miglioretra",
+    "email": "reddany76@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.miglioretra.altervista.org"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "drammadilli-aps",
+    "createdAt": "2024-11-23T22:12:02.000Z",
+    "name": "Drammadilli APS",
+    "email": "idrammadilli@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.drammadilli.org"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "troppocomodo",
+    "createdAt": "2024-11-23T14:43:19.000Z",
+    "name": "troppocomodo",
+    "email": "infotroppocomodo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ac-production-test",
+    "createdAt": "2024-11-20T10:52:03.000Z",
+    "name": "AC Production Test",
+    "email": "rofihix223@kimasoft.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "active-campaign-another-test",
+    "createdAt": "2024-11-20T09:06:09.000Z",
+    "name": "Active Campaign Another Test",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "modellistica",
+    "createdAt": "2024-11-19T09:55:23.000Z",
+    "name": "Modellistica",
+    "email": "rickybenincasa04@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://riccardobenincasa.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "make-hub-studio",
+    "createdAt": "2024-11-18T09:35:41.000Z",
+    "name": "Make Hub Studio",
+    "email": "angelo2.sanfilippo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://marinadicaladelsole.com/it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "romaamor",
+    "createdAt": "2024-11-17T19:25:05.000Z",
+    "name": "RomaamoR",
+    "email": "lyubovshishatska55@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cristina-spadotto",
+    "createdAt": "2024-11-17T13:10:01.000Z",
+    "name": "Cristina Spadotto",
+    "email": "spacri@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cristinaspadotto.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "sport-team-management",
+    "createdAt": "2024-11-15T13:45:29.000Z",
+    "name": "Sport Team Management",
+    "email": "mpaoletti@ik.me",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.studiotecnicoerrebi.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "skillnet",
+    "createdAt": "2024-11-14T15:42:42.000Z",
+    "name": "Skillnet",
+    "email": "info@skillnetsicurezza.net",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://skillnetsicurezza.net"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pippo",
+    "createdAt": "2024-11-14T14:06:26.000Z",
+    "name": "Umbria Microgreens",
+    "email": "odedelgado24@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.umbriamicrogreens.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "webwerkstatt",
+    "createdAt": "2024-11-14T05:32:55.000Z",
+    "name": "Webwerkstatt",
+    "email": "info@webwerkstatt.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "studio-mazzei",
+    "createdAt": "2024-11-12T23:39:00.000Z",
+    "name": "studio-mazzei",
+    "email": "info@studio-mazzei.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://studio-mazzei.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "alimenta-produzioni",
+    "createdAt": "2024-11-12T10:29:38.000Z",
+    "name": "Alimenta Produzioni",
+    "email": "francesco.rufolo@alimentaproduzioni.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 2,
+      "names": "https://www.alimentaproduzioni.it, https://ricettario.alimentaproduzioni.it"
+    },
+    "users": {
+      "count": 5
+    }
+  },
+  {
+    "id": "dimorabellini",
+    "createdAt": "2024-11-09T09:06:23.000Z",
+    "name": "dimorabellini",
+    "email": "info@dimorabellini.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cesare-merigo-geometra",
+    "createdAt": "2024-11-08T16:15:09.000Z",
+    "name": "CESARE MERIGO GEOMETRA",
+    "email": "info@cesaremerigo.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cesaremerigo.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "maelle",
+    "createdAt": "2024-11-08T14:22:22.000Z",
+    "name": "maelle",
+    "email": "info@maelle.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://maelle.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "direecondire",
+    "createdAt": "2024-11-06T16:18:02.000Z",
+    "name": "Direecondire",
+    "email": "claudia.b2912@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fullremoteit",
+    "createdAt": "2024-11-05T13:21:10.000Z",
+    "name": "fullremote.it",
+    "email": "info@fullremote.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://fullremote.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "costantino-ruggiero",
+    "createdAt": "2024-11-05T12:52:44.000Z",
+    "name": "Costantino Ruggiero",
+    "email": "costantino.ruggiero@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 3,
+      "names": "https://costantinoruggiero.com, https://www.musicstorecb.com, https://www.spinosacostruzioni.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bbs-cookie",
+    "createdAt": "2024-11-05T08:09:15.000Z",
+    "name": "BBS COOKIE",
+    "email": "isicilytv@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://i-sicilytv.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "vantes",
+    "createdAt": "2024-11-01T07:23:18.000Z",
+    "name": "Vantes",
+    "email": "info@vantes.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "francesco-cicconetti-fotografo",
+    "createdAt": "2024-10-29T05:35:39.000Z",
+    "name": "Francesco Cicconetti Fotografo",
+    "email": "cicconetti.photo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.francescocicconettifotografo.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "michele-cenacchi-websites",
+    "createdAt": "2024-10-28T18:12:56.000Z",
+    "name": "Michele Cenacchi Websites",
+    "email": "michelecenacchi06@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.imagina360.net"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "elergy",
+    "createdAt": "2024-10-25T07:25:52.000Z",
+    "name": "Elergy",
+    "email": "info@elergy.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.elergy.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "suonintorno",
+    "createdAt": "2024-10-23T10:39:49.000Z",
+    "name": "Suonintorno",
+    "email": "suonintorno@kirsi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.suonintorno.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pappo",
+    "createdAt": "2024-10-23T10:19:23.000Z",
+    "name": "Pappo",
+    "email": "pappog1968@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "dynamo-camp",
+    "createdAt": "2024-10-21T07:06:43.000Z",
+    "name": "Dynamo Camp",
+    "email": "web@dynamocamp.org",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 2,
+      "names": "https://www.dynamocamp.org, https://dybc.dynamocamp.org"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "yeswork",
+    "createdAt": "2024-10-18T07:14:35.000Z",
+    "name": "YesWork",
+    "email": "info@myvisionbigger.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 5,
+      "names": "https://www.yesworkapp.com, https://landing.yesworkapp.com, https://app.yesworkapp.com, https://pmi.yesworkapp.com, https://crm.yesworkapp.com"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "ogsi",
+    "createdAt": "2024-10-18T05:46:46.000Z",
+    "name": "OGSI",
+    "email": "gbrozzi@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "spesa-elettrica",
+    "createdAt": "2024-10-16T11:47:27.000Z",
+    "name": "Spesa Elettrica",
+    "email": "licenze@elexitalia.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.spesaelettrica.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "dna",
+    "createdAt": "2024-10-15T09:40:15.000Z",
+    "name": "Dna",
+    "email": "dnassdrl@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.dnafit.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "drepanum",
+    "createdAt": "2024-10-14T16:07:35.000Z",
+    "name": "Drepanum",
+    "email": "fabiomarinotp@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://LEVANZO.INFO"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "agribrosis",
+    "createdAt": "2024-10-14T08:47:10.000Z",
+    "name": "Agribrosis",
+    "email": "gabrieleraimondi@hotmail.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.agribrosis.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "poliedros-consulting",
+    "createdAt": "2024-10-11T18:30:48.000Z",
+    "name": "Poliedros Consulting",
+    "email": "m.melloni@poliedrosconsulting.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.poliedrosconsulting.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pangea-creation-srl",
+    "createdAt": "2024-10-09T10:11:00.000Z",
+    "name": "Pangea creation s.r.l.",
+    "email": "riccardo.pangea@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "digital-futurum",
+    "createdAt": "2024-10-08T07:09:05.000Z",
+    "name": "Digital Futurum",
+    "email": "infodigitalfuturum@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "myvisionbigger",
+    "createdAt": "2024-10-08T06:28:05.000Z",
+    "name": "MyVisionBigger",
+    "email": "info@myvisionbigger.com",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 11,
+      "names": "https://promuovendo.com, https://crm.promuovendo.com, https://web.promuovendo.com, https://app.promuovendo.com, https://ygtech.io, https://cyber.ygtech.io, https://www.ilsoleestetica.com, https://vipteamglobal.com, https://academy.vipteamglobal.com, https://shop.vipteamglobal.com, https://shop.ygtech.io"
+    },
+    "users": {
+      "count": 5
+    }
+  },
+  {
+    "id": "immoobi",
+    "createdAt": "2024-10-07T15:09:05.000Z",
+    "name": "immoobi",
+    "email": "info@immoobi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.immoobi.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "adeo-group",
+    "createdAt": "2024-10-07T07:31:52.000Z",
+    "name": "Adeo Group",
+    "email": "admin@adeogroup.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 4,
+      "names": "https://www.adeogroup.it, https://eu.adeogroup.it, http://www.acoustixdesign.com, https://www.screenresearch.com"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "insolitour",
+    "createdAt": "2024-10-05T12:24:01.000Z",
+    "name": "Insolitour",
+    "email": "n.tassinari98@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mattiadellera",
+    "createdAt": "2024-09-30T10:06:27.000Z",
+    "name": "mattiadellera",
+    "email": "mattiadellera@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.mattiadellera.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "almagioni",
+    "createdAt": "2024-09-30T09:24:42.000Z",
+    "name": "Almagioni",
+    "email": "alberto.almagioni@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://blog.almagioni.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "future-lab",
+    "createdAt": "2024-09-23T16:47:59.000Z",
+    "name": "Future Lab",
+    "email": "luca.vecchi@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://futurelab.store"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "siti-internet",
+    "createdAt": "2024-09-19T10:43:11.000Z",
+    "name": "Siti Internet",
+    "email": "vitaliveronica9@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "professionale",
+    "createdAt": "2024-09-16T05:57:27.000Z",
+    "name": "Professionale",
+    "email": "caramellamenta@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://poliedrosconsulting.caramellamenta.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "rikyshop",
+    "createdAt": "2024-09-15T12:58:55.000Z",
+    "name": "Rikyshop",
+    "email": "rik.semplici@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.rikyshop.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "academial",
+    "createdAt": "2024-09-13T11:04:50.000Z",
+    "name": "Academial",
+    "email": "contact@academial.ng",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://academial.ng"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "andre13",
+    "createdAt": "2024-09-12T15:26:22.000Z",
+    "name": "ANDRE13",
+    "email": "ANDREMOD.IT@GMAIL.COM",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "andrecommunity",
+    "createdAt": "2024-09-12T14:39:55.000Z",
+    "name": "ANDRECOMMUNITY",
+    "email": "ANDREMOD.IT@GMAIL.COM",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "andrestudios",
+    "createdAt": "2024-09-12T14:37:55.000Z",
+    "name": "ANDRESTUDIOS",
+    "email": "ANDREMOD.IT@GMAIL.COM",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "maxstudios",
+    "createdAt": "2024-09-12T14:37:21.000Z",
+    "name": "MAXSTUDIOS",
+    "email": "ANDREMOD.IT@GMAIL.COM",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "deborah-loddo-psy",
+    "createdAt": "2024-09-12T14:15:15.000Z",
+    "name": "Deborah Loddo psy",
+    "email": "deborah.loddo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://deborah-loddo-psicologa.jimdosite.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "andrea-libertone",
+    "createdAt": "2024-09-12T07:48:43.000Z",
+    "name": "Andrea Libertone",
+    "email": "info@andrealibertone.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.andrealibertone.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gioelemita",
+    "createdAt": "2024-09-11T11:47:26.000Z",
+    "name": "Gioelemita",
+    "email": "gioelemita05le@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://gioelemita.altervista.org/index.html"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bertolino-engineering",
+    "createdAt": "2024-09-10T16:23:17.000Z",
+    "name": "Bertolino Engineering",
+    "email": "bertolinoengineering@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.bertolinoengineering.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "fulvio-cacciabue",
+    "createdAt": "2024-08-31T14:12:37.000Z",
+    "name": "Fulvio Cacciabue",
+    "email": "fulviocacciabue@icloud.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bewebbi",
+    "createdAt": "2024-08-29T10:47:26.000Z",
+    "name": "BEWEBBI",
+    "email": "a.antonini@bewebbi.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.bewebbi.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mako-studio",
+    "createdAt": "2024-08-29T08:03:34.000Z",
+    "name": "Mako Studio",
+    "email": "paolucci.dario@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.agnesezanoni.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "artform-uh",
+    "createdAt": "2024-08-26T11:20:59.000Z",
+    "name": "Artform UH",
+    "email": "artform.adw@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "spazio-lilac",
+    "createdAt": "2024-08-20T14:49:08.000Z",
+    "name": "spazio lilac",
+    "email": "spaziolilac@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.spaziolilac.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "il-bar-del-trading",
+    "createdAt": "2024-08-09T06:35:01.000Z",
+    "name": "Il Bar del Trading",
+    "email": "ilbardeltrading@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://ilbardeltrading.blogspot.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gdldesign",
+    "createdAt": "2024-08-08T08:26:24.000Z",
+    "name": "Gdldesign",
+    "email": "gabrypotter87@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.gdldesign.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "glanzhof",
+    "createdAt": "2024-08-06T06:42:41.000Z",
+    "name": "glanzhof",
+    "email": "andaleproject@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.glanzhof.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "oltre",
+    "createdAt": "2024-08-01T13:03:38.000Z",
+    "name": "Oltre",
+    "email": "daniele.dallacosta@outlook.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.oltrealtovicentino.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "kirsi",
+    "createdAt": "2024-08-01T07:12:19.000Z",
+    "name": "HYDEOUTPALACE",
+    "email": "me@edoardorinaldi.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.hydeoutpalace.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "rewardful-cross-domain",
+    "createdAt": "2024-07-30T08:37:26.000Z",
+    "name": "Rewardful Cross Domain",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "muuu-email",
+    "createdAt": "2024-07-29T10:59:23.000Z",
+    "name": "Muuu Email",
+    "email": "muuu.email@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.muuu.email"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cominato-informatica",
+    "createdAt": "2024-07-27T14:07:10.000Z",
+    "name": "Cominato informatica",
+    "email": "fornitori@cominato.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cominato.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "weggagency",
+    "createdAt": "2024-07-24T07:49:19.000Z",
+    "name": "weggagency",
+    "email": "iacopo.incerpi@weggagency.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://matteomantovani.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "just2playit",
+    "createdAt": "2024-07-23T13:04:41.000Z",
+    "name": "Just2Play.IT",
+    "email": "admin@just2play.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://just2play.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gei-colors",
+    "createdAt": "2024-07-23T06:29:48.000Z",
+    "name": "Gei Colors",
+    "email": "tl.geicolors@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.geicolors.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "mbcar",
+    "createdAt": "2024-07-22T08:43:41.000Z",
+    "name": "MBCar",
+    "email": "mbcar@kirsi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://carrozzeriambcar.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tagliapietra",
+    "createdAt": "2024-07-18T11:41:36.000Z",
+    "name": "Tagliapietra",
+    "email": "info@tagliapietraimpiantisportivi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "http://www.tagliapietraimpiantisportivi.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "simply-amalfi",
+    "createdAt": "2024-07-17T13:09:23.000Z",
+    "name": "Simply Amalfi",
+    "email": "salvatorebrusciano@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://simplyamalfi.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "edoardo",
+    "createdAt": "2024-07-15T13:57:16.000Z",
+    "name": "Edoardo",
+    "email": "info@kirsi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.edoardorinaldi.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "arkys",
+    "createdAt": "2024-07-10T06:14:47.000Z",
+    "name": "Arkys",
+    "email": "amministrazione@arkys.agency",
+    "plan": "Free",
+    "webspaces": {
+      "count": 6,
+      "names": "https://puntosicurezzacalabria.it, https://www.corsoseocosenza.it, https://yellowcab.it, https://allaboutmarriage.wedding, https://lacomedil.it, https://lacomedil.com"
+    },
+    "users": {
+      "count": 4
+    }
+  },
+  {
+    "id": "fumantelab",
+    "createdAt": "2024-07-10T05:55:57.000Z",
+    "name": "FumanteLab",
+    "email": "tl.fumante@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://fumantelab.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "luiselli-srl",
+    "createdAt": "2024-07-09T14:53:25.000Z",
+    "name": "Luiselli SRL",
+    "email": "privacy@luisellisrl.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.luisellisrl.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "icelab",
+    "createdAt": "2024-07-09T06:43:52.000Z",
+    "name": "IceLab",
+    "email": "info@icelab.eu",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 7,
+      "names": "https://www.sanromerio.ch, https://www.filmaboutit.com, https://www.polisportivavilla.it, https://www.agriturismocaricc.com, https://www.rinaldistudio.eu, https://www.lapievedivilla.it, https://www.suisse-poschiavo.ch"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "silipignime",
+    "createdAt": "2024-07-04T08:57:55.000Z",
+    "name": "Silipigni.me",
+    "email": "marcosilipigni404@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://demogg.silipigni.me"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pinkopallo",
+    "createdAt": "2024-07-03T20:13:02.000Z",
+    "name": "Pinkopallo",
+    "email": "pinkopallo.lab@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 18,
+      "names": "https://primareteviaggi.com, https://studiodentisticogrisolia.it, https://www.pataviumdecor.it, https://poltronaemme.com, https://www.hotelbellavistadolomiti.it, https://golfmegastore.it, https://only-hair.it, https://www.studiozcs.it, https://www.cmadiamant.it, https://itechsrl.it, https://www.pdtek.it, https://vineatramontis.it, https://villamarmarole.it, https://www.villamargherita.padova.it, https://www.gardenlab.store, https://autofficinaelettroclima.com, https://jasmine-pinkopallo.it, https://www.nuovamilano.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "bvolley-network",
+    "createdAt": "2024-07-02T10:42:48.000Z",
+    "name": "bvolley network",
+    "email": "elena.bambusi@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ana",
+    "createdAt": "2024-06-28T13:48:40.000Z",
+    "name": "ANA",
+    "email": "ana.cejovic1991@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "italiaoro",
+    "createdAt": "2024-06-28T06:41:11.000Z",
+    "name": "ItaliaOro",
+    "email": "italiaoro2@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://italiaoro.info"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "testivan",
+    "createdAt": "2024-06-27T08:14:30.000Z",
+    "name": "testivan",
+    "email": "ivan.menca@yahoo.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "proxima-e-commerce",
+    "createdAt": "2024-06-27T06:51:12.000Z",
+    "name": "Proxima e-commerce",
+    "email": "proxima.digitale@gmail.com",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.proximaformazione.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "chiaraadami",
+    "createdAt": "2024-06-26T12:00:25.000Z",
+    "name": "chiaraadami",
+    "email": "figli-alchimia-0i@icloud.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "caccabe",
+    "createdAt": "2024-06-23T13:45:29.000Z",
+    "name": "Caccabe",
+    "email": "gianlucarini@blu.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.caccabe.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "aceb",
+    "createdAt": "2024-06-21T19:01:21.000Z",
+    "name": "ACEB",
+    "email": "webmaster@aceb-ets.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "gentlemanleathercare",
+    "createdAt": "2024-06-21T17:09:56.000Z",
+    "name": "gentlemanleathercare",
+    "email": "gentlemanleathercare@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.gentlemanleathercare.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "davide",
+    "createdAt": "2024-06-21T14:09:17.000Z",
+    "name": "davide",
+    "email": "davide.steri@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "outlet-tech",
+    "createdAt": "2024-06-21T13:04:34.000Z",
+    "name": "Outlet Tech",
+    "email": "outlet.tech31@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "chiaraadamivisual",
+    "createdAt": "2024-06-21T05:58:20.000Z",
+    "name": "chiaraadamivisual",
+    "email": "dettami-arcate-0g@icloud.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.chiaraadamivisual.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "myself",
+    "createdAt": "2024-06-20T13:35:24.000Z",
+    "name": "Myself",
+    "email": "andrea.verlicchi@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.colonnineelettriche.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "horn",
+    "createdAt": "2024-06-20T10:14:33.000Z",
+    "name": "HORN",
+    "email": "info@hornhelmets.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.hornhelmets.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bitnot-team",
+    "createdAt": "2024-06-20T04:04:45.000Z",
+    "name": "Bitnot team",
+    "email": "randall@bitnot.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://bitnot.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bm-tecno-serramenti",
+    "createdAt": "2024-06-19T18:11:19.000Z",
+    "name": "BM Tecno Serramenti",
+    "email": "rinaldiedo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.bmtecnoserramenti.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pinkopallo-agency",
+    "createdAt": "2024-06-19T12:20:20.000Z",
+    "name": "SP Studio Digital",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 8,
+      "names": "https://fabbianarredamenti.it, https://www.technolab.it, https://dueffeodontotecnica.it, https://otticamanuela.it, https://spstudiodigital.it, https://www.ilfioncoristorantepizzeria.it, https://ghvhotel.com, https://www.ss47cassola.it"
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "sp-studio",
+    "createdAt": "2024-06-19T12:20:20.000Z",
+    "name": "SP Studio Digital",
+    "email": "jasminecsofia@gmail.com",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 8,
+      "names": "https://fabbianarredamenti.it, https://www.technolab.it, https://dueffeodontotecnica.it, https://otticamanuela.it, https://spstudiodigital.it, https://www.ilfioncoristorantepizzeria.it, https://ghvhotel.com, https://www.ss47cassola.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "ale",
+    "createdAt": "2024-06-19T07:47:12.000Z",
+    "name": "Ale",
+    "email": "alessiodamico1@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.alessiodamico.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "riccardo",
+    "createdAt": "2024-06-18T11:30:20.000Z",
+    "name": "Riccardo",
+    "email": "morph87@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.allergianichel.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "calciosportcom",
+    "createdAt": "2024-06-17T08:11:29.000Z",
+    "name": "Calciosport.com",
+    "email": "info.calciosport@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "homo-digital",
+    "createdAt": "2024-06-17T07:59:48.000Z",
+    "name": "Homo Digital",
+    "email": "info@homodigital.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 9,
+      "names": "https://www.calcio-sport.com, https://freetobe.academy, https://potenzialatuamente.it, https://autoscuoladajetutta.it, https://molinarisalute.it, https://molinarismilelife.it, https://poliambulatorio.site, https://studiovaldinociestetica.it, https://studiotmt.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "matteo",
+    "createdAt": "2024-06-17T07:33:33.000Z",
+    "name": "Matteo",
+    "email": "matteodife1300@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://delittiatavola.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tommaso",
+    "createdAt": "2024-06-15T06:55:17.000Z",
+    "name": "Tommaso",
+    "email": "tommaso.mi8@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://no-gravity.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "studio-avvocato-abbondanza",
+    "createdAt": "2024-06-14T07:27:19.000Z",
+    "name": "Studio Avvocato Abbondanza",
+    "email": "oortcloudorg+saa@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://studioavvocatoabbondanza.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "uniser",
+    "createdAt": "2024-06-06T06:05:16.000Z",
+    "name": "Uniser",
+    "email": "marketing@uniser.net",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://unisermarketing.lpages.co"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "riccelli",
+    "createdAt": "2024-06-05T16:25:59.000Z",
+    "name": "Riccelli",
+    "email": "info@riccelliauto.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://Riccelliauto.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "e-luce",
+    "createdAt": "2024-06-05T06:51:51.000Z",
+    "name": "e-luce",
+    "email": "commerciale@biluce.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://test.eluce-store.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "cpe-sistemi",
+    "createdAt": "2024-06-03T13:33:22.000Z",
+    "name": "CPE Sistemi",
+    "email": "paolo.campora@cpesistemi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.cpesistemi.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "34pixels",
+    "createdAt": "2024-06-01T12:39:17.000Z",
+    "name": "34pixels",
+    "email": "andrea@34pixels.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://34pixels.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "tphoangmai",
+    "createdAt": "2024-05-31T00:49:28.000Z",
+    "name": "tphoangmai",
+    "email": "tphoangmai2013@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "vitans2",
+    "createdAt": "2024-05-30T11:25:05.000Z",
+    "name": "Vitans2",
+    "email": "vitans@iol.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "elevatee",
+    "createdAt": "2024-05-30T08:07:12.000Z",
+    "name": "Elevatee",
+    "email": "info@offertaweb24.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://offertaweb24.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "vitans",
+    "createdAt": "2024-05-30T05:24:30.000Z",
+    "name": "Vitans",
+    "email": "vitans@iol.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.bioagriturismocollesangiorgio.it"
+    },
+    "users": {
+      "count": 4
+    }
+  },
+  {
+    "id": "bidders-hub",
+    "createdAt": "2024-05-28T07:05:05.000Z",
+    "name": "Bidders Hub",
+    "email": "biddershub1@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "pi2000",
+    "createdAt": "2024-05-23T07:46:26.000Z",
+    "name": "Pi2000",
+    "email": "fabio@pi2000srl.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "developress",
+    "createdAt": "2024-05-15T07:29:21.000Z",
+    "name": "DeveloPress",
+    "email": "robertopaolucci805@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.developress.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "neetopia",
+    "createdAt": "2024-05-14T07:52:14.000Z",
+    "name": "NEETOPIA",
+    "email": "fabiani_g@comune.cesena.fc.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://landing.neetopia.it/progettogiovanicesena"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "netboom",
+    "createdAt": "2024-05-13T07:41:16.000Z",
+    "name": "Netboom",
+    "email": "info@netboom.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.netboom.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "eluce",
+    "createdAt": "2024-05-13T05:20:19.000Z",
+    "name": "eluce",
+    "email": "piercarlo@biluce.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://test.eluce-store.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "consulenti-privacy",
+    "createdAt": "2024-05-10T09:44:53.000Z",
+    "name": "Consulenti Privacy",
+    "email": "mfiorellini@goodkarma.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.iconsulentiprivacy.it"
+    },
+    "users": {
+      "count": 4
+    }
+  },
+  {
+    "id": "caveja",
+    "createdAt": "2024-05-06T16:13:12.000Z",
+    "name": "CAVEJA",
+    "email": "info@cavejaforli.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://cavejaforli.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "artwanderlust",
+    "createdAt": "2024-05-01T15:23:13.000Z",
+    "name": "ArtWanderlust",
+    "email": "claudia.artwanderlust@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "graficaideale",
+    "createdAt": "2024-04-23T13:06:40.000Z",
+    "name": "graficaideale",
+    "email": "alessia@graficaideale.it",
+    "plan": "Enterprise",
+    "webspaces": {
+      "count": 23,
+      "names": "https://www.rosauto1979.com, https://www.meccanicafa.com, https://www.t-leder.com, https://www.mgelettromeccanica.it, https://www.coccowood.it, https://www.barcofratelli.it, https://www.esteticaisoladelsole.it, https://www.sferaline.it, http://www.quattrob.com, https://www.dis-el.it, https://www.rossoamante.it, https://www.rotomec-srl.it, https://www.rossoamantejewelry.com, https://www.bluamante.it, https://www.egouomo.it, https://www.warmandwood.com, https://diselsrl.com, https://www.saisrl.net, https://www.skyshard.it, https://www.mattiadido.it, https://www.amicidelcuoreovestvic-ets.it, https://www.ognissanti.org, https://r2rentalcar.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "sdp",
+    "createdAt": "2024-04-23T10:32:53.000Z",
+    "name": "SDP",
+    "email": "sdpresinart@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "polistudio",
+    "createdAt": "2024-04-22T05:36:23.000Z",
+    "name": "Polistudio",
+    "email": "marketing@polistudio.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.polistudio.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "locale",
+    "createdAt": "2024-04-17T06:14:09.000Z",
+    "name": "Locale",
+    "email": "federicotasso1980@me.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 2,
+      "names": "http://localemima.it, https://www.marenita.it"
+    },
+    "users": {
+      "count": 4
+    }
+  },
+  {
+    "id": "gramellini-grandi-cucine",
+    "createdAt": "2024-04-15T13:51:58.000Z",
+    "name": "Gramellini Grandi Cucine",
+    "email": "lorenzo@gramellinicucine.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://gramellinicucine.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "gpiur",
+    "createdAt": "2024-04-15T05:51:02.000Z",
+    "name": "GpiuR",
+    "email": "studio@gpiur.com",
+    "plan": "Enterprise",
+    "webspaces": {
+      "count": 8,
+      "names": "https://gpiur.com, https://seo.gpiur.com, https://privacy.gpiur.com, https://assistenza.gpiur.com, https://giuliabartoli-stylist.it, https://www.pizza-export.it, https://www.queengrill.it, https://fearfashionanna.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "flamigni-srl",
+    "createdAt": "2024-04-12T08:14:14.000Z",
+    "name": "FLAMIGNI SRL",
+    "email": "monica@flamigni.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 2,
+      "names": "https://www.flamigni.it, https://shop.flamigni.it"
+    },
+    "users": {
+      "count": 6
+    }
+  },
+  {
+    "id": "studio-up-web",
+    "createdAt": "2024-04-12T07:29:04.000Z",
+    "name": "Studio Up Web",
+    "email": "riccardo.oppo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://studioupweb.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "eliatessaricom",
+    "createdAt": "2024-04-10T17:42:02.000Z",
+    "name": "Eliatessari.com",
+    "email": "elya.tessari@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.eliatessari.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "palazzo-guiccioli",
+    "createdAt": "2024-04-09T13:28:19.000Z",
+    "name": "Palazzo Guiccioli",
+    "email": "info@fondazionecassaravenna.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.palazzoguiccioli.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "brandstorm",
+    "createdAt": "2024-04-04T12:26:39.000Z",
+    "name": "Brandstorm",
+    "email": "webmaster@brandstormadv.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://dimmidipiusalute.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "teknatron",
+    "createdAt": "2024-04-03T07:45:57.000Z",
+    "name": "Teknatron",
+    "email": "mail@teknatron.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.teknatron.it/it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "need-strategy",
+    "createdAt": "2024-03-26T08:37:51.000Z",
+    "name": "Need Strategy",
+    "email": "l.angilico@need-strategy.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 2,
+      "names": "https://rivestimenti-casa.pietradilanga.it, https://www.need-strategy.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "progetto-italia",
+    "createdAt": "2024-03-25T08:09:40.000Z",
+    "name": "progetto italia",
+    "email": "progitalia@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.deutschefirmen.info"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "can-can",
+    "createdAt": "2024-03-21T12:22:28.000Z",
+    "name": "CAN CAN",
+    "email": "baronigiulio@yahoo.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://cancaneivissa.com"
+    },
+    "users": {
+      "count": 5
+    }
+  },
+  {
+    "id": "gastrochef",
+    "createdAt": "2024-03-18T17:34:29.000Z",
+    "name": "Gastrochef",
+    "email": "newsletter@gastrochef.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.gastrochef.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "prova",
+    "createdAt": "2024-03-17T20:00:07.000Z",
+    "name": "prova",
+    "email": "airora.frola@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "test",
+    "createdAt": "2024-03-14T20:22:42.000Z",
+    "name": "TEST",
+    "email": "c.leblanc@h3l.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.h3l.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "hitchecker",
+    "createdAt": "2024-03-10T16:40:28.000Z",
+    "name": "hitchecker",
+    "email": "mbauer@text-bauer.de",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "elia-tessari",
+    "createdAt": "2024-03-08T13:55:00.000Z",
+    "name": "Elia Tessari",
+    "email": "tessarielia7@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "agriblea",
+    "createdAt": "2024-02-26T09:13:56.000Z",
+    "name": "Agriblea",
+    "email": "agriblea@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.pomodorisecchi.com/compraonline/it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "minioto",
+    "createdAt": "2024-02-26T09:06:26.000Z",
+    "name": "MINIOTO",
+    "email": "aziendaminioto@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "imar2",
+    "createdAt": "2024-02-21T13:22:23.000Z",
+    "name": "Imar2",
+    "email": "tecnico@imarsilenziatori.com",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 1,
+      "names": "https://imarsilenziatori.com"
+    },
+    "users": {
+      "count": 4
+    }
+  },
+  {
+    "id": "techcompenso",
+    "createdAt": "2024-02-19T10:13:32.000Z",
+    "name": "TechCompenso",
+    "email": "fabrizio.lallo95@gmail.com",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://techcompenso.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "tt",
+    "createdAt": "2024-02-13T12:34:36.000Z",
+    "name": "TT",
+    "email": "valerionovo@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "wheelab",
+    "createdAt": "2024-02-12T15:28:16.000Z",
+    "name": "Wheelab",
+    "email": "savelli@wheelab.com",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 1,
+      "names": "https://wheelab.com"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "designeservizi",
+    "createdAt": "2024-02-12T09:32:36.000Z",
+    "name": "Designeservizi",
+    "email": "rcretella@designeservizi.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "team24",
+    "createdAt": "2024-02-07T09:00:08.000Z",
+    "name": "Team24",
+    "email": "giulia8921@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://fitnesslifestyle.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "theviralbox",
+    "createdAt": "2024-02-06T07:40:19.000Z",
+    "name": "The Viral Box",
+    "email": "isapoker@outlook.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://theviralbox.info"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "climaservice",
+    "createdAt": "2024-02-04T09:59:36.000Z",
+    "name": "Climaservice",
+    "email": "marika2c.cdc+climaservice@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://climaserviceancona.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "marketing",
+    "createdAt": "2024-02-01T12:05:57.000Z",
+    "name": "Marketing",
+    "email": "marketing@tasgroup.eu",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.tppay.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "gruppo-ginestri",
+    "createdAt": "2024-01-30T08:49:34.000Z",
+    "name": "Gruppo Ginestri",
+    "email": "gregorio.ginestri@ginestri.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 7,
+      "names": "https://ginestri.it, https://promozioni.ginestri.it, https://casaitalia.eu, https://archimobile.it, https://lubestoreforli.it, https://landing.lubestoreforli.it, https://carrelsystem.it"
+    },
+    "users": {
+      "count": 4
+    }
+  },
+  {
+    "id": "valegraphicteam",
+    "createdAt": "2024-01-22T08:39:30.000Z",
+    "name": "ValegraphicTeam",
+    "email": "valentinamazzeo94@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://valegraphic.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "valegraphic",
+    "createdAt": "2024-01-22T08:22:26.000Z",
+    "name": "Valegraphic",
+    "email": "valentinamazzeo94@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "alsea",
+    "createdAt": "2024-01-19T14:21:34.000Z",
+    "name": "Alsea",
+    "email": "enrico.casiraghi@alsea.mi.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://alsea.mi.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "elidataweb",
+    "createdAt": "2024-01-15T13:27:47.000Z",
+    "name": "Elidataweb",
+    "email": "marino.cattabriga@elidata.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://elidata.it"
+    },
+    "users": {
+      "count": 5
+    }
+  },
+  {
+    "id": "bergoimpianti",
+    "createdAt": "2024-01-02T08:00:33.000Z",
+    "name": "BergoImpianti",
+    "email": "davide.bergo@bergoimpianti.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 2,
+      "names": "https://bergoimpianti.it, https://fotovoltaico.bergoimpianti.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "maiben-visual-design",
+    "createdAt": "2023-12-22T09:33:10.000Z",
+    "name": "Maiben Visual Design",
+    "email": "matildebrocada@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.maibenvisualdesign.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "2c",
+    "createdAt": "2023-12-20T20:24:03.000Z",
+    "name": "2C",
+    "email": "marika2c.cdc+mandolini@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.mandoliniautoveicoli.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "veneta-mineraria",
+    "createdAt": "2023-12-15T12:36:49.000Z",
+    "name": "Veneta Mineraria",
+    "email": "mattia.giacomello@venetamineraria.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.venetamineraria.it"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "scat-punti-vendita",
+    "createdAt": "2023-12-07T12:08:51.000Z",
+    "name": "Scat Punti Vendita",
+    "email": "adesiato@scat.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 2,
+      "names": "https://scat.it, https://portal.scat.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "viaggio-della-speranza",
+    "createdAt": "2023-12-04T15:37:52.000Z",
+    "name": "Viaggio della speranza",
+    "email": "jerikam92@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://jumpgroup.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ericademo",
+    "createdAt": "2023-12-01T07:08:24.000Z",
+    "name": "EricaDemo",
+    "email": null,
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://sptape.it"
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "tecno-costruzioni-e-strade-srl",
+    "createdAt": "2023-11-28T13:02:40.000Z",
+    "name": "Tecno Costruzioni e Strade S.r.l.",
+    "email": "teo9517@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://tcscostruzioni.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ordine-degli-architetti-ppc-prov-di-fc",
+    "createdAt": "2023-11-16T13:51:34.000Z",
+    "name": "Ordine degli Architetti P.P.C. Prov. di FC",
+    "email": "info@forli-cesena.awn.it",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://architettiforlicesena.it"
+    },
+    "users": {
+      "count": 3
+    }
+  },
+  {
+    "id": "tas-spa",
+    "createdAt": "2023-11-07T09:37:51.000Z",
+    "name": "TAS SPA",
+    "email": "acquisti@tasgroup.eu",
+    "plan": "Basic",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.tasgroup.eu"
+    },
+    "users": {
+      "count": 4
+    }
+  },
+  {
+    "id": "ekuo-srl",
+    "createdAt": "2023-11-06T10:32:29.000Z",
+    "name": "Ekuo Srl",
+    "email": "ekuonews@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "bevilacqua",
+    "createdAt": "2023-10-15T12:11:50.000Z",
+    "name": "bevilacqua",
+    "email": "armando@bevilacqua.cloud",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://karaoke-indie.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "weiw-solutions",
+    "createdAt": "2023-10-02T15:56:56.000Z",
+    "name": "Weiw Solutions",
+    "email": "marika2c.cdc+weiw@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://weiwsolutions.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "elevatee-srl",
+    "createdAt": "2023-09-07T08:02:09.000Z",
+    "name": "Elevatee Srl",
+    "email": "andrea.trotta@elevatee.io",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://elevatee.io"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "goon-italia-srl",
+    "createdAt": "2023-08-07T07:14:01.000Z",
+    "name": "Goon Italia Srl",
+    "email": "goonitalia.digital@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://goonitalia.it"
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "ass-cult-vertov-project-aps-ets",
+    "createdAt": "2023-07-21T08:13:44.000Z",
+    "name": "Ass. Cult. Vertov Project APS ETS",
+    "email": "vertovproject@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://ibridafestival.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "performetrica-srl",
+    "createdAt": "2023-07-13T11:38:28.000Z",
+    "name": "Performetrica Srl",
+    "email": "andrea@performetrica.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.performetrica.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "visibility",
+    "createdAt": "2023-07-05T15:45:17.000Z",
+    "name": "VISIBILITY",
+    "email": "visibilitysl@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://inprima.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "2c-centro-della-comunicazione",
+    "createdAt": "2023-07-02T07:49:56.000Z",
+    "name": "2C Centro della Comunicazione",
+    "email": "marika2c.cdc@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.worksmedical.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "studio-247",
+    "createdAt": "2023-06-29T12:59:31.000Z",
+    "name": "Studio 247",
+    "email": "info@studio247.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://thejiggersociety.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "archimedia-srl",
+    "createdAt": "2023-06-28T11:16:10.000Z",
+    "name": "Archimedia SRl",
+    "email": "pastorello@archimedia.it",
+    "plan": "Plus",
+    "webspaces": {
+      "count": 11,
+      "names": "https://www.archimedia.it, https://www.tedxrovigo.it, https://www.nanosilv.it, https://www.comune.occhiobello.ro.it, https://www.bolognachildrensbookfair.com, https://openup.bolognachildrensbookfair.com, https://fairtales.bolognachildrensbookfair.com, https://galleries.bolognachildrensbookfair.com, https://www.scoprega.com, https://www.cvr-level-up.it, https://www.oplon.net"
+    },
+    "users": {
+      "count": 2
+    }
+  },
+  {
+    "id": "setiserveit",
+    "createdAt": "2023-06-19T13:20:47.000Z",
+    "name": "Setiserve.it",
+    "email": "antonio.marotta@quinck.io",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "art4art-srl-sb",
+    "createdAt": "2023-06-19T12:46:22.000Z",
+    "name": "ART4ART SRL SB",
+    "email": "mb@art4art.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.art4art.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "caschettiveloci",
+    "createdAt": "2023-06-17T05:56:01.000Z",
+    "name": "CaschettiVeloci",
+    "email": "andrea.lovo@caschettiveloci.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://caschettiveloci.com"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "ping-pons",
+    "createdAt": "2023-06-16T12:58:03.000Z",
+    "name": "Ping Pons",
+    "email": "poncato.alberto@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.pingpons.it"
+    },
+    "users": {
+      "count": 1
+    }
+  },
+  {
+    "id": "simone-mazzotti",
+    "createdAt": "2023-06-14T10:53:51.000Z",
+    "name": "Simone Mazzotti",
+    "email": "simone.mazzotti+avacy@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://profumodibiscotti.com"
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "riccardo-minghetti",
+    "createdAt": "2023-06-13T12:58:04.000Z",
+    "name": "Riccardo Minghetti",
+    "email": "riccardo.minghetti90@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "http://www.riccardominghetti.it"
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "james-tax",
+    "createdAt": "2023-06-06T12:30:03.000Z",
+    "name": "James Tax",
+    "email": "g.tassinari@outlook.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 1,
+      "names": "https://www.jumptoys.it"
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "mazzotti-srl",
+    "createdAt": "2023-06-06T06:19:23.000Z",
+    "name": "Mazzotti srl",
+    "email": "simone.mazzotti@gmail.com",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  },
+  {
+    "id": "tenant2",
+    "createdAt": "2023-05-03T12:48:26.000Z",
+    "name": "tenant2",
+    "email": "web@ddddjumpgroup.it",
+    "plan": "Free",
+    "webspaces": {
+      "count": 0,
+      "names": null
+    },
+    "users": {
+      "count": 0
+    }
+  }
+]
