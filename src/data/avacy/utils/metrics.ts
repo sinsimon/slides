@@ -84,16 +84,22 @@ export function calculateMetrics(
 	
 	// STEP 1: Calcola lo stato baseline alla data "from"
 	// Include tutti gli abbonamenti creati PRIMA di "from" che NON sono stati cancellati PRIMA di "from"
-	// Nota: il matching basato su email+amount è più accurato del solo email
+	// IMPORTANTE: Per evitare di contare più volte lo stesso contratto, prendiamo solo l'ULTIMO evento per ogni cliente
 	let baselineMrr = 0;
 	const baselineCustomers = new Set<string>();
-
+	
+	// Raggruppa tutti gli eventi PRIMA di "from" per cliente e trova l'ultimo evento non cancellato
+	const baselineCustomerLastSubscription = new Map<string, {
+		point: StripeNewSubscriptionPoint;
+		purchase: { email?: string; amountCents?: number };
+		date: Date;
+	}>();
+	
 	for (const point of allNewSubs) {
 		const pointDate = parseDate(point.date);
 		if (pointDate >= range.from) continue; // Solo quelli creati prima di "from"
 		
 		// Verifica se è stato cancellato prima di "from"
-		// Match più accurato: email + amount (circa) + subscription name
 		let wasCanceled = false;
 		for (const cancelPoint of allCancellations) {
 			const cancelDate = parseDate(cancelPoint.date);
@@ -103,7 +109,7 @@ export function calculateMetrics(
 				const cancelAmount = cancelPoint.totalAmountCents / cancelPoint.count;
 				const newAmount = point.totalAmountCents / point.count;
 				
-				// Match se: email overlap E amount simile (±5% tolleranza) E stesso giorno o dopo
+				// Match se: email overlap E amount simile (±5% tolleranza)
 				for (const email of newEmails) {
 					if (cancelEmails.has(email)) {
 						const amountMatch = Math.abs(cancelAmount - newAmount) / newAmount < 0.05;
@@ -118,10 +124,29 @@ export function calculateMetrics(
 		}
 		
 		if (!wasCanceled) {
-			baselineMrr += point.totalAmountCents;
+			// Per ogni purchase, aggiorna l'ultimo evento se questo è più recente
 			point.purchases.forEach((p) => {
-				if (p.email) baselineCustomers.add(p.email);
+				if (p.email) {
+					const existing = baselineCustomerLastSubscription.get(p.email);
+					if (!existing || pointDate > existing.date) {
+						baselineCustomerLastSubscription.set(p.email, {
+							point,
+							purchase: p,
+							date: pointDate
+						});
+					}
+				}
 			});
+		}
+	}
+	
+	// Somma gli MRR degli ultimi eventi per ogni cliente nel baseline
+	for (const [email, lastSub] of baselineCustomerLastSubscription) {
+		baselineCustomers.add(email);
+		if (lastSub.purchase.amountCents) {
+			baselineMrr += lastSub.purchase.amountCents;
+		} else if (lastSub.point.totalAmountCents && lastSub.point.count > 0) {
+			baselineMrr += Math.round(lastSub.point.totalAmountCents / lastSub.point.count);
 		}
 	}
 
@@ -199,15 +224,26 @@ export function calculateMetrics(
 		});
 
 	// Calcola KPIs finali
-	// IMPORTANTE: Per garantire che toCustomers sia sempre lo stesso indipendentemente da "from",
+	// IMPORTANTE: Per garantire che toMrr e toCustomers siano sempre gli stessi indipendentemente da "from",
 	// calcoliamo direttamente lo stato finale alla data "to" invece di usare la serie
 	const fromMrr = series[0]?.mrr ?? baselineMrr;
-	const toMrr = series[series.length - 1]?.mrr ?? currentMrr;
 	const fromCustomers = series[0]?.activeCustomers ?? baselineCustomers.size;
 	
-	// Calcola direttamente i clienti attivi alla data "to" per garantire coerenza
-	// Partiamo da tutti gli abbonamenti creati fino a "to" e rimuoviamo quelli cancellati fino a "to"
+	// Calcola direttamente MRR e clienti attivi alla data "to" per garantire coerenza
+	// IMPORTANTE: Per evitare di contare più volte lo stesso contratto (es. eventi 2024 + 2025),
+	// prendiamo solo l'ULTIMO evento di subscription per ogni cliente
+	let finalMrr = 0;
 	const finalCustomers = new Set<string>();
+	
+	// Raggruppa tutti gli eventi di subscription per cliente (email)
+	// e trova l'ultimo evento non cancellato per ogni cliente
+	const customerLastSubscription = new Map<string, {
+		point: StripeNewSubscriptionPoint;
+		purchase: { email?: string; amountCents?: number };
+		date: Date;
+	}>();
+	
+	// Prima passata: trova l'ultimo evento di subscription per ogni cliente
 	for (const point of allNewSubs) {
 		const pointDate = parseDate(point.date);
 		if (pointDate > range.to) continue; // Solo quelli creati fino a "to"
@@ -237,12 +273,34 @@ export function calculateMetrics(
 		}
 		
 		if (!wasCanceled) {
+			// Per ogni purchase in questo punto, aggiorna l'ultimo evento se questo è più recente
 			point.purchases.forEach((p) => {
-				if (p.email) finalCustomers.add(p.email);
+				if (p.email) {
+					const existing = customerLastSubscription.get(p.email);
+					if (!existing || pointDate > existing.date) {
+						customerLastSubscription.set(p.email, {
+							point,
+							purchase: p,
+							date: pointDate
+						});
+					}
+				}
 			});
 		}
 	}
+	
+	// Seconda passata: somma gli MRR degli ultimi eventi per ogni cliente
+	for (const [email, lastSub] of customerLastSubscription) {
+		finalCustomers.add(email);
+		if (lastSub.purchase.amountCents) {
+			finalMrr += lastSub.purchase.amountCents;
+		} else if (lastSub.point.totalAmountCents && lastSub.point.count > 0) {
+			finalMrr += Math.round(lastSub.point.totalAmountCents / lastSub.point.count);
+		}
+	}
+	
 	const toCustomers = finalCustomers.size;
+	const toMrr = finalMrr;
 	const toArpa = toCustomers > 0 ? toMrr / toCustomers : 0;
 	const fromArpa = fromCustomers > 0 ? fromMrr / fromCustomers : 0;
 	const netNewMrrTotal = series.reduce((sum, p) => sum + p.netNewMrr, 0);
@@ -269,7 +327,132 @@ export function calculateMetrics(
 	return { series, kpis };
 }
 
+// Helper per matchare piano da subscriptionName a PlanTier
+function normalizePlanToTier(subscriptionName?: string): 'Basic' | 'Plus' | 'Enterprise' | null {
+	if (!subscriptionName) return null;
+	const name = subscriptionName.toLowerCase();
+	if (name.includes('basic')) return 'Basic';
+	if (name.includes('plus')) return 'Plus';
+	if (name.includes('enterprise') || name.includes('custom')) return 'Enterprise';
+	return null;
+}
+
+// Filtra i dataset per piano (Basic/Plus/Enterprise) e numero di webspaces
+// webspacesCount viene estratto dal subscriptionName usando la mappa se fornita
+export function filterDataByPlanTierAndWebspaces(
+    newSubs: StripeNewSubscriptionPoint[],
+    cancellations: StripeCancellationPoint[],
+    planTier: 'all' | 'Basic' | 'Plus' | 'Enterprise',
+    webspacesCount: 'all' | '1' | '5' | '15' | '25',
+    webspacesMap?: Record<string, number>
+): { newSubs: StripeNewSubscriptionPoint[]; cancellations: StripeCancellationPoint[] } {
+    // Filtra per piano
+    const filteredNew = newSubs.map((p) => {
+        const allPurchases = p.purchases || [];
+        let purchases = allPurchases;
+        
+        // Filtra per piano se specificato
+        if (planTier !== 'all') {
+            purchases = purchases.filter((pu) => {
+                const tier = normalizePlanToTier(pu.subscriptionName);
+                return tier === planTier;
+            });
+        }
+        
+        // Filtra per numero di webspaces se specificato
+        if (webspacesCount !== 'all') {
+            purchases = purchases.filter((pu) => {
+                // Enterprise non ha webspaces, quindi escludiamo se il filtro richiede webspaces
+                const tier = normalizePlanToTier(pu.subscriptionName);
+                if (tier === 'Enterprise') return false;
+                
+                // Usa webspacesCount dai dati se presente, altrimenti estrailo dalla mappa
+                let count = pu.webspacesCount;
+                if (count === undefined && webspacesMap && pu.subscriptionName) {
+                    count = webspacesMap[pu.subscriptionName];
+                }
+                // Se non trovato nella mappa, escludi (non è un piano con webspaces noti)
+                if (count === undefined) return false;
+                
+                switch (webspacesCount) {
+                    case '1': return count === 1;
+                    case '5': return count === 5;
+                    case '15': return count === 15;
+                    case '25': return count === 25;
+                    default: return true;
+                }
+            });
+        }
+        
+        let totalAmountCents = purchases.reduce((sum, pu) => sum + (pu.amountCents || 0), 0);
+        if (totalAmountCents === 0 && p.totalAmountCents && p.count) {
+            // fallback: ripartizione proporzionale se negli acquisti manca amountCents
+            const ratio = purchases.length / p.count;
+            totalAmountCents = Math.round(p.totalAmountCents * ratio);
+        }
+        return {
+            ...p,
+            purchases,
+            count: purchases.length,
+            totalAmountCents,
+        };
+    }).filter((p) => p.count > 0 || p.totalAmountCents > 0);
+
+    const filteredCanc = cancellations.map((c) => {
+        const allCanc = c.cancellations || [];
+        let cancellationsArr = allCanc;
+        
+        // Filtra per piano se specificato
+        if (planTier !== 'all') {
+            cancellationsArr = cancellationsArr.filter((ca) => {
+                const tier = normalizePlanToTier(ca.subscriptionName);
+                return tier === planTier;
+            });
+        }
+        
+        // Filtra per numero di webspaces se specificato
+        if (webspacesCount !== 'all') {
+            cancellationsArr = cancellationsArr.filter((ca) => {
+                // Enterprise non ha webspaces, quindi escludiamo se il filtro richiede webspaces
+                const tier = normalizePlanToTier(ca.subscriptionName);
+                if (tier === 'Enterprise') return false;
+                
+                // Usa webspacesCount dai dati se presente, altrimenti estrailo dalla mappa
+                let count = ca.webspacesCount;
+                if (count === undefined && webspacesMap && ca.subscriptionName) {
+                    count = webspacesMap[ca.subscriptionName];
+                }
+                // Se non trovato nella mappa, escludi (non è un piano con webspaces noti)
+                if (count === undefined) return false;
+                
+                switch (webspacesCount) {
+                    case '1': return count === 1;
+                    case '5': return count === 5;
+                    case '15': return count === 15;
+                    case '25': return count === 25;
+                    default: return true;
+                }
+            });
+        }
+        
+        let totalAmountCents = cancellationsArr.reduce((sum, ca) => sum + (ca.amountCents || 0), 0);
+        if (totalAmountCents === 0 && c.totalAmountCents && c.count) {
+            const ratio = cancellationsArr.length / c.count;
+            totalAmountCents = Math.round(c.totalAmountCents * ratio);
+        }
+        return {
+            ...c,
+            cancellations: cancellationsArr,
+            count: cancellationsArr.length,
+            totalAmountCents,
+        };
+    }).filter((c) => c.count > 0 || c.totalAmountCents > 0);
+
+    return { newSubs: filteredNew, cancellations: filteredCanc };
+}
+
 // Filtra i dataset per lista di nomi piano (subscriptionName) mantenendo amounts coerenti
+// Mantenuta per retrocompatibilità
 export function filterDataByPlans(
     newSubs: StripeNewSubscriptionPoint[],
     cancellations: StripeCancellationPoint[],

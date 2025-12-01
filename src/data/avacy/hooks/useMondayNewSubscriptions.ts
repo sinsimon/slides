@@ -17,8 +17,14 @@ export type MondayNewSubscriptionPoint = {
 
 const DATA_URL = buildDataUrl('data/avacy/json/monday/new-subscriptions.json');
 
+interface WrappedData<T> {
+  data: T;
+  lastUpdated?: string;
+}
+
 export function useMondayNewSubscriptions() {
 	const [data, setData] = useState<MondayNewSubscriptionPoint[] | null>(null);
+	const [lastUpdated, setLastUpdated] = useState<string | undefined>(undefined);
 	const [loading, setLoading] = useState<boolean>(false);
 	const [error, setError] = useState<Error | null>(null);
 
@@ -29,10 +35,16 @@ export function useMondayNewSubscriptions() {
 		fetch(DATA_URL)
 			.then(async (r) => {
 				if (!r.ok) throw new Error(`HTTP ${r.status}`);
-				return (await r.json()) as MondayNewSubscriptionPoint[];
+				return (await r.json()) as WrappedData<MondayNewSubscriptionPoint[]> | MondayNewSubscriptionPoint[];
 			})
-			.then((d) => {
-				if (!cancelled) setData(d);
+			.then((resp) => {
+				if (!cancelled) {
+					const wrapped = resp as WrappedData<MondayNewSubscriptionPoint[]> | MondayNewSubscriptionPoint[];
+					const d = Array.isArray(wrapped) ? wrapped : wrapped.data;
+					const updated = Array.isArray(wrapped) ? undefined : wrapped.lastUpdated;
+					setData(d);
+					setLastUpdated(updated);
+				}
 			})
 			.catch((e) => {
 				if (!cancelled) setError(e as Error);
@@ -45,6 +57,6 @@ export function useMondayNewSubscriptions() {
 		};
 	}, []);
 
-	return { data, loading, error } as const;
+	return { data, loading, error, lastUpdated } as const;
 }
 

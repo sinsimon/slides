@@ -1,12 +1,22 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { SlideTitle, Nav } from '@components';
+import { SlideTitle, Nav, SourceLabel } from '@components';
 import styles from '../../components/DataTable.module.css';
 import { useNewSubscriptions } from '../../data/avacy/hooks/useNewSubscriptions';
 import { useCancellations } from '../../data/avacy/hooks/useCancellations';
 import { useMondayNewSubscriptions } from '../../data/avacy/hooks/useMondayNewSubscriptions';
 import { useMondayCancellations } from '../../data/avacy/hooks/useMondayCancellations';
-import { calculateMetrics, filterDataByPlans, type DateRange } from '../../data/avacy/utils/metrics';
+import { calculateMetrics, filterDataByPlans, filterDataByPlanTierAndWebspaces, type DateRange } from '../../data/avacy/utils/metrics';
+
+// Helper per normalizzare il nome del piano (copiato da metrics.ts per evitare export)
+function normalizePlanToTier(subscriptionName?: string): 'Basic' | 'Plus' | 'Enterprise' | null {
+	if (!subscriptionName) return null;
+	const name = subscriptionName.toLowerCase();
+	if (name.includes('basic')) return 'Basic';
+	if (name.includes('plus')) return 'Plus';
+	if (name.includes('enterprise') || name.includes('custom')) return 'Enterprise';
+	return null;
+}
 
 type MetricTab = 'mrr' | 'customers' | 'arpa' | 'netNew';
 
@@ -46,19 +56,33 @@ function formatDelta(absolute: number, percent: number): string {
 	return `${sign}${formatCurrency(absolute)} (${sign}${percent.toFixed(1)}%)`;
 }
 
+// Mappa hardcoded per estrarre il numero di webspaces dal subscriptionName
+const WEBSPACES_COUNT_MAP: Record<string, number> = {
+	'Piano basic': 1, // Piano vecchio senza specifica, trattato come 1 spazio
+	'Avacy Basic - 1 spazio web': 1,
+	'Avacy Basic - 5 spazi web': 5,
+	'Avacy Basic - 15 spazi web': 15,
+	'Avacy Basic - 25 spazi web': 25,
+	'Avacy Plus - 1 spazio web': 1,
+	'Avacy Plus - 5 spazi web': 5,
+	'Avacy Plus - 15 spazi web': 15,
+	'Avacy Plus - 25 spazi web': 25,
+};
+
 export function SlideHeadlineMetrics() {
-	const { data: newSubs, loading: loadingNew } = useNewSubscriptions();
-	const { data: cancellations, loading: loadingCanc } = useCancellations();
-	const { data: mondayNewSubs, loading: loadingMondayNew } = useMondayNewSubscriptions();
-	const { data: mondayCancellations, loading: loadingMondayCanc } = useMondayCancellations();
-	const [selectedPlans, setSelectedPlans] = useState<string[] | null>(null); // null = tutte
+	const { data: newSubs, loading: loadingNew, lastUpdated: stripeNewLastUpdated } = useNewSubscriptions();
+	const { data: cancellations, loading: loadingCanc, lastUpdated: stripeCancLastUpdated } = useCancellations();
+	const { data: mondayNewSubs, loading: loadingMondayNew, lastUpdated: mondayNewLastUpdated } = useMondayNewSubscriptions();
+	const { data: mondayCancellations, loading: loadingMondayCanc, lastUpdated: mondayCancLastUpdated } = useMondayCancellations();
+	const [selectedPlanTier, setSelectedPlanTier] = useState<'all' | 'Basic' | 'Plus' | 'Enterprise'>('all');
+	const [selectedWebspacesCount, setSelectedWebspacesCount] = useState<'all' | '1' | '5' | '15' | '25'>('all');
 	const [excludeMonday, setExcludeMonday] = useState<boolean>(false);
 	const [excludeStripe, setExcludeStripe] = useState<boolean>(false);
 	const [selectedTab, setSelectedTab] = useState<MetricTab>('mrr');
+	const [showFilters, setShowFilters] = useState<boolean>(false);
+	// Inizializza con tutti i dati disponibili (all the time)
 	const [fromDate, setFromDate] = useState<string>(() => {
-		const d = new Date();
-		d.setDate(d.getDate() - 30);
-		return d.toISOString().split('T')[0];
+		return '2020-01-01'; // Data di inizio storico
 	});
 	const [toDate, setToDate] = useState<string>(() => new Date().toISOString().split('T')[0]);
 
@@ -66,6 +90,23 @@ export function SlideHeadlineMetrics() {
 		from: new Date(fromDate + 'T00:00:00Z'),
 		to: new Date(toDate + 'T23:59:59Z'),
 	}), [fromDate, toDate]);
+
+	// Quando si nascondono i filtri, resetta il range a "lifetime" e i filtri
+	useEffect(() => {
+		if (!showFilters) {
+			setFromDate('2020-01-01');
+			setToDate(new Date().toISOString().split('T')[0]);
+			setSelectedPlanTier('all');
+			setSelectedWebspacesCount('all');
+		}
+	}, [showFilters]);
+
+	// Quando si seleziona Enterprise, resetta il filtro webspaces a "all" (Enterprise non ha webspaces)
+	useEffect(() => {
+		if (selectedPlanTier === 'Enterprise') {
+			setSelectedWebspacesCount('all');
+		}
+	}, [selectedPlanTier]);
 
 	const { allPlans, planCounts, planCategories } = useMemo(() => {
 		const names = new Set<string>();
@@ -129,148 +170,187 @@ export function SlideHeadlineMetrics() {
 		// Applica filtri per fonte dati
 		const filteredNewSubs = excludeStripe ? [] : newSubs;
 		const filteredCancellations = excludeStripe ? [] : cancellations;
-		const filteredMondayNewSubs = excludeMonday ? null : mondayNewSubs;
-		const filteredMondayCancellations = excludeMonday ? null : mondayCancellations;
+		let filteredMondayNewSubs = excludeMonday ? null : mondayNewSubs;
+		let filteredMondayCancellations = excludeMonday ? null : mondayCancellations;
 		
-		const filtered = filterDataByPlans(filteredNewSubs, filteredCancellations, selectedPlans);
+		// Applica filtri per piano e webspaces (webspacesCount viene estratto dal subscriptionName usando la mappa)
+		const filtered = filterDataByPlanTierAndWebspaces(
+			filteredNewSubs, 
+			filteredCancellations, 
+			selectedPlanTier, 
+			selectedWebspacesCount,
+			WEBSPACES_COUNT_MAP
+		);
+		
+		// Applica gli stessi filtri anche a Monday se presente
+		if (filteredMondayNewSubs && filteredMondayCancellations) {
+			const mondayFiltered = filterDataByPlanTierAndWebspaces(
+				filteredMondayNewSubs,
+				filteredMondayCancellations,
+				selectedPlanTier,
+				selectedWebspacesCount,
+				WEBSPACES_COUNT_MAP
+			);
+			filteredMondayNewSubs = mondayFiltered.newSubs;
+			filteredMondayCancellations = mondayFiltered.cancellations;
+		}
+		
 		return calculateMetrics(filtered.newSubs, filtered.cancellations, range, filteredMondayNewSubs, filteredMondayCancellations);
-	}, [newSubs, cancellations, selectedPlans, range, mondayNewSubs, mondayCancellations, excludeMonday, excludeStripe]);
+	}, [newSubs, cancellations, selectedPlanTier, selectedWebspacesCount, range, mondayNewSubs, mondayCancellations, excludeMonday, excludeStripe]);
 
-	// Calcola clienti attivi per categoria alla fine del periodo
+	// Estrai abbonamenti attivi filtrati per la tabella
+	const activeSubscriptions = useMemo(() => {
+		if (!newSubs || !cancellations) return [];
+		
+		// Applica gli stessi filtri
+		const filteredNewSubs = excludeStripe ? [] : newSubs;
+		const filteredCancellations = excludeStripe ? [] : cancellations;
+		let filteredMondayNewSubs = excludeMonday ? null : mondayNewSubs;
+		let filteredMondayCancellations = excludeMonday ? null : mondayCancellations;
+		
+		const filtered = filterDataByPlanTierAndWebspaces(
+			filteredNewSubs, 
+			filteredCancellations, 
+			selectedPlanTier, 
+			selectedWebspacesCount,
+			WEBSPACES_COUNT_MAP
+		);
+		
+		// Filtra Monday solo se presente (gli Enterprise vengono da Monday)
+		if (filteredMondayNewSubs && filteredMondayCancellations) {
+			const mondayFiltered = filterDataByPlanTierAndWebspaces(
+				filteredMondayNewSubs,
+				filteredMondayCancellations,
+				selectedPlanTier,
+				selectedWebspacesCount,
+				WEBSPACES_COUNT_MAP
+			);
+			filteredMondayNewSubs = mondayFiltered.newSubs;
+			filteredMondayCancellations = mondayFiltered.cancellations;
+		} else if (!excludeMonday && mondayNewSubs && mondayCancellations) {
+			// Se Monday non è stato ancora filtrato, filtra ora
+			const mondayFiltered = filterDataByPlanTierAndWebspaces(
+				mondayNewSubs,
+				mondayCancellations,
+				selectedPlanTier,
+				selectedWebspacesCount,
+				WEBSPACES_COUNT_MAP
+			);
+			filteredMondayNewSubs = mondayFiltered.newSubs;
+			filteredMondayCancellations = mondayFiltered.cancellations;
+		}
+		
+		// Raccogli tutti gli abbonamenti fino alla data "to"
+		const subscriptions = new Map<string, {
+			email: string;
+			subscriptionName: string;
+			amountCents: number;
+			date: string;
+			source: 'stripe' | 'monday';
+			webspacesCount?: number;
+		}>();
+		
+		// Processa Stripe
+		for (const point of filtered.newSubs) {
+			const pointDate = new Date(point.date + 'T00:00:00Z');
+			if (pointDate > range.to) continue;
+			
+			for (const purchase of point.purchases) {
+				if (!purchase.email) continue;
+				const key = purchase.email.toLowerCase();
+				const existing = subscriptions.get(key);
+				if (!existing || pointDate > new Date(existing.date + 'T00:00:00Z')) {
+					subscriptions.set(key, {
+						email: purchase.email,
+						subscriptionName: purchase.subscriptionName || 'Unknown',
+						amountCents: purchase.amountCents || 0,
+						date: point.date,
+						source: 'stripe',
+						webspacesCount: purchase.webspacesCount ?? (purchase.subscriptionName ? WEBSPACES_COUNT_MAP[purchase.subscriptionName] : undefined)
+					});
+				}
+			}
+		}
+		
+		// Processa Monday
+		if (filteredMondayNewSubs) {
+			for (const point of filteredMondayNewSubs) {
+				const pointDate = new Date(point.date + 'T00:00:00Z');
+				if (pointDate > range.to) continue;
+				
+				for (const purchase of point.purchases) {
+					if (!purchase.email) continue;
+					const key = purchase.email.toLowerCase();
+					const existing = subscriptions.get(key);
+					if (!existing || pointDate > new Date(existing.date + 'T00:00:00Z')) {
+						subscriptions.set(key, {
+							email: purchase.email,
+							subscriptionName: purchase.subscriptionName || 'Unknown',
+							amountCents: purchase.amountCents || 0,
+							date: point.date,
+							source: 'monday',
+							webspacesCount: purchase.webspacesCount ?? (purchase.subscriptionName ? WEBSPACES_COUNT_MAP[purchase.subscriptionName] : undefined)
+						});
+					}
+				}
+			}
+		}
+		
+		// Rimuovi cancellazioni
+		for (const point of filtered.cancellations) {
+			const cancelDate = new Date(point.date + 'T00:00:00Z');
+			if (cancelDate > range.to) continue;
+			
+			for (const cancellation of point.cancellations) {
+				if (!cancellation.email) continue;
+				const key = cancellation.email.toLowerCase();
+				const existing = subscriptions.get(key);
+				if (existing && cancelDate >= new Date(existing.date + 'T00:00:00Z')) {
+					subscriptions.delete(key);
+				}
+			}
+		}
+		
+		if (filteredMondayCancellations) {
+			for (const point of filteredMondayCancellations) {
+				const cancelDate = new Date(point.date + 'T00:00:00Z');
+				if (cancelDate > range.to) continue;
+				
+				for (const cancellation of point.cancellations) {
+					if (!cancellation.email) continue;
+					const key = cancellation.email.toLowerCase();
+					const existing = subscriptions.get(key);
+					if (existing && cancelDate >= new Date(existing.date + 'T00:00:00Z')) {
+						subscriptions.delete(key);
+					}
+				}
+			}
+		}
+		
+		return Array.from(subscriptions.values())
+			.sort((a, b) => b.amountCents - a.amountCents)
+			.slice(0, 50); // Limita a 50 per performance
+	}, [newSubs, cancellations, mondayNewSubs, mondayCancellations, selectedPlanTier, selectedWebspacesCount, range, excludeMonday, excludeStripe]);
+
+	// Calcola clienti attivi per categoria alla fine del periodo (usando i dati filtrati)
 	const customersByCategory = useMemo(() => {
-		if (!newSubs || !cancellations || !kpis) return { basic: 0, plus: 0, enterprise: 0 };
-		
-		// Per la card vogliamo il breakdown complessivo alla data "to",
-		// indipendente dal filtro piano selezionato nella tendina.
-		const toDate = range.to;
-		
-		// Traccia abbonamenti attivi per cliente e categoria
-		// customerEmail -> Set di categorie attive
-		const customerCategories: Record<string, Set<string>> = {};
-		
-		// Aggiungi nuovi abbonamenti fino a "to" (Stripe) - solo se non escluso
-		if (!excludeStripe) {
-			for (const point of newSubs) {
-				const pointDate = new Date(point.date + 'T00:00:00Z');
-				if (pointDate > toDate) continue;
-				
-				for (const purchase of point.purchases) {
-					if (!purchase.email || !purchase.subscriptionName) continue;
-					if (!customerCategories[purchase.email]) {
-						customerCategories[purchase.email] = new Set();
-					}
-					const lower = purchase.subscriptionName.toLowerCase();
-					if (lower.includes('basic')) {
-						customerCategories[purchase.email].add('basic');
-					} else if (lower.includes('plus')) {
-						customerCategories[purchase.email].add('plus');
-					} else if (lower.includes('premium') || lower.includes('enterprise')) {
-						customerCategories[purchase.email].add('enterprise');
-					}
-				}
-			}
-		}
-		
-		// Aggiungi nuovi abbonamenti fino a "to" (Monday) - solo se non escluso
-		if (!excludeMonday && mondayNewSubs) {
-			for (const point of mondayNewSubs) {
-				const pointDate = new Date(point.date + 'T00:00:00Z');
-				if (pointDate > toDate) continue;
-				
-				for (const purchase of point.purchases) {
-					if (!purchase.email || !purchase.subscriptionName) continue;
-					if (!customerCategories[purchase.email]) {
-						customerCategories[purchase.email] = new Set();
-					}
-					const lower = purchase.subscriptionName.toLowerCase();
-					if (lower.includes('enterprise')) {
-						customerCategories[purchase.email].add('enterprise');
-					}
-				}
-			}
-		}
-		
-		// Rimuovi cancellazioni fino a "to" - Stripe
-		if (!excludeStripe) {
-			for (const point of cancellations) {
-				const pointDate = new Date(point.date + 'T00:00:00Z');
-				if (pointDate > toDate) continue;
-				
-				for (const cancel of point.cancellations) {
-					if (!cancel.email || !cancel.subscriptionName) continue;
-					if (customerCategories[cancel.email]) {
-						const lower = cancel.subscriptionName.toLowerCase();
-						let category = '';
-						if (lower.includes('basic')) {
-							category = 'basic';
-						} else if (lower.includes('plus')) {
-							category = 'plus';
-						} else if (lower.includes('premium') || lower.includes('enterprise')) {
-							category = 'enterprise';
-						}
-						if (category) {
-							customerCategories[cancel.email].delete(category);
-							if (customerCategories[cancel.email].size === 0) {
-								delete customerCategories[cancel.email];
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		// Rimuovi cancellazioni fino a "to" - Monday
-		if (!excludeMonday && mondayCancellations) {
-			for (const point of mondayCancellations) {
-				const pointDate = new Date(point.date + 'T00:00:00Z');
-				if (pointDate > toDate) continue;
-				
-				for (const cancel of point.cancellations) {
-					if (!cancel.email || !cancel.subscriptionName) continue;
-					if (customerCategories[cancel.email]) {
-						const lower = cancel.subscriptionName.toLowerCase();
-						if (lower.includes('enterprise')) {
-							customerCategories[cancel.email].delete('enterprise');
-							if (customerCategories[cancel.email].size === 0) {
-								delete customerCategories[cancel.email];
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		// Conta clienti per categoria
+		// Usa activeSubscriptions che già applica tutti i filtri
 		let basic = 0, plus = 0, enterprise = 0;
-		for (const categories of Object.values(customerCategories)) {
-			if (categories.has('basic')) basic++;
-			if (categories.has('plus')) plus++;
-			if (categories.has('enterprise')) enterprise++;
+		
+		for (const sub of activeSubscriptions) {
+			const tier = normalizePlanToTier(sub.subscriptionName);
+			if (tier === 'Basic') {
+				basic++;
+			} else if (tier === 'Plus') {
+				plus++;
+			} else if (tier === 'Enterprise') {
+				enterprise++;
+			}
 		}
 		
 		return { basic, plus, enterprise };
-	}, [newSubs, cancellations, mondayNewSubs, mondayCancellations, range, kpis, excludeMonday, excludeStripe]);
+	}, [activeSubscriptions]);
 
-	const selectValue = useMemo(() => {
-		if (selectedPlans === null) return 'ALL';
-		if (selectedPlans.length === planCategories.basic.length && 
-			planCategories.basic.length > 0 &&
-			selectedPlans.every(p => planCategories.basic.includes(p))) {
-			return 'CAT:BASIC';
-		}
-		if (selectedPlans.length === planCategories.plus.length && 
-			planCategories.plus.length > 0 &&
-			selectedPlans.every(p => planCategories.plus.includes(p))) {
-			return 'CAT:PLUS';
-		}
-		if (selectedPlans.length === planCategories.premium.length && 
-			planCategories.premium.length > 0 &&
-			selectedPlans.every(p => planCategories.premium.includes(p))) {
-			return 'CAT:PREMIUM';
-		}
-		if (selectedPlans.length === 1) return selectedPlans[0];
-		return 'ALL';
-	}, [selectedPlans, planCategories]);
 
 	// Calcola dominio Y per centrare sui valori effettivi
 	const getYDomain = (dataKey: 'mrr' | 'activeCustomers' | 'arpa' | 'netNewMrr') => {
@@ -364,7 +444,15 @@ export function SlideHeadlineMetrics() {
 			<header className="bar" style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16 }}>
 				<div>
 					<SlideTitle>Headline Metrics</SlideTitle>
-					<div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 4 }}>(fonte: Stripe / Monday)</div>
+					<SourceLabel 
+						label="Stripe / Monday"
+						sources={[
+							{ label: 'Stripe - Nuove Sottoscrizioni', url: 'data/avacy/json/stripe/new-subscriptions.json', lastUpdated: stripeNewLastUpdated },
+							{ label: 'Stripe - Cancellazioni', url: 'data/avacy/json/stripe/cancellations.json', lastUpdated: stripeCancLastUpdated },
+							{ label: 'Monday - Nuove Sottoscrizioni', url: 'data/avacy/json/monday/new-subscriptions.json', lastUpdated: mondayNewLastUpdated },
+							{ label: 'Monday - Cancellazioni', url: 'data/avacy/json/monday/cancellations.json', lastUpdated: mondayCancLastUpdated }
+						]}
+					/>
 				</div>
 				<Nav />
 			</header>
@@ -375,7 +463,7 @@ export function SlideHeadlineMetrics() {
             <div className={styles.panel} style={{ padding: 20 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
                     <h3 style={{ margin: 0, fontSize: 14, fontWeight: 600, color: 'var(--muted)' }}>MRR Totale</h3>
-                    <Info text="Monthly Recurring Revenue: Il fatturato ricorrente mensile normalizzato da tutti gli abbonamenti attivi." />
+                    <Info text="Monthly Recurring Revenue: Il fatturato ricorrente mensile normalizzato da tutti gli abbonamenti attivi alla fine del periodo selezionato." />
                 </div>
                 <div style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: 'var(--text)' }}>
                     {formatCurrency(kpis.mrr)}
@@ -432,133 +520,156 @@ export function SlideHeadlineMetrics() {
 
         {/* Sezione 1: Controlli Globali */}
 			<div style={{ marginBottom: 24 }}>
-				{/* Prima riga: Date pickers e Presets */}
-				<div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap', marginBottom: 12 }}>
-					<label style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 14 }}>
-						<span style={{ color: 'var(--muted)' }}>Da</span>
-						<input
-							type="date"
-							value={fromDate}
-							onChange={(e) => setFromDate(e.target.value)}
-							style={{
-								padding: '6px 8px',
-								background: 'var(--panel)',
-								color: 'var(--text)',
-								border: '1px solid rgba(255,255,255,0.12)',
-								borderRadius: 6,
-								fontSize: 14,
-							}}
-						/>
-					</label>
-					<label style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 14 }}>
-						<span style={{ color: 'var(--muted)' }}>A</span>
-						<input
-							type="date"
-							value={toDate}
-							onChange={(e) => setToDate(e.target.value)}
-							style={{
-								padding: '6px 8px',
-								background: 'var(--panel)',
-								color: 'var(--text)',
-								border: '1px solid rgba(255,255,255,0.12)',
-								borderRadius: 6,
-								fontSize: 14,
-							}}
-						/>
-					</label>
-					<div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginLeft: 'auto' }}>
-						{PRESETS.map((preset) => (
-							<button
-								key={preset.label}
-								onClick={() => {
-									if (preset.getRange) {
-										const { from, to } = preset.getRange();
-										setFromDate(from.toISOString().split('T')[0]);
-										setToDate(to.toISOString().split('T')[0]);
-									} else if (preset.days) {
-										const to = new Date();
-										const from = new Date();
-										from.setDate(from.getDate() - preset.days);
-										setFromDate(from.toISOString().split('T')[0]);
-										setToDate(to.toISOString().split('T')[0]);
-									}
-								}}
-								style={{
-									padding: '6px 12px',
-									background: 'var(--panel)',
-									color: 'var(--text)',
-									border: '1px solid rgba(255,255,255,0.12)',
-									borderRadius: 6,
-									cursor: 'pointer',
-									fontSize: 13,
-								}}
-							>
-								{preset.label}
-							</button>
-						))}
-					</div>
-				</div>
+				<label style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, cursor: 'pointer', marginBottom: 12 }}>
+					<input
+						type="checkbox"
+						checked={showFilters}
+						onChange={(e) => setShowFilters(e.target.checked)}
+						style={{ cursor: 'pointer' }}
+					/>
+					<span style={{ color: 'var(--muted)' }}>Mostra filtri</span>
+				</label>
 				
-				{/* Seconda riga: Piano e checkbox esclusioni */}
-				<div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
-					<div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-						<span style={{ color: 'var(--muted)', fontSize: 14 }}>Piano</span>
-						<select
-							value={selectValue}
-							onChange={(e) => {
-								const v = e.target.value;
-								if (v === 'ALL') {
-									setSelectedPlans(null);
-								} else if (v === 'CAT:BASIC') {
-									setSelectedPlans(planCategories.basic.length > 0 ? planCategories.basic : null);
-								} else if (v === 'CAT:PLUS') {
-									setSelectedPlans(planCategories.plus.length > 0 ? planCategories.plus : null);
-								} else if (v === 'CAT:PREMIUM') {
-									setSelectedPlans(planCategories.premium.length > 0 ? planCategories.premium : null);
-								} else {
-									setSelectedPlans([v]);
-								}
-							}}
-							style={{
-								padding: '6px 8px',
-								background: 'var(--panel)',
-								color: 'var(--text)',
-								border: '1px solid rgba(255,255,255,0.12)',
-								borderRadius: 6,
-								fontSize: 14,
-							}}
-						>
-							<option value="ALL">Tutti i piani</option>
-							{planCategories.basic.length > 0 && <option value="CAT:BASIC">Tutti i Basic</option>}
-							{planCategories.plus.length > 0 && <option value="CAT:PLUS">Tutti i Plus</option>}
-							{planCategories.premium.length > 0 && <option value="CAT:PREMIUM">Tutti i Premium</option>}
-							{allPlans.map((p) => (
-								<option key={p} value={p}>{p} ({planCounts[p] || 0})</option>
-							))}
-						</select>
-					</div>
-					
-					<div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-						<label style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer', fontSize: 14 }}>
-							<input
-								type="checkbox"
-								checked={excludeMonday}
-								onChange={(e) => setExcludeMonday(e.target.checked)}
-								style={{ cursor: 'pointer' }}
-							/>
-							<span style={{ color: 'var(--muted)' }}>Escludi Monday</span>
-						</label>
-						<label style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer', fontSize: 14 }}>
-							<input
-								type="checkbox"
-								checked={excludeStripe}
-								onChange={(e) => setExcludeStripe(e.target.checked)}
-								style={{ cursor: 'pointer' }}
-							/>
-							<span style={{ color: 'var(--muted)' }}>Escludi Stripe</span>
-						</label>
-					</div>
-				</div>
+				{showFilters && (
+					<>
+						{/* Prima riga: Date pickers e Presets */}
+						<div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap', marginBottom: 12 }}>
+							<label style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 14 }}>
+								<span style={{ color: 'var(--muted)' }}>Da</span>
+								<input
+									type="date"
+									value={fromDate}
+									onChange={(e) => setFromDate(e.target.value)}
+									style={{
+										padding: '6px 8px',
+										background: 'var(--panel)',
+										color: 'var(--text)',
+										border: '1px solid rgba(255,255,255,0.12)',
+										borderRadius: 6,
+										fontSize: 14,
+									}}
+								/>
+							</label>
+							<label style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 14 }}>
+								<span style={{ color: 'var(--muted)' }}>A</span>
+								<input
+									type="date"
+									value={toDate}
+									onChange={(e) => setToDate(e.target.value)}
+									style={{
+										padding: '6px 8px',
+										background: 'var(--panel)',
+										color: 'var(--text)',
+										border: '1px solid rgba(255,255,255,0.12)',
+										borderRadius: 6,
+										fontSize: 14,
+									}}
+								/>
+							</label>
+							<div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginLeft: 'auto' }}>
+								{PRESETS.map((preset) => (
+									<button
+										key={preset.label}
+										onClick={() => {
+											if (preset.getRange) {
+												const { from, to } = preset.getRange();
+												setFromDate(from.toISOString().split('T')[0]);
+												setToDate(to.toISOString().split('T')[0]);
+											} else if (preset.days) {
+												const to = new Date();
+												const from = new Date();
+												from.setDate(from.getDate() - preset.days);
+												setFromDate(from.toISOString().split('T')[0]);
+												setToDate(to.toISOString().split('T')[0]);
+											}
+										}}
+										style={{
+											padding: '6px 12px',
+											background: 'var(--panel)',
+											color: 'var(--text)',
+											border: '1px solid rgba(255,255,255,0.12)',
+											borderRadius: 6,
+											cursor: 'pointer',
+											fontSize: 13,
+										}}
+									>
+										{preset.label}
+									</button>
+								))}
+							</div>
+						</div>
+						
+						{/* Seconda riga: Piano, Numero Spazi e checkbox esclusioni */}
+						<div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
+							<div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+								<span style={{ color: 'var(--muted)', fontSize: 14 }}>Piano</span>
+								<select
+									value={selectedPlanTier}
+									onChange={(e) => setSelectedPlanTier(e.target.value as 'all' | 'Basic' | 'Plus' | 'Enterprise')}
+									style={{
+										padding: '6px 8px',
+										background: 'var(--panel)',
+										color: 'var(--text)',
+										border: '1px solid rgba(255,255,255,0.12)',
+										borderRadius: 6,
+										fontSize: 14,
+									}}
+								>
+									<option value="all">Tutti i piani</option>
+									<option value="Basic">Basic</option>
+									<option value="Plus">Plus</option>
+									<option value="Enterprise">Enterprise</option>
+								</select>
+							</div>
+							
+							<div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+								<span style={{ color: 'var(--muted)', fontSize: 14 }}>Numero Spazi</span>
+								<select
+									value={selectedWebspacesCount}
+									onChange={(e) => setSelectedWebspacesCount(e.target.value as 'all' | '1' | '5' | '15' | '25')}
+									disabled={selectedPlanTier === 'Enterprise'}
+									style={{
+										padding: '6px 8px',
+										background: selectedPlanTier === 'Enterprise' ? 'var(--panel)' : 'var(--panel)',
+										color: selectedPlanTier === 'Enterprise' ? 'var(--muted)' : 'var(--text)',
+										border: '1px solid rgba(255,255,255,0.12)',
+										borderRadius: 6,
+										fontSize: 14,
+										cursor: selectedPlanTier === 'Enterprise' ? 'not-allowed' : 'pointer',
+										opacity: selectedPlanTier === 'Enterprise' ? 0.5 : 1,
+									}}
+								>
+									<option value="all">Tutti</option>
+									<option value="1">1 spazio</option>
+									<option value="5">5 spazi</option>
+									<option value="15">15 spazi</option>
+									<option value="25">25 spazi</option>
+								</select>
+							</div>
+							
+							<div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+								<label style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer', fontSize: 14 }}>
+									<input
+										type="checkbox"
+										checked={excludeMonday}
+										onChange={(e) => setExcludeMonday(e.target.checked)}
+										style={{ cursor: 'pointer' }}
+									/>
+									<span style={{ color: 'var(--muted)' }}>Escludi Monday</span>
+								</label>
+								<label style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer', fontSize: 14 }}>
+									<input
+										type="checkbox"
+										checked={excludeStripe}
+										onChange={(e) => setExcludeStripe(e.target.checked)}
+										style={{ cursor: 'pointer' }}
+									/>
+									<span style={{ color: 'var(--muted)' }}>Escludi Stripe</span>
+								</label>
+							</div>
+						</div>
+					</>
+				)}
 			</div>
 
 			{/* Sezione 2: Area Grafico Principale */}
@@ -626,6 +737,61 @@ export function SlideHeadlineMetrics() {
 				</div>
 			</div>
 
+			{/* Tabella Abbonamenti Filtrati */}
+			{showFilters && (
+				<div className={styles.panel} style={{ padding: 24, marginTop: 32 }}>
+					<h2 style={{ marginTop: 0, marginBottom: 16, fontSize: 18, fontWeight: 600 }}>
+						Abbonamenti Attivi Filtrati ({activeSubscriptions.length})
+					</h2>
+					<div style={{ overflowX: 'auto' }}>
+						<table className={styles.table} style={{ width: '100%' }}>
+							<thead>
+								<tr>
+									<th style={{ width: '25%' }}>Email</th>
+									<th style={{ width: '20%' }}>Piano</th>
+									<th style={{ width: '15%' }}>Webspaces</th>
+									<th style={{ width: '15%', textAlign: 'right' }}>MRR</th>
+									<th style={{ width: '15%' }}>Data</th>
+									<th style={{ width: '10%' }}>Fonte</th>
+								</tr>
+							</thead>
+							<tbody>
+								{activeSubscriptions.length === 0 ? (
+									<tr>
+										<td colSpan={6} style={{ textAlign: 'center', color: 'var(--muted)', padding: 40 }}>
+											Nessun abbonamento trovato con i filtri selezionati
+										</td>
+									</tr>
+								) : (
+									activeSubscriptions.map((sub, idx) => {
+										const tier = sub.subscriptionName?.toLowerCase().includes('basic') ? 'Basic' :
+											sub.subscriptionName?.toLowerCase().includes('plus') ? 'Plus' :
+											sub.subscriptionName?.toLowerCase().includes('enterprise') ? 'Enterprise' : 'Unknown';
+										return (
+											<tr key={`${sub.email}-${idx}`}>
+												<td style={{ fontSize: 13 }}>{sub.email}</td>
+												<td style={{ fontSize: 13 }}>{sub.subscriptionName}</td>
+												<td style={{ fontSize: 13 }}>
+													{tier === 'Enterprise' ? '-' : (sub.webspacesCount ?? 'N/A')}
+												</td>
+												<td style={{ fontSize: 13, textAlign: 'right' }}>
+													{formatCurrency(sub.amountCents)}
+												</td>
+												<td style={{ fontSize: 13, color: 'var(--muted)' }}>
+													{new Date(sub.date + 'T00:00:00Z').toLocaleDateString('it-IT')}
+												</td>
+												<td style={{ fontSize: 12, color: 'var(--muted)', textTransform: 'uppercase' }}>
+													{sub.source}
+												</td>
+											</tr>
+										);
+									})
+								)}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			)}
 
 		</div>
 	);

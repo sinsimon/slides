@@ -14,11 +14,18 @@ export type StripeCancellationPoint = {
 		cancelAt?: string;
         currency?: string;
 		metadata?: Record<string, string>;
+		webspacesCount?: number; // Numero di webspaces estratto dal subscriptionName
 	}>;
 };
 
+interface WrappedData<T> {
+  data: T;
+  lastUpdated?: string;
+}
+
 export function useCancellations() {
 	const [data, setData] = useState<StripeCancellationPoint[] | null>(null);
+	const [lastUpdated, setLastUpdated] = useState<string | undefined>(undefined);
 	const [loading, setLoading] = useState<boolean>(false);
 	const [error, setError] = useState<Error | null>(null);
 
@@ -29,10 +36,16 @@ export function useCancellations() {
 		fetch(buildDataUrl('data/avacy/json/stripe/cancellations.json'))
 			.then(async (r) => {
 				if (!r.ok) throw new Error(`HTTP ${r.status}`);
-				return (await r.json()) as StripeCancellationPoint[];
+				return (await r.json()) as WrappedData<StripeCancellationPoint[]> | StripeCancellationPoint[];
 			})
-			.then((d) => {
-				if (!cancelled) setData(d);
+			.then((resp) => {
+				if (!cancelled) {
+					const wrapped = resp as WrappedData<StripeCancellationPoint[]> | StripeCancellationPoint[];
+					const d = Array.isArray(wrapped) ? wrapped : wrapped.data;
+					const updated = Array.isArray(wrapped) ? undefined : wrapped.lastUpdated;
+					setData(d);
+					setLastUpdated(updated);
+				}
 			})
 			.catch((e) => {
 				if (!cancelled) setError(e as Error);
@@ -45,7 +58,7 @@ export function useCancellations() {
 		};
 	}, []);
 
-	return { data, loading, error } as const;
+	return { data, loading, error, lastUpdated } as const;
 }
 
 

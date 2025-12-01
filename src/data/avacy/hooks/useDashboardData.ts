@@ -5,16 +5,22 @@ import { buildDataUrl } from '../utils/assets';
 import { StripeNewSubscriptionPoint } from '../hooks/useNewSubscriptions';
 import { StripeCancellationPoint } from '../hooks/useCancellations';
 
-// Path dei Mock (che replicano la struttura Prod)
-const VAPOR_TENANTS_URL = buildDataUrl('data/avacy/json/mock/vapor-tenants.json');
-const STRIPE_NEW_SUBS_URL = buildDataUrl('data/avacy/json/mock/stripe-new-subscriptions.json');
-const STRIPE_CANCELS_URL = buildDataUrl('data/avacy/json/mock/stripe-cancellations.json');
-const MONDAY_NEW_SUBS_URL = buildDataUrl('data/avacy/json/mock/monday-new-subscriptions.json');
-const MONDAY_CANCELS_URL = buildDataUrl('data/avacy/json/mock/monday-cancellations.json');
+// Path dei dati reali
+const VAPOR_TENANTS_URL = buildDataUrl('data/avacy/json/vapor/tenants.json');
+const STRIPE_NEW_SUBS_URL = buildDataUrl('data/avacy/json/stripe/new-subscriptions.json');
+const STRIPE_CANCELS_URL = buildDataUrl('data/avacy/json/stripe/cancellations.json');
+const MONDAY_NEW_SUBS_URL = buildDataUrl('data/avacy/json/monday/new-subscriptions.json');
+const MONDAY_CANCELS_URL = buildDataUrl('data/avacy/json/monday/cancellations.json');
+
+interface WrappedData<T> {
+  data: T;
+  lastUpdated?: string;
+}
 
 export function useDashboardData() {
   const [rawTenants, setRawTenants] = useState<RawTenant[] | null>(null);
   const [rawBilling, setRawBilling] = useState<RawBillingEvent[] | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -23,16 +29,46 @@ export function useDashboardData() {
     setLoading(true);
 
     Promise.all([
-      fetch(VAPOR_TENANTS_URL).then(r => r.json() as Promise<RawTenant[]>),
-      fetch(STRIPE_NEW_SUBS_URL).then(r => r.json() as Promise<StripeNewSubscriptionPoint[]>),
-      fetch(STRIPE_CANCELS_URL).then(r => r.json() as Promise<StripeCancellationPoint[]>),
-      fetch(MONDAY_NEW_SUBS_URL).then(r => r.json() as Promise<StripeNewSubscriptionPoint[]>),
-      fetch(MONDAY_CANCELS_URL).then(r => r.json() as Promise<StripeCancellationPoint[]>)
+      fetch(VAPOR_TENANTS_URL).then(r => r.json()),
+      fetch(STRIPE_NEW_SUBS_URL).then(r => r.json()),
+      fetch(STRIPE_CANCELS_URL).then(r => r.json()),
+      fetch(MONDAY_NEW_SUBS_URL).then(r => r.json()),
+      fetch(MONDAY_CANCELS_URL).then(r => r.json())
     ])
-    .then(([vaporData, stripeNew, stripeCanc, mondayNew, mondayCanc]) => {
+    .then(([vaporResp, stripeNewResp, stripeCancResp, mondayNewResp, mondayCancResp]) => {
       if (!cancelled) {
-        // 1. Tenants: Il JSON è già nel formato RawTenant[] (Clean JSON)
+        // Gestisci il formato wrapper (con data e lastUpdated) o array diretto (backward compatibility)
+        const vaporWrapped = vaporResp as WrappedData<RawTenant[]> | RawTenant[];
+        const vaporData = Array.isArray(vaporWrapped) ? vaporWrapped : vaporWrapped.data;
+        const vaporLastUpdated = Array.isArray(vaporWrapped) ? undefined : vaporWrapped.lastUpdated;
+        
+        const stripeNewWrapped = stripeNewResp as WrappedData<StripeNewSubscriptionPoint[]> | StripeNewSubscriptionPoint[];
+        const stripeNew = Array.isArray(stripeNewWrapped) ? stripeNewWrapped : stripeNewWrapped.data;
+        const stripeNewLastUpdated = Array.isArray(stripeNewWrapped) ? undefined : stripeNewWrapped.lastUpdated;
+        
+        const stripeCancWrapped = stripeCancResp as WrappedData<StripeCancellationPoint[]> | StripeCancellationPoint[];
+        const stripeCanc = Array.isArray(stripeCancWrapped) ? stripeCancWrapped : stripeCancWrapped.data;
+        const stripeCancLastUpdated = Array.isArray(stripeCancWrapped) ? undefined : stripeCancWrapped.lastUpdated;
+        
+        const mondayNewWrapped = mondayNewResp as WrappedData<StripeNewSubscriptionPoint[]> | StripeNewSubscriptionPoint[];
+        const mondayNew = Array.isArray(mondayNewWrapped) ? mondayNewWrapped : mondayNewWrapped.data;
+        const mondayNewLastUpdated = Array.isArray(mondayNewWrapped) ? undefined : mondayNewWrapped.lastUpdated;
+        
+        const mondayCancWrapped = mondayCancResp as WrappedData<StripeCancellationPoint[]> | StripeCancellationPoint[];
+        const mondayCanc = Array.isArray(mondayCancWrapped) ? mondayCancWrapped : mondayCancWrapped.data;
+        const mondayCancLastUpdated = Array.isArray(mondayCancWrapped) ? undefined : mondayCancWrapped.lastUpdated;
+
+        // 1. Tenants
         setRawTenants(vaporData);
+        
+        // Salva le date di ultimo aggiornamento
+        const updates: Record<string, string> = {};
+        if (vaporLastUpdated) updates['vapor-tenants'] = vaporLastUpdated;
+        if (stripeNewLastUpdated) updates['stripe-new-subscriptions'] = stripeNewLastUpdated;
+        if (stripeCancLastUpdated) updates['stripe-cancellations'] = stripeCancLastUpdated;
+        if (mondayNewLastUpdated) updates['monday-new-subscriptions'] = mondayNewLastUpdated;
+        if (mondayCancLastUpdated) updates['monday-cancellations'] = mondayCancLastUpdated;
+        setLastUpdated(updates);
 
         // 2. Normalizzazione Billing Events
         const events: RawBillingEvent[] = [];
@@ -205,5 +241,5 @@ export function useDashboardData() {
 
   }, [rawTenants, rawBilling]);
 
-  return { data, loading, error };
+  return { data, loading, error, lastUpdated };
 }

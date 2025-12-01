@@ -6,5 +6,6 @@ export { DataTable } from './DataTable'
 export { Presentation, Nav } from './Presentation'
 export { TwoColumnSlide } from './TwoColumnSlide'
 export { Badge } from './Badge'
+export { SourceLabel } from './SourceLabel'
 
 
