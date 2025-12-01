@@ -16,6 +16,10 @@ if [ -z "$AWS_LAMBDA_ROLE_ARN" ]; then
   exit 1
 fi
 
+# Ottieni l'account ID AWS
+AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+echo "📋 AWS Account ID: $AWS_ACCOUNT_ID"
+
 # Leggi la configurazione cron
 CRON_CONFIG="lambda-cron-config.json"
 if [ ! -f "$CRON_CONFIG" ]; then
@@ -41,46 +45,22 @@ deploy_lambda() {
   # Crea directory del package
   mkdir -p "$package_dir"
   
-  # Copia i file necessari
-  cp -r src/data/avacy/pollers "$package_dir/"
-  cp -r src/data/avacy/db "$package_dir/" 2>/dev/null || true
-  cp package.json "$package_dir/"
-  cp package-lock.json "$package_dir/" 2>/dev/null || true
-  cp tsconfig.json "$package_dir/" 2>/dev/null || true
+  # Compila TypeScript in un unico file JS usando esbuild
+  # Includiamo dotenv e aws-sdk come external se necessario, ma qui vogliamo tutto nel bundle
+  # tranne aws-sdk v3 che è già nel runtime lambda (ma parzialmente, meglio includere per sicurezza se usiamo client specifici)
+  # Per semplicità bundliamo tutto.
   
-  # Crea handler.js che usa tsx per eseguire TypeScript
-  cat > "$package_dir/handler.js" << 'HANDLER_EOF'
-const { execSync } = require('child_process');
-const path = require('path');
+  npx esbuild src/data/avacy/pollers/lambda-handler.ts \
+    --bundle \
+    --platform=node \
+    --target=node18 \
+    --outfile="$package_dir/index.js" \
+    --format=cjs \
+    --external:@aws-sdk/* 
 
-exports.handler = async (event, context) => {
-  // Estrai il nome del poller dall'evento o dal nome della funzione
-  const pollerName = event.poller || process.env.POLLER_NAME || '';
-  
-  if (!pollerName) {
-    throw new Error('Missing poller name');
-  }
-  
-  // Usa tsx per eseguire il lambda-handler.ts
-  const handlerPath = path.join(__dirname, 'pollers', 'lambda-handler.ts');
-  const result = execSync(`npx tsx ${handlerPath}`, {
-    input: JSON.stringify({ poller: pollerName }),
-    encoding: 'utf-8',
-    env: { ...process.env, ...context }
-  });
-  
-  return JSON.parse(result);
-};
-HANDLER_EOF
-  
-  # Installa dipendenze di produzione
+  # Crea zip con solo il file compilato
   cd "$package_dir"
-  npm ci --production --ignore-scripts
-  cd - > /dev/null
-  
-  # Crea zip
-  cd "$package_dir"
-  zip -r "../${function_name}.zip" . -q
+  zip -r "../${function_name}.zip" index.js -q
   cd - > /dev/null
   
   echo "✅ Packaged $function_name"
@@ -93,8 +73,15 @@ HANDLER_EOF
       --zip-file "fileb://lambda-packages/${function_name}.zip" \
       --region "$AWS_REGION" > /dev/null
     
+    # Aspetta che l'aggiornamento del codice sia completato
+    echo "⏳ Waiting for update to complete..."
+    aws lambda wait function-updated \
+      --function-name "$function_name" \
+      --region "$AWS_REGION"
+
     aws lambda update-function-configuration \
       --function-name "$function_name" \
+      --handler index.handler \
       --timeout 900 \
       --memory-size 1024 \
       --environment "Variables={AWS_S3_BUCKET=${AWS_S3_BUCKET},POLLER_NAME=${poller_name}}" \
@@ -105,7 +92,7 @@ HANDLER_EOF
       --function-name "$function_name" \
       --runtime nodejs18.x \
       --role "$AWS_LAMBDA_ROLE_ARN" \
-      --handler handler.handler \
+      --handler index.handler \
       --zip-file "fileb://lambda-packages/${function_name}.zip" \
       --timeout 900 \
       --memory-size 1024 \
@@ -122,23 +109,37 @@ HANDLER_EOF
     --schedule-expression "$schedule" \
     --region "$AWS_REGION" > /dev/null
   
+  # Ottieni l'ARN della Lambda
+  local lambda_arn="arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:${function_name}"
+  
   # Aggiungi permesso per EventBridge
   aws lambda add-permission \
     --function-name "$function_name" \
     --statement-id "${rule_name}-invoke" \
     --action lambda:InvokeFunction \
     --principal events.amazonaws.com \
-    --source-arn "arn:aws:events:${AWS_REGION}:*:rule/${rule_name}" \
+    --source-arn "arn:aws:events:${AWS_REGION}:${AWS_ACCOUNT_ID}:rule/${rule_name}" \
     --region "$AWS_REGION" 2>/dev/null || true
   
+  # Crea file JSON temporaneo per i targets (evita problemi di escaping)
+  local targets_file=$(mktemp)
+  cat > "$targets_file" << EOF
+[
+  {
+    "Id": "1",
+    "Arn": "${lambda_arn}",
+    "Input": "{\"poller\":\"${poller_name}\"}"
+  }
+]
+EOF
+  
   # Collega la rule alla Lambda
-  # Costruisci il JSON per il target (formato array JSON)
-  local input_json="{\"poller\":\"${poller_name}\"}"
-  local target_json="[{\"Id\":\"1\",\"Arn\":\"arn:aws:lambda:${AWS_REGION}:*:function:${function_name}\",\"Input\":\"${input_json}\"}]"
   aws events put-targets \
     --rule "$rule_name" \
-    --targets "$target_json" \
+    --targets "file://${targets_file}" \
     --region "$AWS_REGION" > /dev/null
+  
+  rm -f "$targets_file"
   
   echo "✅ Deployed $function_name with schedule $schedule"
 }
@@ -161,5 +162,6 @@ while IFS='|' read -r poller_name schedule; do
 done <<< "$pollers"
 
 echo "🎉 All Lambda functions deployed successfully!"
+
 
 

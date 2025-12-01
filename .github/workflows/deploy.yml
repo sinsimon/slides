@@ -5,6 +5,7 @@ on:
     branches: [master, main]
     paths:
       - 'src/**'
+      - 'scripts/**'
       - 'package.json'
       - 'package-lock.json'
       - 'vite.config.ts'
@@ -41,7 +42,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete --acl public-read --exclude "data/*"
+          aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude "data/*"
 
       - name: Invalidate CloudFront
         continue-on-error: true
