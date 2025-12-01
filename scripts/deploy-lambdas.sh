@@ -54,10 +54,14 @@ deploy_lambda() {
   
   # Crea handler.js che usa tsx per eseguire TypeScript
   cat > "$package_dir/handler.js" << 'HANDLER_EOF'
-const { execSync } = require('child_process');
-const path = require('path');
+import { execSync } from 'child_process';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-exports.handler = async (event, context) => {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export const handler = async (event, context) => {
   // Estrai il nome del poller dall'evento o dal nome della funzione
   const pollerName = event.poller || process.env.POLLER_NAME || '';
   
