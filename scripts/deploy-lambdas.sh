@@ -16,6 +16,10 @@ if [ -z "$AWS_LAMBDA_ROLE_ARN" ]; then
   exit 1
 fi
 
+# Ottieni l'account ID AWS
+AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+echo "📋 AWS Account ID: $AWS_ACCOUNT_ID"
+
 # Leggi la configurazione cron
 CRON_CONFIG="lambda-cron-config.json"
 if [ ! -f "$CRON_CONFIG" ]; then
@@ -122,20 +126,37 @@ HANDLER_EOF
     --schedule-expression "$schedule" \
     --region "$AWS_REGION" > /dev/null
   
+  # Ottieni l'ARN della Lambda
+  local lambda_arn="arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:${function_name}"
+  
   # Aggiungi permesso per EventBridge
   aws lambda add-permission \
     --function-name "$function_name" \
     --statement-id "${rule_name}-invoke" \
     --action lambda:InvokeFunction \
     --principal events.amazonaws.com \
-    --source-arn "arn:aws:events:${AWS_REGION}:*:rule/${rule_name}" \
+    --source-arn "arn:aws:events:${AWS_REGION}:${AWS_ACCOUNT_ID}:rule/${rule_name}" \
     --region "$AWS_REGION" 2>/dev/null || true
+  
+  # Crea file JSON temporaneo per i targets (evita problemi di escaping)
+  local targets_file=$(mktemp)
+  cat > "$targets_file" << EOF
+[
+  {
+    "Id": "1",
+    "Arn": "${lambda_arn}",
+    "Input": "{\"poller\":\"${poller_name}\"}"
+  }
+]
+EOF
   
   # Collega la rule alla Lambda
   aws events put-targets \
     --rule "$rule_name" \
-    --targets "Id=1,Arn=arn:aws:lambda:${AWS_REGION}:*:function:${function_name},Input={\"poller\":\"${poller_name}\"}" \
+    --targets "file://${targets_file}" \
     --region "$AWS_REGION" > /dev/null
+  
+  rm -f "$targets_file"
   
   echo "✅ Deployed $function_name with schedule $schedule"
 }
@@ -158,5 +179,6 @@ while IFS='|' read -r poller_name schedule; do
 done <<< "$pollers"
 
 echo "🎉 All Lambda functions deployed successfully!"
+
 
 
