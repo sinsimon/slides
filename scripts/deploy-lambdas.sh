@@ -45,50 +45,22 @@ deploy_lambda() {
   # Crea directory del package
   mkdir -p "$package_dir"
   
-  # Copia i file necessari
-  cp -r src/data/avacy/pollers "$package_dir/"
-  cp -r src/data/avacy/db "$package_dir/" 2>/dev/null || true
-  cp package.json "$package_dir/"
-  cp package-lock.json "$package_dir/" 2>/dev/null || true
-  cp tsconfig.json "$package_dir/" 2>/dev/null || true
+  # Compila TypeScript in un unico file JS usando esbuild
+  # Includiamo dotenv e aws-sdk come external se necessario, ma qui vogliamo tutto nel bundle
+  # tranne aws-sdk v3 che è già nel runtime lambda (ma parzialmente, meglio includere per sicurezza se usiamo client specifici)
+  # Per semplicità bundliamo tutto.
   
-  # Crea handler.js che usa tsx per eseguire TypeScript
-  cat > "$package_dir/handler.js" << 'HANDLER_EOF'
-import { execSync } from 'child_process';
-import path from 'path';
-import { fileURLToPath } from 'url';
+  npx esbuild src/data/avacy/pollers/lambda-handler.ts \
+    --bundle \
+    --platform=node \
+    --target=node18 \
+    --outfile="$package_dir/index.js" \
+    --format=cjs \
+    --external:@aws-sdk/* 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export const handler = async (event, context) => {
-  // Estrai il nome del poller dall'evento o dal nome della funzione
-  const pollerName = event.poller || process.env.POLLER_NAME || '';
-  
-  if (!pollerName) {
-    throw new Error('Missing poller name');
-  }
-  
-  // Usa tsx per eseguire il lambda-handler.ts
-  const handlerPath = path.join(__dirname, 'pollers', 'lambda-handler.ts');
-  const result = execSync(`npx tsx ${handlerPath}`, {
-    input: JSON.stringify({ poller: pollerName }),
-    encoding: 'utf-8',
-    env: { ...process.env, ...context }
-  });
-  
-  return JSON.parse(result);
-};
-HANDLER_EOF
-  
-  # Installa dipendenze di produzione
+  # Crea zip con solo il file compilato
   cd "$package_dir"
-  npm ci --production --ignore-scripts
-  cd - > /dev/null
-  
-  # Crea zip
-  cd "$package_dir"
-  zip -r "../${function_name}.zip" . -q
+  zip -r "../${function_name}.zip" index.js -q
   cd - > /dev/null
   
   echo "✅ Packaged $function_name"
@@ -109,6 +81,7 @@ HANDLER_EOF
 
     aws lambda update-function-configuration \
       --function-name "$function_name" \
+      --handler index.handler \
       --timeout 900 \
       --memory-size 1024 \
       --environment "Variables={AWS_S3_BUCKET=${AWS_S3_BUCKET},POLLER_NAME=${poller_name}}" \
@@ -119,7 +92,7 @@ HANDLER_EOF
       --function-name "$function_name" \
       --runtime nodejs18.x \
       --role "$AWS_LAMBDA_ROLE_ARN" \
-      --handler handler.handler \
+      --handler index.handler \
       --zip-file "fileb://lambda-packages/${function_name}.zip" \
       --timeout 900 \
       --memory-size 1024 \
