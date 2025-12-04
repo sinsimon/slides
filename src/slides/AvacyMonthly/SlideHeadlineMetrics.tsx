@@ -70,8 +70,6 @@ const WEBSPACES_COUNT_MAP: Record<string, number> = {
 	'Avacy Plus - 5 spazi web': 5,
 	'Avacy Plus - 15 spazi web': 15,
 	'Avacy Plus - 25 spazi web': 25,
-	'Avacy Plus - 15 spazi web': 15,
-	'Avacy Plus - 25 spazi web': 25,
 };
 
 export function SlideHeadlineMetrics() {

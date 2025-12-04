@@ -1,4 +1,4 @@
-import { cp, mkdir } from 'node:fs/promises';
+import { cp, mkdir, access } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -18,7 +18,22 @@ const mappings = [
   },
 ];
 
+async function pathExists(p) {
+  try {
+    await access(p);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function copyTree(from, to) {
+  const exists = await pathExists(from);
+  if (!exists) {
+    console.log(`[copy-data] Saltato ${path.relative(projectRoot, from)} (non esiste)`);
+    return;
+  }
+  
   await mkdir(path.dirname(to), { recursive: true });
   await cp(from, to, { recursive: true });
   console.log(`[copy-data] Copiato ${path.relative(projectRoot, from)} → ${path.relative(projectRoot, to)}`);
