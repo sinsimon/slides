@@ -5,9 +5,28 @@ export function buildDataUrl(relativePath: string): string {
   return `${normalizedBase}${normalizedPath}`;
 }
 
+/**
+ * Helper per fetch con cache-busting per evitare cache del browser/CloudFront
+ * Usa solo la data (giorno) invece del timestamp completo, così il browser
+ * ricarica i JSON una volta al giorno (allineato con l'esecuzione giornaliera dei pollers)
+ */
+export function fetchWithCacheBust(url: string): Promise<Response> {
+  // Usa solo la data (YYYY-MM-DD) invece del timestamp completo
+  // Questo permette al browser di ricaricare i JSON una volta al giorno
+  const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+  const cacheBuster = `?d=${today}`;
+  const urlWithBuster = url.includes('?') ? `${url}&d=${today}` : `${url}${cacheBuster}`;
+  return fetch(urlWithBuster, {
+    cache: 'no-cache',
+    headers: {
+      'Cache-Control': 'no-cache',
+    },
+  });
+}
+
 export async function loadJsonData<T>(relativePath: string): Promise<T> {
   const url = buildDataUrl(`data/${relativePath}`);
-  const response = await fetch(url);
+  const response = await fetchWithCacheBust(url);
   if (!response.ok) {
     throw new Error(`Failed to load JSON data from ${url}: ${response.status} ${response.statusText}`);
   }

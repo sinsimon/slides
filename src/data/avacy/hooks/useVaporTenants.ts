@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { buildDataUrl } from '../utils/assets';
+import { buildDataUrl, fetchWithCacheBust } from '../utils/assets';
 
 export type VaporTenant = {
   id: string;
@@ -24,7 +24,7 @@ export function useVaporTenants() {
     setLoading(true);
     setError(null);
 
-    fetch(DATA_URL)
+    fetchWithCacheBust(DATA_URL)
       .then(async (res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         // tenants.json è un array, non un oggetto payload { contacts: ... } come active campaign

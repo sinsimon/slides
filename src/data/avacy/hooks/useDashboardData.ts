@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { DashboardData, DashboardHistoryPoint, AccountEntity, PlanTier } from '../types';
 import { RawTenant, RawBillingEvent } from '../types/raw';
-import { buildDataUrl } from '../utils/assets';
+import { buildDataUrl, fetchWithCacheBust } from '../utils/assets';
 import { StripeNewSubscriptionPoint } from '../hooks/useNewSubscriptions';
 import { StripeCancellationPoint } from '../hooks/useCancellations';
 
@@ -29,11 +29,11 @@ export function useDashboardData() {
     setLoading(true);
 
     Promise.all([
-      fetch(VAPOR_TENANTS_URL).then(r => r.json()),
-      fetch(STRIPE_NEW_SUBS_URL).then(r => r.json()),
-      fetch(STRIPE_CANCELS_URL).then(r => r.json()),
-      fetch(MONDAY_NEW_SUBS_URL).then(r => r.json()),
-      fetch(MONDAY_CANCELS_URL).then(r => r.json())
+      fetchWithCacheBust(VAPOR_TENANTS_URL).then(r => r.json()),
+      fetchWithCacheBust(STRIPE_NEW_SUBS_URL).then(r => r.json()),
+      fetchWithCacheBust(STRIPE_CANCELS_URL).then(r => r.json()),
+      fetchWithCacheBust(MONDAY_NEW_SUBS_URL).then(r => r.json()),
+      fetchWithCacheBust(MONDAY_CANCELS_URL).then(r => r.json())
     ])
     .then(([vaporResp, stripeNewResp, stripeCancResp, mondayNewResp, mondayCancResp]) => {
       if (!cancelled) {

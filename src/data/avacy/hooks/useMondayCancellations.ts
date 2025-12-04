@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { buildDataUrl } from '../utils/assets';
+import { buildDataUrl, fetchWithCacheBust } from '../utils/assets';
 
 export type MondayCancellationPoint = {
 	date: string;
@@ -34,7 +34,7 @@ export function useMondayCancellations() {
 		let cancelled = false;
 		setLoading(true);
 		setError(null);
-		fetch(DATA_URL)
+		fetchWithCacheBust(DATA_URL)
 			.then(async (r) => {
 				if (!r.ok) throw new Error(`HTTP ${r.status}`);
 				return (await r.json()) as WrappedData<MondayCancellationPoint[]> | MondayCancellationPoint[];

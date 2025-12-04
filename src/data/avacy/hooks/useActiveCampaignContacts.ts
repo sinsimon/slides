@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { buildDataUrl } from '../utils/assets';
+import { buildDataUrl, fetchWithCacheBust } from '../utils/assets';
 
 export type ActiveCampaignContact = {
   id: string;
@@ -31,7 +31,7 @@ export function useActiveCampaignContacts() {
     setLoading(true);
     setError(null);
 
-    fetch(DATA_URL)
+    fetchWithCacheBust(DATA_URL)
       .then(async (res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return (await res.json()) as ActiveCampaignContactsPayload;

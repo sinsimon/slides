@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { buildDataUrl } from '../utils/assets';
+import { buildDataUrl, fetchWithCacheBust } from '../utils/assets';
 
 export type StripeCancellationPoint = {
 	date: string;
@@ -33,7 +33,7 @@ export function useCancellations() {
 		let cancelled = false;
 		setLoading(true);
 		setError(null);
-		fetch(buildDataUrl('data/avacy/json/stripe/cancellations.json'))
+		fetchWithCacheBust(buildDataUrl('data/avacy/json/stripe/cancellations.json'))
 			.then(async (r) => {
 				if (!r.ok) throw new Error(`HTTP ${r.status}`);
 				return (await r.json()) as WrappedData<StripeCancellationPoint[]> | StripeCancellationPoint[];
