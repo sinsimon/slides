@@ -32,13 +32,15 @@ export async function handler(event: { poller: string }, context: Context) {
 	if (groupKey && groupSecret) {
 		try {
 			// Create dummy .secret-fetcher file for secret-fetcher library requirement
-			if (!fs.existsSync('/tmp/.secret-fetcher')) {
-				fs.writeFileSync('/tmp/.secret-fetcher', '');
+			// Lambda filesystem is read-only, so we can only write to /tmp
+			const secretFetcherPath = '/tmp/.secret-fetcher';
+			if (!fs.existsSync(secretFetcherPath)) {
+				fs.writeFileSync(secretFetcherPath, '');
 			}
-			// Also try in current directory
-			if (!fs.existsSync('.secret-fetcher')) {
-				fs.writeFileSync('.secret-fetcher', '');
-			}
+			
+			// Change to /tmp directory temporarily since library looks for .secret-fetcher in current dir
+			const originalCwd = process.cwd();
+			process.chdir('/tmp');
 
 			console.log(`[Lambda] Fetching secrets for env: ${envName}...`);
 			const secrets = await getSecrets({
@@ -46,11 +48,21 @@ export async function handler(event: { poller: string }, context: Context) {
 				groupSecret,
 				env: envName
 			});
+			
+			// Restore original directory
+			process.chdir(originalCwd);
 
 			const envSecrets = secrets[envName];
 			if (envSecrets) {
 				console.log(`[Lambda] Secrets fetched successfully. Injecting into process.env...`);
-				Object.assign(process.env, envSecrets);
+				// Filter out AWS credentials - Lambda should use IAM role, not static credentials
+				const filteredSecrets = { ...envSecrets };
+				delete filteredSecrets.AWS_ACCESS_KEY_ID;
+				delete filteredSecrets.AWS_SECRET_ACCESS_KEY;
+				delete filteredSecrets.AWS_LAMBDA_ROLE_ARN; // Not needed at runtime
+				delete filteredSecrets.CLOUDFRONT_DISTRIBUTION_ID; // Not needed at runtime
+				Object.assign(process.env, filteredSecrets);
+				console.log(`[Lambda] Injected ${Object.keys(filteredSecrets).length} secrets (AWS credentials excluded)`);
 			} else {
 				console.warn(`[Lambda] No secrets found for env: ${envName}`);
 			}
