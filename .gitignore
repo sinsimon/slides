@@ -24,4 +24,3 @@ pnpm-debug.log*
 Thumbs.db
 .venv/
 src/data/avacy/json/*
-!src/data/avacy/json/rai/

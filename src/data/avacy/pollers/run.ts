@@ -18,7 +18,8 @@ type PollerName =
 	| 'active-campaign:contacts'
 	| 'vapor:tenants'
 	| 'vapor:users-funnel'
-	| 'vapor:leaderboard';
+	| 'vapor:leaderboard'
+	| 'rai:subscriptions';
 
 async function loadSecrets() {
 	const groupKey = process.env.GROUP_KEY;
@@ -141,6 +142,15 @@ async function runPoller(pollerName: PollerName, vars: Record<string, string>): 
 		return;
 	}
 
+	if (pollerName === 'rai:subscriptions') {
+		const { fetchRaiSubscriptions, fetchRaiCancellations } = await import('./rai/subscriptions');
+		const newSubs = await fetchRaiSubscriptions();
+		const cancellations = await fetchRaiCancellations();
+		saveJsonLocal('rai/new-subscriptions.json', newSubs);
+		saveJsonLocal('rai/cancellations.json', cancellations);
+		return;
+	}
+
 	throw new Error(`Unknown poller: ${pollerName}`);
 }
 
@@ -158,6 +168,7 @@ async function main() {
 		console.error('  - vapor:tenants');
 		console.error('  - vapor:users-funnel');
 		console.error('  - vapor:leaderboard');
+		console.error('  - rai:subscriptions');
 		console.error('\nOr use "all" to run all pollers');
 		process.exit(1);
 	}
@@ -174,6 +185,7 @@ async function main() {
 			'vapor:tenants',
 			'vapor:users-funnel',
 			'vapor:leaderboard',
+			'rai:subscriptions',
 		];
 
 		for (const poller of allPollers) {

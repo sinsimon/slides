@@ -11,7 +11,8 @@ type PollerName =
 	| 'active-campaign:contacts'
 	| 'vapor:tenants'
 	| 'vapor:users-funnel'
-	| 'vapor:leaderboard';
+	| 'vapor:leaderboard'
+	| 'rai:subscriptions';
 
 async function loadSecrets(groupKey: string, groupSecret: string, envName: string): Promise<Record<string, string>> {
 	console.log(`[Lambda] Fetching secrets for env: ${envName}...`);
@@ -144,6 +145,15 @@ async function runPoller(
 			STRIPE_API_KEY: vars.STRIPE_API_KEY,
 		});
 		await saveJsonS3('vapor/leaderboard.json', result, bucket, region);
+		return;
+	}
+
+	if (pollerName === 'rai:subscriptions') {
+		const { fetchRaiSubscriptions, fetchRaiCancellations } = await import('./rai/subscriptions');
+		const newSubs = await fetchRaiSubscriptions();
+		const cancellations = await fetchRaiCancellations();
+		await saveJsonS3('rai/new-subscriptions.json', newSubs, bucket, region);
+		await saveJsonS3('rai/cancellations.json', cancellations, bucket, region);
 		return;
 	}
 

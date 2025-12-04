@@ -27,6 +27,10 @@
     {
       "name": "vapor:leaderboard",
       "schedule": "cron(0 3 * * ? *)"
+    },
+    {
+      "name": "rai:subscriptions",
+      "schedule": "cron(0 3 * * ? *)"
     }
   ]
 }
