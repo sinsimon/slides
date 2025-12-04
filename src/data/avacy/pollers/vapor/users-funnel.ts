@@ -1,16 +1,6 @@
 import { createVaporPool } from '../../db/client';
 import { fetch } from 'undici';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
-
-function getEnv(name: string): string {
-	const value = process.env[name];
-	if (!value) {
-		throw new Error(`Missing required env var ${name}`);
-	}
-	return value;
-}
+import type { VaporPollVars } from './tenants';
 
 type TenantFunnelData = {
 	tenantId: string | null; // null per utenti senza tenant (usano email come ID)
@@ -85,9 +75,31 @@ function normalizePlanName(planName: string): string {
 	return planName; // Returns original name if no match
 }
 
-export async function fetchUsersFunnel(): Promise<void> {
-	const stripeApiKey = getEnv('STRIPE_API_KEY');
-	const pool = createVaporPool();
+export async function fetchUsersFunnel(vars: VaporPollVars): Promise<{
+	fetchedAt: string;
+	stats: {
+		total: number;
+		emailVerified: number;
+		hasTenant: number;
+		hasWebspace: number;
+		isNonFree: number;
+		conversionRates: {
+			emailVerification: string;
+			tenantCreation: string;
+			webspaceCreation: string;
+			nonFreeConversion: string;
+		};
+	};
+	tenants: TenantFunnelData[];
+}> {
+	const stripeApiKey = vars.STRIPE_API_KEY;
+	const pool = createVaporPool({
+		host: vars.VAPOR_RDS_HOST,
+		port: parseInt(vars.VAPOR_RDS_PORT, 10),
+		user: vars.VAPOR_RDS_USER,
+		password: vars.VAPOR_RDS_PASSWORD,
+		database: vars.VAPOR_RDS_DATABASE,
+	});
 
 	console.log('=== Vapor RDS: fetch users funnel data ===');
 
@@ -343,15 +355,7 @@ export async function fetchUsersFunnel(): Promise<void> {
 			tenants: funnelData,
 		};
 
-		const { saveJsonFile } = await import('../s3-utils');
-		await saveJsonFile('vapor/users-funnel.json', payload);
-		console.log(`✓ Saved ${funnelData.length} users funnel data`);
-		console.log(`\n📊 Statistiche:`);
-		console.log(`  Totale utenti: ${stats.total}`);
-		console.log(`  Email verificate: ${stats.emailVerified} (${((stats.emailVerified / stats.total) * 100).toFixed(1)}%)`);
-		console.log(`  Con tenant: ${stats.hasTenant} (${((stats.hasTenant / stats.total) * 100).toFixed(1)}%)`);
-		console.log(`  Con webspace: ${stats.hasWebspace} (${((stats.hasWebspace / stats.total) * 100).toFixed(1)}%)`);
-		console.log(`  Non free: ${stats.isNonFree} (${((stats.isNonFree / stats.total) * 100).toFixed(1)}%)`);
+		return payload;
 	} finally {
 		await pool.end();
 	}

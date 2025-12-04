@@ -33,18 +33,15 @@ function resolveSslOption(): VaporDbConfig['ssl'] {
 
 export function getVaporDbConfig(overrides: Partial<VaporDbConfig> = {}): VaporDbConfig {
 	const baseConfig: VaporDbConfig = {
-		host: requireEnv('VAPOR_RDS_HOST'),
-		port: Number(process.env.VAPOR_RDS_PORT ?? 3306),
-		user: requireEnv('VAPOR_RDS_USER'),
-		password: requireEnv('VAPOR_RDS_PASSWORD'),
-		database: requireEnv('VAPOR_RDS_DATABASE'),
-		ssl: resolveSslOption(),
+		host: overrides.host ?? requireEnv('VAPOR_RDS_HOST'),
+		port: overrides.port ?? Number(process.env.VAPOR_RDS_PORT ?? 3306),
+		user: overrides.user ?? requireEnv('VAPOR_RDS_USER'),
+		password: overrides.password ?? requireEnv('VAPOR_RDS_PASSWORD'),
+		database: overrides.database ?? requireEnv('VAPOR_RDS_DATABASE'),
+		ssl: overrides.ssl ?? resolveSslOption(),
 	};
 
-	return {
-		...baseConfig,
-		...overrides,
-	};
+	return baseConfig;
 }
 
 const READ_ONLY_PREFIXES = ['SELECT', 'SHOW', 'DESCRIBE', 'EXPLAIN', 'WITH'];

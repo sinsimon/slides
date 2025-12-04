@@ -1,12 +1,9 @@
 import { fetch } from 'undici';
 
-function getEnv(name: string): string {
-  const value = process.env[name];
-  if (!value) {
-    throw new Error(`Missing env ${name}`);
-  }
-  return value;
-}
+export type ActiveCampaignPollVars = {
+	ACTIVE_CAMPAIGN_API_URL: string;
+	ACTIVE_CAMPAIGN_API_KEY: string;
+};
 
 type ActiveCampaignMeta = {
   total?: number;
@@ -81,9 +78,14 @@ async function fetchPaginatedCollection<T extends Record<string, unknown>>(
   return results;
 }
 
-export async function fetchActiveCampaignContacts(): Promise<void> {
-  const baseUrl = getEnv('ACTIVE_CAMPAIGN_API_URL').replace(/\/$/, '');
-  const apiKey = getEnv('ACTIVE_CAMPAIGN_API_KEY');
+export async function fetchActiveCampaignContacts(vars: ActiveCampaignPollVars): Promise<{
+	fetchedAt: string;
+	total: number;
+	fields: Array<{ id: string; title?: string; type?: string }>;
+	contacts: Array<Record<string, unknown> & { customFields: Record<string, string> }>;
+}> {
+  const baseUrl = vars.ACTIVE_CAMPAIGN_API_URL.replace(/\/$/, '');
+  const apiKey = vars.ACTIVE_CAMPAIGN_API_KEY;
 
   console.log('=== ActiveCampaign: fetch contacts, fields & field values ===');
 
@@ -158,16 +160,12 @@ export async function fetchActiveCampaignContacts(): Promise<void> {
     type: field.type,
   }));
 
-  const payload = {
+  return {
     fetchedAt: new Date().toISOString(),
     total: contacts.length,
     fields: simplifiedFields,
     contacts: contactsWithCustom,
   };
-
-  const { saveJsonFile } = await import('../s3-utils');
-  await saveJsonFile('active-campaign/contacts.json', payload);
-  console.log(`Saved ${contacts.length} contacts (with custom fields)`);
 }
 
 export default fetchActiveCampaignContacts;

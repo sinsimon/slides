@@ -17,12 +17,6 @@ type MondayItem = {
   column_values: MondayColumnValue[];
 };
 
-function getEnv(name: string): string {
-  const v = process.env[name];
-  if (!v) throw new Error(`Missing env ${name}`);
-  return v;
-}
-
 // Minimal mapping helper: convert column_values array into an object keyed by column id with {text, value}
 function mapColumns(values: MondayColumnValue[]): Record<string, { text?: string | null; value?: string | null }> {
   const out: Record<string, { text?: string | null; value?: string | null }> = {};
@@ -32,8 +26,42 @@ function mapColumns(values: MondayColumnValue[]): Record<string, { text?: string
   return out;
 }
 
-export async function fetchEnterpriseAccounts(): Promise<void> {
-  const apiKey = getEnv('MONDAY_API_KEY');
+export type MondayPollVars = {
+	MONDAY_API_KEY: string;
+};
+
+export type MondayEnterpriseAccountsResult = {
+	'new-subscriptions': Array<{
+		date: string;
+		count: number;
+		totalAmountCents: number;
+		currency: string;
+		purchases: Array<{
+			email?: string;
+			subscriptionName?: string;
+			amountCents?: number;
+			currency?: string;
+			metadata?: Record<string, string>;
+		}>;
+	}>;
+	cancellations: Array<{
+		date: string;
+		count: number;
+		totalAmountCents: number;
+		currency: string;
+		cancellations: Array<{
+			email?: string;
+			subscriptionName?: string;
+			amountCents?: number;
+			canceledAt?: string;
+			currency?: string;
+			metadata?: Record<string, string>;
+		}>;
+	}>;
+};
+
+export async function fetchEnterpriseAccounts(vars: MondayPollVars): Promise<MondayEnterpriseAccountsResult> {
+  const apiKey = vars.MONDAY_API_KEY;
   // Board ID hardcoded per Enterprise Accounts
   const boardId = 3820670548;
 
@@ -515,34 +543,10 @@ export async function fetchEnterpriseAccounts(): Promise<void> {
   const newSubscriptions = Object.values(subscriptionsByDate).sort((a, b) => a.date.localeCompare(b.date));
   const cancellations = Object.values(cancellationsByDate).sort((a, b) => a.date.localeCompare(b.date));
 
-  // Salva i file JSON
-  const { saveJsonFile } = await import('../s3-utils');
-  await saveJsonFile('monday/new-subscriptions.json', newSubscriptions);
-  await saveJsonFile('monday/cancellations.json', cancellations);
-
-  console.log(`Saved ${newSubscriptions.length} new subscriptions to src/data/avacy/json/monday/new-subscriptions.json`);
-  console.log(`Saved ${cancellations.length} cancellations to src/data/avacy/json/monday/cancellations.json`);
-  
-  // Mostra alcuni esempi
-  if (newSubscriptions.length > 0) {
-    console.log(`\n=== ESEMPI NEW SUBSCRIPTIONS (${newSubscriptions.length} totali) ===`);
-    newSubscriptions.slice(0, 3).forEach((item) => {
-      console.log(`  - ${item.date}: ${item.count} subscription(s), ${(item.totalAmountCents / 100).toFixed(2)}€`);
-      if (item.purchases.length > 0) {
-        console.log(`    Customer: ${item.purchases[0].email || 'N/A'}, Plan: ${item.purchases[0].subscriptionName}`);
-      }
-    });
-  }
-  
-  if (cancellations.length > 0) {
-    console.log(`\n=== ESEMPI CANCELLATIONS (${cancellations.length} totali) ===`);
-    cancellations.slice(0, 3).forEach((item) => {
-      console.log(`  - ${item.date}: ${item.count} cancellation(s), ${(item.totalAmountCents / 100).toFixed(2)}€`);
-      if (item.cancellations.length > 0) {
-        console.log(`    Customer: ${item.cancellations[0].email || 'N/A'}, Plan: ${item.cancellations[0].subscriptionName}`);
-      }
-    });
-  }
+  return {
+    'new-subscriptions': newSubscriptions,
+    cancellations: cancellations,
+  };
 }
 
 export default fetchEnterpriseAccounts;

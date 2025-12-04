@@ -93,13 +93,15 @@ jobs:
           aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Deploy Lambda functions
+      - name: Build Lambda function
+        run: npm run lambda:build
+
+      - name: Deploy Lambda function
         env:
           AWS_S3_BUCKET: ${{ env.AWS_S3_BUCKET }}
           AWS_LAMBDA_ROLE_ARN: ${{ env.AWS_LAMBDA_ROLE_ARN }}
+          AWS_REGION: ${{ env.AWS_REGION }}
           GROUP_KEY: ${{ secrets.GROUP_KEY }}
           GROUP_SECRET: ${{ secrets.GROUP_SECRET }}
           SECRETS_ENV: production
-        run: |
-          chmod +x scripts/deploy-lambdas.sh
-          ./scripts/deploy-lambdas.sh
+        run: npm run lambda:deploy

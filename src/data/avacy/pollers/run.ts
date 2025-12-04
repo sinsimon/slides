@@ -1,139 +1,196 @@
 import * as dotenv from 'dotenv';
+// @ts-ignore
 import { getSecrets } from '@jumpgroup/secret-fetcher';
-import { writeFileSync, existsSync } from 'fs';
+import { writeFileSync, mkdirSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-// Carica env dalla root del progetto (default .env)
+// Carica env dalla root del progetto
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+type PollerName = 
+	| 'stripe:new-subscriptions'
+	| 'stripe:cancellations'
+	| 'monday:enterprise-accounts'
+	| 'active-campaign:contacts'
+	| 'vapor:tenants'
+	| 'vapor:users-funnel'
+	| 'vapor:leaderboard';
+
 async function loadSecrets() {
-  const groupKey = process.env.GROUP_KEY;
-  const groupSecret = process.env.GROUP_SECRET;
+	const groupKey = process.env.GROUP_KEY;
+	const groupSecret = process.env.GROUP_SECRET;
+	const envName = process.env.SECRETS_ENV || 'production';
 
-  if (groupKey && groupSecret) {
-    console.log('🔐 Loading secrets from @jumpgroup/secret-fetcher...');
-    
-    // Crea un file .secret-fetcher temporaneo se non esiste, necessario per la libreria
-    if (!existsSync('.secret-fetcher')) {
-      console.log('📝 Creating temporary .secret-fetcher file...');
-      writeFileSync('.secret-fetcher', `GROUP_KEY=${groupKey}\nGROUP_SECRET=${groupSecret}`);
-    }
+	if (!groupKey || !groupSecret) {
+		console.warn('⚠️  GROUP_KEY or GROUP_SECRET missing. Using process.env only.');
+		return {};
+	}
 
-    try {
-      const secrets = await getSecrets({
-        groupKey,
-        groupSecret,
-        // env: 'production' // Se omesso, ritorna tutti i secrets o mergedVariables
-      });
+	console.log('🔐 Loading secrets from @jumpgroup/secret-fetcher...');
 
-      // Appiattisci i secrets in process.env
-      // getSecrets ritorna un oggetto con i secrets, che potrebbero essere annidati per ambiente se `env` è specificato
-      // o un oggetto mergiato se no. Dalla lettura del codice sorgente della libreria:
-      // Se env non è specificato: result = mergedVariables; dove mergedVariables è { key: value, ... } (o { key: { ...props } })
-      // La libreria parsa il YAML nella nota.
-      
-      // Ispezioniamo la struttura ritornata.
-      // Se result è tipo { "VAPOR_RDS_HOST": { value: "..." }, ... } o direttamente { "VAPOR_RDS_HOST": "..." }
-      // Il codice sorgente faceva: itemProperties = yaml.loadAll(item.note)[0]; tagToObjectMap[newTag] = { ...itemProperties };
-      // Quindi tagToObjectMap è { "tag": { key: value, ... } }? No.
-      // result.forEach(item => item.tags.forEach(tag => ... tagToObjectMap[tag] = ... ))
-      // Quindi ritorna un oggetto dove le chiavi sono i tag (es. "production", "staging", o nomi delle app)
-      // e i valori sono gli oggetti definiti nel YAML della nota.
-      
-      // Assumiamo che ci sia un tag che corrisponde al nostro ambiente o "common".
-      // O che vogliamo caricare tutto.
-      
-      // Se il segreto è salvato con tag "avacy" o simile.
-      // Proviamo a stampare le chiavi disponibili se non sappiamo cosa c'è.
-      
-      // Per ora proviamo a fare merge di tutto quello che troviamo nel primo livello che sembra una variabile d'ambiente
-      
-      Object.entries(secrets).forEach(([key, value]) => {
-        if (typeof value === 'object' && value !== null) {
-           // Probabilmente un raggruppamento per ambiente/tag
-           Object.entries(value).forEach(([subKey, subValue]) => {
-             if (typeof subValue === 'string' || typeof subValue === 'number') {
-               process.env[subKey] = String(subValue);
-             }
-           });
-        } else if (typeof value === 'string' || typeof value === 'number') {
-           process.env[key] = String(value);
-        }
-      });
-      
-      console.log('✅ Secrets loaded into process.env');
-      
-    } catch (e) {
-      console.warn('⚠️ Failed to load secrets:', e);
-    }
-  } else {
-    console.warn('⚠️ GROUP_KEY or GROUP_SECRET missing in .env. Skipping secret fetch.');
-  }
+	// Crea file .secret-fetcher se necessario
+	const secretFetcherPath = join(process.cwd(), '.secret-fetcher');
+	try {
+		writeFileSync(secretFetcherPath, '');
+	} catch (e) {
+		// Ignora se già esiste
+	}
+
+	try {
+		const secrets = await getSecrets({
+			groupKey,
+			groupSecret,
+			env: envName,
+		});
+
+		const envSecrets = secrets[envName] || {};
+		console.log(`✅ Loaded ${Object.keys(envSecrets).length} secrets`);
+		return envSecrets;
+	} catch (e) {
+		console.warn('⚠️  Failed to load secrets:', e);
+		return {};
+	}
+}
+
+function saveJsonLocal(relativePath: string, data: unknown): void {
+	const outputPath = join(process.cwd(), 'src', 'data', 'avacy', 'json', relativePath);
+	const outputDir = dirname(outputPath);
+	mkdirSync(outputDir, { recursive: true });
+	writeFileSync(outputPath, JSON.stringify(data, null, 2), 'utf8');
+	console.log(`✓ Saved: ${relativePath}`);
+}
+
+async function runPoller(pollerName: PollerName, vars: Record<string, string>): Promise<void> {
+	console.log(`\n🚀 Running poller: ${pollerName}`);
+
+	if (pollerName === 'stripe:new-subscriptions') {
+		const { fetchNewSubscriptions } = await import('./stripe');
+		const result = await fetchNewSubscriptions({ STRIPE_API_KEY: vars.STRIPE_API_KEY });
+		saveJsonLocal('stripe/new-subscriptions.json', result);
+		return;
+	}
+
+	if (pollerName === 'stripe:cancellations') {
+		const { fetchCancellations } = await import('./stripe');
+		const result = await fetchCancellations({ STRIPE_API_KEY: vars.STRIPE_API_KEY });
+		saveJsonLocal('stripe/cancellations.json', result);
+		return;
+	}
+
+	if (pollerName === 'monday:enterprise-accounts') {
+		const { fetchEnterpriseAccounts } = await import('./monday/enterprise-accounts');
+		const result = await fetchEnterpriseAccounts({ MONDAY_API_KEY: vars.MONDAY_API_KEY });
+		saveJsonLocal('monday/new-subscriptions.json', result['new-subscriptions']);
+		saveJsonLocal('monday/cancellations.json', result.cancellations);
+		return;
+	}
+
+	if (pollerName === 'active-campaign:contacts') {
+		const { fetchActiveCampaignContacts } = await import('./active-campaign/contacts');
+		const result = await fetchActiveCampaignContacts({
+			ACTIVE_CAMPAIGN_API_URL: vars.ACTIVE_CAMPAIGN_API_URL,
+			ACTIVE_CAMPAIGN_API_KEY: vars.ACTIVE_CAMPAIGN_API_KEY,
+		});
+		saveJsonLocal('active-campaign/contacts.json', result);
+		return;
+	}
+
+	if (pollerName === 'vapor:tenants') {
+		const { fetchVaporTenants } = await import('./vapor/tenants');
+		const result = await fetchVaporTenants({
+			VAPOR_RDS_HOST: vars.VAPOR_RDS_HOST,
+			VAPOR_RDS_PORT: vars.VAPOR_RDS_PORT || '3306',
+			VAPOR_RDS_USER: vars.VAPOR_RDS_USER,
+			VAPOR_RDS_PASSWORD: vars.VAPOR_RDS_PASSWORD,
+			VAPOR_RDS_DATABASE: vars.VAPOR_RDS_DATABASE,
+			STRIPE_API_KEY: vars.STRIPE_API_KEY,
+		});
+		saveJsonLocal('vapor/tenants.json', result);
+		return;
+	}
+
+	if (pollerName === 'vapor:users-funnel') {
+		const { fetchUsersFunnel } = await import('./vapor/users-funnel');
+		const result = await fetchUsersFunnel({
+			VAPOR_RDS_HOST: vars.VAPOR_RDS_HOST,
+			VAPOR_RDS_PORT: vars.VAPOR_RDS_PORT || '3306',
+			VAPOR_RDS_USER: vars.VAPOR_RDS_USER,
+			VAPOR_RDS_PASSWORD: vars.VAPOR_RDS_PASSWORD,
+			VAPOR_RDS_DATABASE: vars.VAPOR_RDS_DATABASE,
+			STRIPE_API_KEY: vars.STRIPE_API_KEY,
+		});
+		saveJsonLocal('vapor/users-funnel.json', result);
+		return;
+	}
+
+	if (pollerName === 'vapor:leaderboard') {
+		const { fetchLeaderboard } = await import('./vapor/leaderboard');
+		const result = await fetchLeaderboard({
+			VAPOR_RDS_HOST: vars.VAPOR_RDS_HOST,
+			VAPOR_RDS_PORT: vars.VAPOR_RDS_PORT || '3306',
+			VAPOR_RDS_USER: vars.VAPOR_RDS_USER,
+			VAPOR_RDS_PASSWORD: vars.VAPOR_RDS_PASSWORD,
+			VAPOR_RDS_DATABASE: vars.VAPOR_RDS_DATABASE,
+			STRIPE_API_KEY: vars.STRIPE_API_KEY,
+		});
+		saveJsonLocal('vapor/leaderboard.json', result);
+		return;
+	}
+
+	throw new Error(`Unknown poller: ${pollerName}`);
 }
 
 async function main() {
-  await loadSecrets();
+	const args = process.argv.slice(2);
+	const pollerArg = args[0];
 
-  const arg = process.argv[2] || '';
-  if (!arg) {
-    console.error('Usage: npm run poll -- <poller[:task]>');
-    process.exit(1);
-  }
+	if (!pollerArg) {
+		console.error('Usage: npm run poll -- <poller-name>');
+		console.error('Available pollers:');
+		console.error('  - stripe:new-subscriptions');
+		console.error('  - stripe:cancellations');
+		console.error('  - monday:enterprise-accounts');
+		console.error('  - active-campaign:contacts');
+		console.error('  - vapor:tenants');
+		console.error('  - vapor:users-funnel');
+		console.error('  - vapor:leaderboard');
+		console.error('\nOr use "all" to run all pollers');
+		process.exit(1);
+	}
 
-  // Mapping poller
-  if (arg === 'stripe:new-subscriptions') {
-    const { fetchNewSubscriptions } = await import('./stripe');
-    await fetchNewSubscriptions();
-    console.log('Done: stripe:new-subscriptions');
-    return;
-  }
+	const secrets = await loadSecrets();
+	const vars = { ...process.env, ...secrets } as Record<string, string>;
 
-  if (arg === 'stripe:cancellations') {
-    const { fetchCancellations } = await import('./stripe');
-    await fetchCancellations();
-    console.log('Done: stripe:cancellations');
-    return;
-  }
+	if (pollerArg === 'all') {
+		const allPollers: PollerName[] = [
+			'stripe:new-subscriptions',
+			'stripe:cancellations',
+			'monday:enterprise-accounts',
+			'active-campaign:contacts',
+			'vapor:tenants',
+			'vapor:users-funnel',
+			'vapor:leaderboard',
+		];
 
-  if (arg === 'monday:enterprise-accounts') {
-    const { fetchEnterpriseAccounts } = await import('./monday/enterprise-accounts');
-    await fetchEnterpriseAccounts();
-    console.log('Done: monday:enterprise-accounts');
-    return;
-  }
+		for (const poller of allPollers) {
+			try {
+				await runPoller(poller, vars);
+			} catch (e) {
+				console.error(`❌ Error running ${poller}:`, e);
+			}
+		}
+	} else {
+		await runPoller(pollerArg as PollerName, vars);
+	}
 
-  if (arg === 'active-campaign:contacts') {
-    const { fetchActiveCampaignContacts } = await import('./active-campaign/contacts');
-    await fetchActiveCampaignContacts();
-    console.log('Done: active-campaign:contacts');
-    return;
-  }
-
-  if (arg === 'vapor:tenants') {
-    const { fetchVaporTenants } = await import('./vapor/tenants');
-    await fetchVaporTenants();
-    console.log('Done: vapor:tenants');
-    return;
-  }
-
-  if (arg === 'vapor:users-funnel') {
-    const { fetchUsersFunnel } = await import('./vapor/users-funnel');
-    await fetchUsersFunnel();
-    console.log('Done: vapor:users-funnel');
-    return;
-  }
-
-  if (arg === 'vapor:leaderboard') {
-    const { fetchLeaderboard } = await import('./vapor/leaderboard');
-    await fetchLeaderboard();
-    console.log('Done: vapor:leaderboard');
-    return;
-  }
-
-  console.error(`Poller sconosciuto: ${arg}`);
-  process.exit(1);
+	console.log('\n✅ Done!');
 }
 
 main().catch((e) => {
-  console.error(e);
-  process.exit(1);
+	console.error(e);
+	process.exit(1);
 });

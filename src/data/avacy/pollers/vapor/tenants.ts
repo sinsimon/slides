@@ -1,17 +1,15 @@
 import { fetch } from 'undici';
 import { createVaporPool } from '../../db/client';
-import * as dotenv from 'dotenv';
 import { Pool } from 'mysql2/promise';
 
-dotenv.config();
-
-function getEnv(name: string): string {
-	const value = process.env[name];
-	if (!value) {
-		throw new Error(`Missing env ${name}`);
-	}
-	return value;
-}
+export type VaporPollVars = {
+	VAPOR_RDS_HOST: string;
+	VAPOR_RDS_PORT: string;
+	VAPOR_RDS_USER: string;
+	VAPOR_RDS_PASSWORD: string;
+	VAPOR_RDS_DATABASE: string;
+	STRIPE_API_KEY: string;
+};
 
 type StripePrice = {
 	id: string;
@@ -102,9 +100,24 @@ async function fetchTenantDomains(pool: Pool, dbName: string): Promise<{ count: 
     }
 }
 
-export async function fetchVaporTenants(): Promise<void> {
-	const stripeApiKey = getEnv('STRIPE_API_KEY');
-	const pool = createVaporPool();
+export async function fetchVaporTenants(vars: VaporPollVars): Promise<Array<{
+	id: string;
+	createdAt: string | null;
+	name: string;
+	email: string | null;
+	plan: string;
+	hasOnlyTestMail: boolean;
+	webspaces: { count: number; names: string | null };
+	users: { count: number };
+}>> {
+	const stripeApiKey = vars.STRIPE_API_KEY;
+	const pool = createVaporPool({
+		host: vars.VAPOR_RDS_HOST,
+		port: parseInt(vars.VAPOR_RDS_PORT, 10),
+		user: vars.VAPOR_RDS_USER,
+		password: vars.VAPOR_RDS_PASSWORD,
+		database: vars.VAPOR_RDS_DATABASE,
+	});
 
 	console.log('=== Vapor RDS: fetch tenants ===');
 
@@ -233,9 +246,7 @@ export async function fetchVaporTenants(): Promise<void> {
 			};
 		});
 
-		const { saveJsonFile } = await import('../s3-utils');
-		await saveJsonFile('vapor/tenants.json', cleanTenants);
-		console.log(`✓ Saved ${cleanTenants.length} tenants`);
+		return cleanTenants;
 	} finally {
 		await pool.end();
 	}

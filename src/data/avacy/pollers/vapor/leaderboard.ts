@@ -1,33 +1,54 @@
-
 import { createVaporPool } from '../../db/client';
-import { saveJsonFile } from '../../pollers/s3-utils';
+import type { VaporPollVars } from './tenants';
 
-export async function fetchLeaderboard(): Promise<void> {
-	const pool = createVaporPool();
+export async function fetchLeaderboard(vars: VaporPollVars): Promise<Array<{
+	domain: string;
+	visits: number;
+	request_percentage: number;
+	month: number;
+	year: number;
+	tenant_id: string | null;
+}>> {
+	const pool = createVaporPool({
+		host: vars.VAPOR_RDS_HOST,
+		port: parseInt(vars.VAPOR_RDS_PORT, 10),
+		user: vars.VAPOR_RDS_USER,
+		password: vars.VAPOR_RDS_PASSWORD,
+		database: vars.VAPOR_RDS_DATABASE,
+	});
 
 	console.log('=== Vapor RDS: fetch domain leaderboard ===');
 
 	try {
 		const [rows] = await pool.query(`
 			SELECT 
-                domain_url as domain,
-                request_count as visits,
-                request_percentage,
-                month,
-                year,
-                tenant_id
-			FROM vapor.domain_leaderboard 
-			ORDER BY year DESC, month DESC, request_count DESC
+                dl.domain_url as domain,
+                dl.request_count as visits,
+                dl.request_percentage,
+                dl.month,
+                dl.year,
+                -- Usa solo il tenant_id dalla tabella domains (più affidabile)
+                -- Se non c'è match, usa NULL e lascia che il componente SlideLeaderboard
+                -- faccia il matching per dominio nei webspaces
+                d.tenant_id as tenant_id
+			FROM vapor.domain_leaderboard dl
+			LEFT JOIN domains d ON (
+				-- Normalizza i domini per il matching: rimuovi protocollo, www, trailing slash e path
+				-- Estrai il dominio base (senza subdomain) per il matching
+				SUBSTRING_INDEX(
+					LOWER(TRIM(REPLACE(REPLACE(REPLACE(REPLACE(dl.domain_url, 'https://', ''), 'http://', ''), 'www.', ''), '/', ''))),
+					'/',
+					1
+				) = SUBSTRING_INDEX(
+					LOWER(TRIM(REPLACE(REPLACE(REPLACE(REPLACE(d.domain, 'https://', ''), 'http://', ''), 'www.', ''), '/', ''))),
+					'/',
+					1
+				)
+			)
+			ORDER BY dl.year DESC, dl.month DESC, dl.request_count DESC
 		`) as any[];
 
-		console.log(`Fetched ${rows.length} leaderboard entries`);
-
-		if (rows.length > 0) {
-			console.log('Sample row:', rows[0]);
-		}
-
-		await saveJsonFile('vapor/leaderboard.json', rows);
-		console.log(`✓ Saved leaderboard data`);
+		return rows;
 	} finally {
 		await pool.end();
 	}

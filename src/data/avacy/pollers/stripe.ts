@@ -1,9 +1,4 @@
 import { fetch } from 'undici';
-import * as dotenv from 'dotenv';
-import { saveJsonFile } from './s3-utils';
-
-// carica env dalla root (.env)
-dotenv.config();
 
 export type StripeNewSubscriptionPoint = {
 	date: string;
@@ -19,14 +14,12 @@ export type StripeNewSubscriptionPoint = {
 	}>;
 };
 
-function getEnv(name: string): string {
-	const v = process.env[name];
-	if (!v) throw new Error(`Missing env ${name}`);
-	return v;
-}
+export type StripePollVars = {
+	STRIPE_API_KEY: string;
+};
 
-export async function fetchNewSubscriptions(): Promise<void> {
-    const key = getEnv('STRIPE_API_KEY');
+export async function fetchNewSubscriptions(vars: StripePollVars): Promise<StripeNewSubscriptionPoint[]> {
+    const key = vars.STRIPE_API_KEY;
     // Data di inizio hardcoded
     const fromIso = '2020-01-01';
     const last365 = new Date(`${fromIso}T00:00:00Z`);
@@ -124,7 +117,7 @@ export async function fetchNewSubscriptions(): Promise<void> {
 			purchases: purchasesByDate[d] ?? [],
 		}));
 
-	await saveJsonFile('stripe/new-subscriptions.json', series);
+	return series;
 }
 
 export type StripeCancellationPoint = {
@@ -143,8 +136,8 @@ export type StripeCancellationPoint = {
     }>;
 };
 
-export async function fetchCancellations(): Promise<void> {
-    const key = getEnv('STRIPE_API_KEY');
+export async function fetchCancellations(vars: StripePollVars): Promise<StripeCancellationPoint[]> {
+    const key = vars.STRIPE_API_KEY;
     const fromIso = '2020-01-01';
     const fromDate = new Date(`${fromIso}T00:00:00Z`);
 
@@ -265,7 +258,7 @@ export async function fetchCancellations(): Promise<void> {
             cancellations: cancellationsByDate[d] ?? [],
         }));
 
-    await saveJsonFile('stripe/cancellations.json', series);
+    return series;
 }
 
 
