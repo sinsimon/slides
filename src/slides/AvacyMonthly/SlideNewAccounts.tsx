@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import { SlideTitle, Nav } from '@components';
+import { SlideTitle, Nav, SourceLabel } from '@components';
 import styles from '../../components/DataTable.module.css';
 import { useActiveCampaignContacts } from '../../data/avacy/hooks/useActiveCampaignContacts';
+import { useFileLastModified } from '../../data/avacy/hooks/useFileLastModified';
 
 const PRESETS = [
   { label: 'Ultimi 30 giorni', days: 30 },
@@ -95,6 +96,8 @@ type AccountEntry = {
 
 export function SlideNewAccounts() {
   const { data, loading } = useActiveCampaignContacts();
+  const sourceUrls = ['avacy/json/active-campaign/contacts.json'];
+  const lastUpdated = useFileLastModified(sourceUrls);
   const [fromDate, setFromDate] = useState(() => {
     const d = new Date();
     d.setUTCDate(d.getUTCDate() - 30);
@@ -236,7 +239,12 @@ export function SlideNewAccounts() {
         <header className="bar" style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16 }}>
           <div>
             <SlideTitle>Nuovi Account</SlideTitle>
-            <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 4 }}>(fonte: ActiveCampaign)</div>
+            <SourceLabel 
+              label="ActiveCampaign"
+              sources={[
+                { label: 'ActiveCampaign - Contatti', url: 'data/avacy/json/active-campaign/contacts.json', lastUpdated: lastUpdated['avacy/json/active-campaign/contacts.json'] || undefined }
+              ]}
+            />
           </div>
           <Nav />
         </header>

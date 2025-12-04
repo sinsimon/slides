@@ -132,26 +132,24 @@ export async function fetchVaporTenants(): Promise<void> {
 				-- Domini centrali (opzionali, manteniamo per backward compatibility o info extra)
 				GROUP_CONCAT(DISTINCT d.domain ORDER BY d.domain SEPARATOR ', ') as central_domains,
 				-- Users Count (dal DB centrale)
-				(SELECT COUNT(*) FROM users_teams ut WHERE ut.tenant_id = t.id) as users_count
+				(SELECT COUNT(*) FROM users_teams ut WHERE ut.tenant_id = t.id) as users_count,
+				-- Tutte le email del tenant (per calcolare hasOnlyTestMail)
+				GROUP_CONCAT(DISTINCT u.email ORDER BY u.email SEPARATOR ', ') as all_emails
 			FROM tenants t
 			LEFT JOIN subscriptions s ON s.tenant_id = t.id AND s.stripe_status != 'canceled'
 			LEFT JOIN domains d ON d.tenant_id = t.id
+			LEFT JOIN users_teams uteam ON uteam.tenant_id = t.id
+			LEFT JOIN users u ON u.id = uteam.user_id AND u.email IS NOT NULL AND u.email != ''
 			GROUP BY t.id, t.created_at, t.data->>'$.tenancy_db_name', t.data->>'$.first_name', t.data->>'$.last_name', t.data->>'$.business_name', t.data->>'$.bundle_limits', s.id, s.stripe_price, s.stripe_status
 			ORDER BY t.created_at DESC
 		`) as any[];
 
-        // Filtra tenant di test (@jumpgroup.it e @avacysolution.com)
-        const filteredTenants = tenants.filter((t: any) => {
-            const email = t.email || '';
-            return !email.endsWith('@jumpgroup.it') && !email.endsWith('@avacysolution.com');
-        });
-
-		console.log(`Total tenants (after filter): ${filteredTenants.length}`);
+		console.log(`Total tenants: ${tenants.length}`);
 
 		// 2. Fetch Piani Stripe (Cache & Parallel)
 		const priceToPlan = new Map<string, string>();
 		const uniquePrices = new Set<string>();
-		filteredTenants.forEach((t: any) => {
+		tenants.forEach((t: any) => {
 			if (t.stripe_price && t.stripe_status === 'active') {
 				uniquePrices.add(t.stripe_price);
 			}
@@ -174,8 +172,8 @@ export async function fetchVaporTenants(): Promise<void> {
         
         // Batch concurrency per DB queries
         const BATCH_SIZE = 20;
-        for (let i = 0; i < filteredTenants.length; i += BATCH_SIZE) {
-            const batch = filteredTenants.slice(i, i + BATCH_SIZE);
+        for (let i = 0; i < tenants.length; i += BATCH_SIZE) {
+            const batch = tenants.slice(i, i + BATCH_SIZE);
             await Promise.all(batch.map(async (t: any) => {
                 if (t.db_name) {
                     const res = await fetchTenantDomains(pool, t.db_name);
@@ -183,13 +181,13 @@ export async function fetchVaporTenants(): Promise<void> {
                 }
             }));
             // Piccolo delay per non saturare connessioni se necessario, ma con 5 conn limit nel pool mysql2 gestisce la coda
-            if (i % 100 === 0) console.log(`Processati ${i}/${filteredTenants.length} DB...`);
+            if (i % 100 === 0) console.log(`Processati ${i}/${tenants.length} DB...`);
         }
         console.log('✓ Webspaces fetch complete');
 
 
 		// 4. Costruzione Output Finale
-		const cleanTenants = filteredTenants.map((tenant: any) => {
+		const cleanTenants = tenants.map((tenant: any) => {
 			let plan = 'Free';
 			if (tenant.bundle_limits) {
 				plan = 'Enterprise';
@@ -203,12 +201,27 @@ export async function fetchVaporTenants(): Promise<void> {
             
             const webData = webspacesMap.get(tenant.tenant_id) || { count: 0, names: null };
 
+			// Calcola hasOnlyTestMail: true solo se OGNI email è di test
+			const allEmails = tenant.all_emails 
+				? tenant.all_emails.split(',').map((e: string) => e.trim()).filter((e: string) => e)
+				: [];
+			
+			// Se non ci sono email, considera false (non è un tenant di test)
+			let hasOnlyTestMail = false;
+			if (allEmails.length > 0) {
+				// Controlla che TUTTE le email siano di test
+				hasOnlyTestMail = allEmails.every((email: string) => 
+					email.endsWith('@jumpgroup.it') || email.endsWith('@avacysolution.com')
+				);
+			}
+
 			return {
 				id: tenant.tenant_id,
 				createdAt: tenant.tenant_created_at ? new Date(tenant.tenant_created_at).toISOString() : null,
 				name: name,
 				email: tenant.email || null,
 				plan: plan,
+				hasOnlyTestMail: hasOnlyTestMail,
 				// domains rimosso
                 webspaces: {
                     count: webData.count,

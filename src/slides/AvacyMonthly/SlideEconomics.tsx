@@ -14,6 +14,7 @@ import {
 import { SlideTitle, Nav, SourceLabel } from '@components';
 import styles from '../../components/DataTable.module.css';
 import { useDashboardData } from '../../data/avacy/hooks/useDashboardData';
+import { useFileLastModified } from '../../data/avacy/hooks/useFileLastModified';
 import { PlanTier } from '../../data/avacy/types';
 
 const COLORS: Record<PlanTier, string> = {
@@ -29,8 +30,17 @@ function formatCurrency(cents: number) {
 }
 
 export function SlideEconomics() {
-  const { data, loading, error, lastUpdated } = useDashboardData();
+  const { data, loading, error } = useDashboardData();
   const [timeRange, setTimeRange] = useState<number>(90); // Default ultimi 90 giorni
+  
+  const sourceUrls = [
+    'avacy/json/vapor/tenants.json',
+    'avacy/json/stripe/new-subscriptions.json',
+    'avacy/json/stripe/cancellations.json',
+    'avacy/json/monday/new-subscriptions.json',
+    'avacy/json/monday/cancellations.json'
+  ];
+  const lastUpdated = useFileLastModified(sourceUrls);
 
   const filteredHistory = useMemo(() => {
     if (!data) return [];
@@ -77,11 +87,11 @@ export function SlideEconomics() {
           <SourceLabel 
             label="Stripe + Monday + DB"
             sources={[
-              { label: 'Tenants (DB)', url: 'data/avacy/json/vapor/tenants.json', lastUpdated: lastUpdated?.['vapor-tenants'] },
-              { label: 'Stripe - Nuove Sottoscrizioni', url: 'data/avacy/json/stripe/new-subscriptions.json', lastUpdated: lastUpdated?.['stripe-new-subscriptions'] },
-              { label: 'Stripe - Cancellazioni', url: 'data/avacy/json/stripe/cancellations.json', lastUpdated: lastUpdated?.['stripe-cancellations'] },
-              { label: 'Monday - Nuove Sottoscrizioni', url: 'data/avacy/json/monday/new-subscriptions.json', lastUpdated: lastUpdated?.['monday-new-subscriptions'] },
-              { label: 'Monday - Cancellazioni', url: 'data/avacy/json/monday/cancellations.json', lastUpdated: lastUpdated?.['monday-cancellations'] }
+              { label: 'Tenants (DB)', url: 'data/avacy/json/vapor/tenants.json', lastUpdated: lastUpdated['avacy/json/vapor/tenants.json'] || undefined },
+              { label: 'Stripe - Nuove Sottoscrizioni', url: 'data/avacy/json/stripe/new-subscriptions.json', lastUpdated: lastUpdated['avacy/json/stripe/new-subscriptions.json'] || undefined },
+              { label: 'Stripe - Cancellazioni', url: 'data/avacy/json/stripe/cancellations.json', lastUpdated: lastUpdated['avacy/json/stripe/cancellations.json'] || undefined },
+              { label: 'Monday - Nuove Sottoscrizioni', url: 'data/avacy/json/monday/new-subscriptions.json', lastUpdated: lastUpdated['avacy/json/monday/new-subscriptions.json'] || undefined },
+              { label: 'Monday - Cancellazioni', url: 'data/avacy/json/monday/cancellations.json', lastUpdated: lastUpdated['avacy/json/monday/cancellations.json'] || undefined }
             ]}
           />
         </div>

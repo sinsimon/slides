@@ -18,6 +18,7 @@ body {
     radial-gradient(900px 600px at 32% 25%, rgba(255, 90, 72, 0.35) 0%, rgba(255, 122, 60, 0.18) 30%, transparent 60%),
     radial-gradient(700px 500px at 80% -10%, rgba(255, 90, 72, 0.25) 0%, transparent 55%),
     var(--bg);
+  background-attachment: fixed;
 }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }

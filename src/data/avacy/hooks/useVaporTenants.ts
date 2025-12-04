@@ -1,27 +1,21 @@
 import { useEffect, useState } from 'react';
 import { buildDataUrl } from '../utils/assets';
 
-export type VaporTenantContact = {
+export type VaporTenant = {
   id: string;
-  cdate: string;
-  email: string;
-  firstName?: string | null;
-  lastName?: string | null;
-  customFields?: Record<string, string>;
-  [key: string]: any;
-};
-
-export type VaporTenantsPayload = {
-  fetchedAt: string;
-  total: number;
-  fields: Array<{ id: string; title?: string; type?: string }>;
-  contacts: VaporTenantContact[];
+  name: string;
+  email?: string;
+  plan: string;
+  hasOnlyTestMail?: boolean;
+  webspaces?: { count: number; names: string | null };
+  users?: { count: number };
+  createdAt?: string;
 };
 
 const DATA_URL = buildDataUrl('data/avacy/json/vapor/tenants.json');
 
 export function useVaporTenants() {
-  const [data, setData] = useState<VaporTenantsPayload | null>(null);
+  const [tenants, setTenants] = useState<VaporTenant[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -33,10 +27,11 @@ export function useVaporTenants() {
     fetch(DATA_URL)
       .then(async (res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return (await res.json()) as VaporTenantsPayload;
+        // tenants.json è un array, non un oggetto payload { contacts: ... } come active campaign
+        return (await res.json()) as VaporTenant[];
       })
       .then((payload) => {
-        if (!cancelled) setData(payload);
+        if (!cancelled) setTenants(payload);
       })
       .catch((err) => {
         if (!cancelled) setError(err as Error);
@@ -50,6 +45,6 @@ export function useVaporTenants() {
     };
   }, []);
 
-  return { data, loading, error } as const;
+  return { tenants, loading, error } as const;
 }
 

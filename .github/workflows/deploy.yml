@@ -4,102 +4,84 @@ on:
   push:
     branches: [master, main]
     paths:
-      - "src/**"
-      - "scripts/**"
-      - "package.json"
-      - "package-lock.json"
-      - "vite.config.ts"
-      - "lambda-cron-config.json"
-      - ".github/workflows/deploy.yml"
+      - 'src/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.ts'
+      - 'lambda-cron-config.json'
+      - '.github/workflows/deploy.yml'
 
 jobs:
   deploy-frontend:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "."
+        working-directory: '.'
     steps:
       - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: "npm"
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Fetch Build Secrets
-        env:
-          GROUP_KEY: ${{ secrets.GROUP_KEY }}
-          GROUP_SECRET: ${{ secrets.GROUP_SECRET }}
-          SECRETS_ENV: production
-        run: npx tsx scripts/fetch-build-secrets.ts
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
 
       - name: Build frontend
         run: npm run build
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist s3://${{ env.AWS_S3_BUCKET }} --delete --exclude "data/*"
+          aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude "data/*"
 
       - name: Invalidate CloudFront
-        if: env.CLOUDFRONT_DISTRIBUTION_ID != ''
         continue-on-error: true
         uses: chetan/invalidate-cloudfront-action@v2
         env:
-          DISTRIBUTION: ${{ env.CLOUDFRONT_DISTRIBUTION_ID }}
+          DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
           PATHS: "/*"
-          AWS_REGION: "${{ env.AWS_REGION }}"
-          AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "${{ secrets.AWS_REGION }}"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   deploy-lambdas:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "."
+        working-directory: '.'
     steps:
       - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: "npm"
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Fetch Build Secrets
-        env:
-          GROUP_KEY: ${{ secrets.GROUP_KEY }}
-          GROUP_SECRET: ${{ secrets.GROUP_SECRET }}
-          SECRETS_ENV: production
-        run: npx tsx scripts/fetch-build-secrets.ts
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
-
       - name: Deploy Lambda functions
         env:
-          AWS_S3_BUCKET: ${{ env.AWS_S3_BUCKET }}
-          AWS_LAMBDA_ROLE_ARN: ${{ env.AWS_LAMBDA_ROLE_ARN }}
-          GROUP_KEY: ${{ secrets.GROUP_KEY }}
-          GROUP_SECRET: ${{ secrets.GROUP_SECRET }}
-          SECRETS_ENV: production
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_LAMBDA_ROLE_ARN: ${{ secrets.AWS_LAMBDA_ROLE_ARN }}
         run: |
           chmod +x scripts/deploy-lambdas.sh
           ./scripts/deploy-lambdas.sh

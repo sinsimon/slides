@@ -15,12 +15,31 @@ export default defineConfig({
           if (url.startsWith('/data/avacy/json/')) {
             const relativePath = url.replace(/^\//, '')
             const filePath = path.resolve(__dirname, 'src', relativePath)
-            fs.readFile(filePath, (err, data) => {
-              if (err) {
+
+            fs.stat(filePath, (statErr, stats) => {
+              if (statErr) {
                 return next()
               }
+
+              // Imposta intestazioni comuni (incluso Last-Modified per le date di aggiornamento)
               res.setHeader('Content-Type', 'application/json')
-              res.end(data)
+              if (stats.mtime) {
+                res.setHeader('Last-Modified', stats.mtime.toUTCString())
+              }
+
+              // Per richieste HEAD basta inviare le intestazioni
+              if (req.method === 'HEAD') {
+                res.statusCode = 200
+                res.end()
+                return
+              }
+
+              fs.readFile(filePath, (err, data) => {
+                if (err) {
+                  return next()
+                }
+                res.end(data)
+              })
             })
             return
           }

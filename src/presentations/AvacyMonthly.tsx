@@ -5,6 +5,7 @@ import { SlideNewAccounts } from '@slides/AvacyMonthly/SlideNewAccounts'
 import { SlideCollaborations } from '@slides/AvacyMonthly/SlideCollaborations'
 import { SlideUserFunnel } from '@slides/AvacyMonthly/SlideUserFunnel'
 import { SlideEconomics } from '@slides/AvacyMonthly/SlideEconomics'
+import { SlideLeaderboard } from '@slides/AvacyMonthly/SlideLeaderboard'
 
 export default function AvacyMonthly() {
   return (
@@ -13,6 +14,7 @@ export default function AvacyMonthly() {
       <SlideNewAccounts />
       <SlideEconomics />
       <SlideUserFunnel />
+      <SlideLeaderboard />
       <SlideCollaborations />
     </Presentation>
   )

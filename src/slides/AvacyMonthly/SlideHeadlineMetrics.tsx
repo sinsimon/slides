@@ -6,6 +6,7 @@ import { useNewSubscriptions } from '../../data/avacy/hooks/useNewSubscriptions'
 import { useCancellations } from '../../data/avacy/hooks/useCancellations';
 import { useMondayNewSubscriptions } from '../../data/avacy/hooks/useMondayNewSubscriptions';
 import { useMondayCancellations } from '../../data/avacy/hooks/useMondayCancellations';
+import { useFileLastModified } from '../../data/avacy/hooks/useFileLastModified';
 import { calculateMetrics, filterDataByPlans, filterDataByPlanTierAndWebspaces, type DateRange } from '../../data/avacy/utils/metrics';
 
 // Helper per normalizzare il nome del piano (copiato da metrics.ts per evitare export)
@@ -70,10 +71,18 @@ const WEBSPACES_COUNT_MAP: Record<string, number> = {
 };
 
 export function SlideHeadlineMetrics() {
-	const { data: newSubs, loading: loadingNew, lastUpdated: stripeNewLastUpdated } = useNewSubscriptions();
-	const { data: cancellations, loading: loadingCanc, lastUpdated: stripeCancLastUpdated } = useCancellations();
-	const { data: mondayNewSubs, loading: loadingMondayNew, lastUpdated: mondayNewLastUpdated } = useMondayNewSubscriptions();
-	const { data: mondayCancellations, loading: loadingMondayCanc, lastUpdated: mondayCancLastUpdated } = useMondayCancellations();
+	const { data: newSubs, loading: loadingNew } = useNewSubscriptions();
+	const { data: cancellations, loading: loadingCanc } = useCancellations();
+	const { data: mondayNewSubs, loading: loadingMondayNew } = useMondayNewSubscriptions();
+	const { data: mondayCancellations, loading: loadingMondayCanc } = useMondayCancellations();
+	
+	const sourceUrls = [
+		'avacy/json/stripe/new-subscriptions.json',
+		'avacy/json/stripe/cancellations.json',
+		'avacy/json/monday/new-subscriptions.json',
+		'avacy/json/monday/cancellations.json'
+	];
+	const lastUpdated = useFileLastModified(sourceUrls);
 	const [selectedPlanTier, setSelectedPlanTier] = useState<'all' | 'Basic' | 'Plus' | 'Enterprise'>('all');
 	const [selectedWebspacesCount, setSelectedWebspacesCount] = useState<'all' | '1' | '5' | '15' | '25'>('all');
 	const [excludeMonday, setExcludeMonday] = useState<boolean>(false);
@@ -447,10 +456,10 @@ export function SlideHeadlineMetrics() {
 					<SourceLabel 
 						label="Stripe / Monday"
 						sources={[
-							{ label: 'Stripe - Nuove Sottoscrizioni', url: 'data/avacy/json/stripe/new-subscriptions.json', lastUpdated: stripeNewLastUpdated },
-							{ label: 'Stripe - Cancellazioni', url: 'data/avacy/json/stripe/cancellations.json', lastUpdated: stripeCancLastUpdated },
-							{ label: 'Monday - Nuove Sottoscrizioni', url: 'data/avacy/json/monday/new-subscriptions.json', lastUpdated: mondayNewLastUpdated },
-							{ label: 'Monday - Cancellazioni', url: 'data/avacy/json/monday/cancellations.json', lastUpdated: mondayCancLastUpdated }
+							{ label: 'Stripe - Nuove Sottoscrizioni', url: 'data/avacy/json/stripe/new-subscriptions.json', lastUpdated: lastUpdated['avacy/json/stripe/new-subscriptions.json'] || undefined },
+							{ label: 'Stripe - Cancellazioni', url: 'data/avacy/json/stripe/cancellations.json', lastUpdated: lastUpdated['avacy/json/stripe/cancellations.json'] || undefined },
+							{ label: 'Monday - Nuove Sottoscrizioni', url: 'data/avacy/json/monday/new-subscriptions.json', lastUpdated: lastUpdated['avacy/json/monday/new-subscriptions.json'] || undefined },
+							{ label: 'Monday - Cancellazioni', url: 'data/avacy/json/monday/cancellations.json', lastUpdated: lastUpdated['avacy/json/monday/cancellations.json'] || undefined }
 						]}
 					/>
 				</div>

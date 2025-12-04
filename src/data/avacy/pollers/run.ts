@@ -1,44 +1,77 @@
 import * as dotenv from 'dotenv';
-import * as fs from 'fs';
-// @ts-ignore
 import { getSecrets } from '@jumpgroup/secret-fetcher';
+import { writeFileSync, existsSync } from 'fs';
 
 // Carica env dalla root del progetto (default .env)
 dotenv.config();
 
-async function main() {
-  // Fetch secrets locally if configured
+async function loadSecrets() {
   const groupKey = process.env.GROUP_KEY;
   const groupSecret = process.env.GROUP_SECRET;
-  const envName = process.env.SECRETS_ENV || 'production';
 
   if (groupKey && groupSecret) {
-    try {
-        // Create dummy .secret-fetcher file for local dev if it doesn't exist
-        // This is required by the secret-fetcher library
-        if (!fs.existsSync('.secret-fetcher')) {
-            fs.writeFileSync('.secret-fetcher', '');
-        }
+    console.log('🔐 Loading secrets from @jumpgroup/secret-fetcher...');
+    
+    // Crea un file .secret-fetcher temporaneo se non esiste, necessario per la libreria
+    if (!existsSync('.secret-fetcher')) {
+      console.log('📝 Creating temporary .secret-fetcher file...');
+      writeFileSync('.secret-fetcher', `GROUP_KEY=${groupKey}\nGROUP_SECRET=${groupSecret}`);
+    }
 
-      console.log(`[Local] Fetching secrets for env: ${envName}...`);
+    try {
       const secrets = await getSecrets({
         groupKey,
         groupSecret,
-        env: envName
+        // env: 'production' // Se omesso, ritorna tutti i secrets o mergedVariables
       });
-      const envSecrets = secrets[envName];
-      if (envSecrets) {
-        console.log(`[Local] Secrets fetched. Injecting into process.env...`);
-        Object.assign(process.env, envSecrets);
-      }
+
+      // Appiattisci i secrets in process.env
+      // getSecrets ritorna un oggetto con i secrets, che potrebbero essere annidati per ambiente se `env` è specificato
+      // o un oggetto mergiato se no. Dalla lettura del codice sorgente della libreria:
+      // Se env non è specificato: result = mergedVariables; dove mergedVariables è { key: value, ... } (o { key: { ...props } })
+      // La libreria parsa il YAML nella nota.
       
-      // Cleanup dummy file if we created it
-      // fs.unlinkSync('.secret-fetcher'); 
-    } catch (err) {
-      console.warn(`[Local] Failed to fetch secrets:`, err);
-      // Continue, maybe vars are in .env
+      // Ispezioniamo la struttura ritornata.
+      // Se result è tipo { "VAPOR_RDS_HOST": { value: "..." }, ... } o direttamente { "VAPOR_RDS_HOST": "..." }
+      // Il codice sorgente faceva: itemProperties = yaml.loadAll(item.note)[0]; tagToObjectMap[newTag] = { ...itemProperties };
+      // Quindi tagToObjectMap è { "tag": { key: value, ... } }? No.
+      // result.forEach(item => item.tags.forEach(tag => ... tagToObjectMap[tag] = ... ))
+      // Quindi ritorna un oggetto dove le chiavi sono i tag (es. "production", "staging", o nomi delle app)
+      // e i valori sono gli oggetti definiti nel YAML della nota.
+      
+      // Assumiamo che ci sia un tag che corrisponde al nostro ambiente o "common".
+      // O che vogliamo caricare tutto.
+      
+      // Se il segreto è salvato con tag "avacy" o simile.
+      // Proviamo a stampare le chiavi disponibili se non sappiamo cosa c'è.
+      
+      // Per ora proviamo a fare merge di tutto quello che troviamo nel primo livello che sembra una variabile d'ambiente
+      
+      Object.entries(secrets).forEach(([key, value]) => {
+        if (typeof value === 'object' && value !== null) {
+           // Probabilmente un raggruppamento per ambiente/tag
+           Object.entries(value).forEach(([subKey, subValue]) => {
+             if (typeof subValue === 'string' || typeof subValue === 'number') {
+               process.env[subKey] = String(subValue);
+             }
+           });
+        } else if (typeof value === 'string' || typeof value === 'number') {
+           process.env[key] = String(value);
+        }
+      });
+      
+      console.log('✅ Secrets loaded into process.env');
+      
+    } catch (e) {
+      console.warn('⚠️ Failed to load secrets:', e);
     }
+  } else {
+    console.warn('⚠️ GROUP_KEY or GROUP_SECRET missing in .env. Skipping secret fetch.');
   }
+}
+
+async function main() {
+  await loadSecrets();
 
   const arg = process.argv[2] || '';
   if (!arg) {
@@ -86,6 +119,13 @@ async function main() {
     const { fetchUsersFunnel } = await import('./vapor/users-funnel');
     await fetchUsersFunnel();
     console.log('Done: vapor:users-funnel');
+    return;
+  }
+
+  if (arg === 'vapor:leaderboard') {
+    const { fetchLeaderboard } = await import('./vapor/leaderboard');
+    await fetchLeaderboard();
+    console.log('Done: vapor:leaderboard');
     return;
   }
 

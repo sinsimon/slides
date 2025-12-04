@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { SlideTitle, Nav, SourceLabel } from '@components';
+import { useFileLastModified } from '../../data/avacy/hooks/useFileLastModified';
 import styles from '../../components/DataTable.module.css';
 import { useUsersFunnel } from '../../data/avacy/hooks/useUsersFunnel';
 
@@ -31,6 +32,8 @@ type TenantExample = {
 
 export function SlideUserFunnel() {
 	const { data, loading, error } = useUsersFunnel();
+	const sourceUrls = ['avacy/json/vapor/users-funnel.json'];
+	const lastUpdated = useFileLastModified(sourceUrls);
 	const [showDateFilter, setShowDateFilter] = useState(false);
 	const [fromDate, setFromDate] = useState(() => {
 		const d = new Date();
@@ -352,7 +355,7 @@ export function SlideUserFunnel() {
 						<SourceLabel 
 							label="DB di produzione"
 							sources={[
-								{ label: 'Users Funnel (DB)', url: 'data/avacy/json/vapor/users-funnel.json' }
+								{ label: 'Users Funnel (DB)', url: 'data/avacy/json/vapor/users-funnel.json', lastUpdated: lastUpdated['avacy/json/vapor/users-funnel.json'] || undefined }
 							]}
 						/>
 					</div>
@@ -372,7 +375,7 @@ export function SlideUserFunnel() {
 						<SourceLabel 
 							label="DB di produzione"
 							sources={[
-								{ label: 'Users Funnel (DB)', url: 'data/avacy/json/vapor/users-funnel.json' }
+								{ label: 'Users Funnel (DB)', url: 'data/avacy/json/vapor/users-funnel.json', lastUpdated: lastUpdated['avacy/json/vapor/users-funnel.json'] || undefined }
 							]}
 						/>
 					</div>
@@ -394,7 +397,7 @@ export function SlideUserFunnel() {
 						<SourceLabel 
 							label="DB di produzione"
 							sources={[
-								{ label: 'Users Funnel (DB)', url: 'data/avacy/json/vapor/users-funnel.json' }
+								{ label: 'Users Funnel (DB)', url: 'data/avacy/json/vapor/users-funnel.json', lastUpdated: lastUpdated['avacy/json/vapor/users-funnel.json'] || undefined }
 							]}
 						/>
 					</div>
@@ -413,7 +416,7 @@ export function SlideUserFunnel() {
 					<SourceLabel 
 						label="DB di produzione"
 						sources={[
-							{ label: 'Users Funnel (DB)', url: 'data/avacy/json/vapor/users-funnel.json' }
+							{ label: 'Users Funnel (DB)', url: 'data/avacy/json/vapor/users-funnel.json', lastUpdated: lastUpdated['avacy/json/vapor/users-funnel.json'] || undefined }
 						]}
 					/>
 				</div>

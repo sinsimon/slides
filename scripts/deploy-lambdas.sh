@@ -5,9 +5,6 @@ set -e
 AWS_REGION=${AWS_REGION:-eu-central-1}
 AWS_S3_BUCKET=${AWS_S3_BUCKET}
 AWS_LAMBDA_ROLE_ARN=${AWS_LAMBDA_ROLE_ARN}
-GROUP_KEY=${GROUP_KEY}
-GROUP_SECRET=${GROUP_SECRET}
-SECRETS_ENV=${SECRETS_ENV:-production}
 
 if [ -z "$AWS_S3_BUCKET" ]; then
   echo "Error: AWS_S3_BUCKET environment variable is required"
@@ -17,10 +14,6 @@ fi
 if [ -z "$AWS_LAMBDA_ROLE_ARN" ]; then
   echo "Error: AWS_LAMBDA_ROLE_ARN environment variable is required"
   exit 1
-fi
-
-if [ -z "$GROUP_KEY" ] || [ -z "$GROUP_SECRET" ]; then
-  echo "Warning: GROUP_KEY or GROUP_SECRET not set. Lambdas might fail to fetch secrets."
 fi
 
 # Ottieni l'account ID AWS
@@ -91,7 +84,7 @@ deploy_lambda() {
       --handler index.handler \
       --timeout 900 \
       --memory-size 1024 \
-      --environment "Variables={AWS_S3_BUCKET=${AWS_S3_BUCKET},POLLER_NAME=${poller_name},GROUP_KEY=${GROUP_KEY},GROUP_SECRET=${GROUP_SECRET},SECRETS_ENV=${SECRETS_ENV}}" \
+      --environment "Variables={AWS_S3_BUCKET=${AWS_S3_BUCKET},POLLER_NAME=${poller_name}}" \
       --region "$AWS_REGION" > /dev/null
   else
     echo "🆕 Creating new Lambda: $function_name"
@@ -103,7 +96,7 @@ deploy_lambda() {
       --zip-file "fileb://lambda-packages/${function_name}.zip" \
       --timeout 900 \
       --memory-size 1024 \
-      --environment "Variables={AWS_S3_BUCKET=${AWS_S3_BUCKET},POLLER_NAME=${poller_name},GROUP_KEY=${GROUP_KEY},GROUP_SECRET=${GROUP_SECRET},SECRETS_ENV=${SECRETS_ENV}}" \
+      --environment "Variables={AWS_S3_BUCKET=${AWS_S3_BUCKET},POLLER_NAME=${poller_name}}" \
       --region "$AWS_REGION" > /dev/null
   fi
   
