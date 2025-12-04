@@ -1,0 +1,23 @@
+{
+    "data": [
+        {
+            "date": "2028-01-01",
+            "count": 1,
+            "totalAmountCents": 120833,
+            "currency": "EUR",
+            "cancellations": [
+                {
+                    "email": "amministrazione@rai.it",
+                    "subscriptionName": "Enterprise",
+                    "amountCents": 120833,
+                    "currency": "EUR",
+                    "canceledAt": "2028-01-01T00:00:00.000Z",
+                    "metadata": {
+                        "source": "rai"
+                    }
+                }
+            ]
+        }
+    ],
+    "lastUpdated": "2024-12-04T10:00:00.000Z"
+}

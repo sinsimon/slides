@@ -60,25 +60,32 @@ export function calculateMetrics(
 	cancellations: StripeCancellationPoint[],
 	range: DateRange,
 	mondayNewSubs?: MondayNewSubscriptionPoint[] | null,
-	mondayCancellations?: MondayCancellationPoint[] | null
+	mondayCancellations?: MondayCancellationPoint[] | null,
+    raiNewSubs?: MondayNewSubscriptionPoint[] | null, // RAI usa lo stesso formato di Monday
+    raiCancellations?: MondayCancellationPoint[] | null
 ): { series: MetricPoint[]; kpis: KpiValues } {
 	// Combina Stripe e Monday subscriptions (stesso formato)
 	let allNewSubs: StripeNewSubscriptionPoint[] = [...newSubs];
 	if (mondayNewSubs && mondayNewSubs.length > 0) {
 		// Monday usa lo stesso formato, possiamo unire direttamente
 		allNewSubs = [...allNewSubs, ...mondayNewSubs];
-		// Riordina per data
-		allNewSubs.sort((a, b) => a.date.localeCompare(b.date));
 	}
+    if (raiNewSubs && raiNewSubs.length > 0) {
+        allNewSubs = [...allNewSubs, ...raiNewSubs];
+    }
+    // Riordina per data
+    allNewSubs.sort((a, b) => a.date.localeCompare(b.date));
 	
-	// Combina Stripe e Monday cancellations (stesso formato)
+	// Combina Stripe, Monday e RAI cancellations (stesso formato)
 	let allCancellations: StripeCancellationPoint[] = [...cancellations];
 	if (mondayCancellations && mondayCancellations.length > 0) {
-		// Monday usa lo stesso formato, possiamo unire direttamente
 		allCancellations = [...allCancellations, ...mondayCancellations];
-		// Riordina per data
-		allCancellations.sort((a, b) => a.date.localeCompare(b.date));
 	}
+	if (raiCancellations && raiCancellations.length > 0) {
+		allCancellations = [...allCancellations, ...raiCancellations];
+	}
+	// Riordina per data
+	allCancellations.sort((a, b) => a.date.localeCompare(b.date));
 	
 	const granularity = getGranularity(range);
 	

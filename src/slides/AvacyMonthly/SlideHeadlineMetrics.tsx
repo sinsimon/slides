@@ -6,6 +6,8 @@ import { useNewSubscriptions } from '../../data/avacy/hooks/useNewSubscriptions'
 import { useCancellations } from '../../data/avacy/hooks/useCancellations';
 import { useMondayNewSubscriptions } from '../../data/avacy/hooks/useMondayNewSubscriptions';
 import { useMondayCancellations } from '../../data/avacy/hooks/useMondayCancellations';
+import { useRaiNewSubscriptions } from '../../data/avacy/hooks/useRaiNewSubscriptions';
+import { useRaiCancellations } from '../../data/avacy/hooks/useRaiCancellations';
 import { useFileLastModified } from '../../data/avacy/hooks/useFileLastModified';
 import { calculateMetrics, filterDataByPlans, filterDataByPlanTierAndWebspaces, type DateRange } from '../../data/avacy/utils/metrics';
 
@@ -19,7 +21,7 @@ function normalizePlanToTier(subscriptionName?: string): 'Basic' | 'Plus' | 'Ent
 	return null;
 }
 
-type MetricTab = 'mrr' | 'customers' | 'arpa' | 'netNew';
+type MetricTab = 'mrr' | 'customers' | 'arpa';
 
 const PRESETS = [
 	{ label: 'Ultimi 30 giorni', days: 30 },
@@ -68,6 +70,8 @@ const WEBSPACES_COUNT_MAP: Record<string, number> = {
 	'Avacy Plus - 5 spazi web': 5,
 	'Avacy Plus - 15 spazi web': 15,
 	'Avacy Plus - 25 spazi web': 25,
+	'Avacy Plus - 15 spazi web': 15,
+	'Avacy Plus - 25 spazi web': 25,
 };
 
 export function SlideHeadlineMetrics() {
@@ -75,18 +79,23 @@ export function SlideHeadlineMetrics() {
 	const { data: cancellations, loading: loadingCanc } = useCancellations();
 	const { data: mondayNewSubs, loading: loadingMondayNew } = useMondayNewSubscriptions();
 	const { data: mondayCancellations, loading: loadingMondayCanc } = useMondayCancellations();
+	const { data: raiNewSubs, loading: loadingRaiNew } = useRaiNewSubscriptions();
+	const { data: raiCancellations, loading: loadingRaiCanc } = useRaiCancellations();
 	
 	const sourceUrls = [
 		'avacy/json/stripe/new-subscriptions.json',
 		'avacy/json/stripe/cancellations.json',
 		'avacy/json/monday/new-subscriptions.json',
-		'avacy/json/monday/cancellations.json'
+		'avacy/json/monday/cancellations.json',
+		'avacy/json/rai/new-subscriptions.json',
+		'avacy/json/rai/cancellations.json'
 	];
 	const lastUpdated = useFileLastModified(sourceUrls);
 	const [selectedPlanTier, setSelectedPlanTier] = useState<'all' | 'Basic' | 'Plus' | 'Enterprise'>('all');
 	const [selectedWebspacesCount, setSelectedWebspacesCount] = useState<'all' | '1' | '5' | '15' | '25'>('all');
 	const [excludeMonday, setExcludeMonday] = useState<boolean>(false);
 	const [excludeStripe, setExcludeStripe] = useState<boolean>(false);
+	const [excludeRai, setExcludeRai] = useState<boolean>(false);
 	const [selectedTab, setSelectedTab] = useState<MetricTab>('mrr');
 	const [showFilters, setShowFilters] = useState<boolean>(false);
 	// Inizializza con tutti i dati disponibili (all the time)
@@ -153,6 +162,14 @@ export function SlideHeadlineMetrics() {
 				}
 			});
 		});
+		(raiNewSubs || []).forEach((p) => {
+			p.purchases.forEach((pu) => {
+				if (pu.subscriptionName) {
+					names.add(pu.subscriptionName);
+					counts[pu.subscriptionName] = (counts[pu.subscriptionName] || 0) + 1;
+				}
+			});
+		});
 		
 		// Filtra solo piani con conteggio > 0
 		const plansWithCount = Array.from(names).filter((name) => (counts[name] || 0) > 0).sort();
@@ -171,7 +188,7 @@ export function SlideHeadlineMetrics() {
 			planCounts: counts,
 			planCategories: categories,
 		};
-	}, [newSubs, cancellations, mondayNewSubs, mondayCancellations]);
+	}, [newSubs, cancellations, mondayNewSubs, mondayCancellations, raiNewSubs]);
 
 	const { series, kpis } = useMemo(() => {
 		if (!newSubs || !cancellations) return { series: [], kpis: null };
@@ -181,6 +198,8 @@ export function SlideHeadlineMetrics() {
 		const filteredCancellations = excludeStripe ? [] : cancellations;
 		let filteredMondayNewSubs = excludeMonday ? null : mondayNewSubs;
 		let filteredMondayCancellations = excludeMonday ? null : mondayCancellations;
+		let filteredRaiNewSubs = excludeRai ? null : raiNewSubs;
+		let filteredRaiCancellations = excludeRai ? null : raiCancellations;
 		
 		// Applica filtri per piano e webspaces (webspacesCount viene estratto dal subscriptionName usando la mappa)
 		const filtered = filterDataByPlanTierAndWebspaces(
@@ -203,9 +222,24 @@ export function SlideHeadlineMetrics() {
 			filteredMondayNewSubs = mondayFiltered.newSubs;
 			filteredMondayCancellations = mondayFiltered.cancellations;
 		}
+
+		// Applica filtri a RAI
+		if (filteredRaiNewSubs) {
+			const raiFiltered = filterDataByPlanTierAndWebspaces(
+				filteredRaiNewSubs,
+				filteredRaiCancellations || [], // Se raiCancellations è null, passa array vuoto
+				selectedPlanTier,
+				selectedWebspacesCount,
+				WEBSPACES_COUNT_MAP
+			);
+			filteredRaiNewSubs = raiFiltered.newSubs;
+			if (filteredRaiCancellations) {
+				filteredRaiCancellations = raiFiltered.cancellations;
+			}
+		}
 		
-		return calculateMetrics(filtered.newSubs, filtered.cancellations, range, filteredMondayNewSubs, filteredMondayCancellations);
-	}, [newSubs, cancellations, selectedPlanTier, selectedWebspacesCount, range, mondayNewSubs, mondayCancellations, excludeMonday, excludeStripe]);
+		return calculateMetrics(filtered.newSubs, filtered.cancellations, range, filteredMondayNewSubs, filteredMondayCancellations, filteredRaiNewSubs, filteredRaiCancellations);
+	}, [newSubs, cancellations, selectedPlanTier, selectedWebspacesCount, range, mondayNewSubs, mondayCancellations, raiNewSubs, raiCancellations, excludeMonday, excludeStripe, excludeRai]);
 
 	// Estrai abbonamenti attivi filtrati per la tabella
 	const activeSubscriptions = useMemo(() => {
@@ -216,6 +250,8 @@ export function SlideHeadlineMetrics() {
 		const filteredCancellations = excludeStripe ? [] : cancellations;
 		let filteredMondayNewSubs = excludeMonday ? null : mondayNewSubs;
 		let filteredMondayCancellations = excludeMonday ? null : mondayCancellations;
+		let filteredRaiNewSubs = excludeRai ? null : raiNewSubs;
+		let filteredRaiCancellations = excludeRai ? null : raiCancellations;
 		
 		const filtered = filterDataByPlanTierAndWebspaces(
 			filteredNewSubs, 
@@ -248,6 +284,20 @@ export function SlideHeadlineMetrics() {
 			filteredMondayNewSubs = mondayFiltered.newSubs;
 			filteredMondayCancellations = mondayFiltered.cancellations;
 		}
+
+		if (filteredRaiNewSubs) {
+			const raiFiltered = filterDataByPlanTierAndWebspaces(
+				filteredRaiNewSubs,
+				filteredRaiCancellations || [],
+				selectedPlanTier,
+				selectedWebspacesCount,
+				WEBSPACES_COUNT_MAP
+			);
+			filteredRaiNewSubs = raiFiltered.newSubs;
+			if (filteredRaiCancellations) {
+				filteredRaiCancellations = raiFiltered.cancellations;
+			}
+		}
 		
 		// Raccogli tutti gli abbonamenti fino alla data "to"
 		const subscriptions = new Map<string, {
@@ -255,7 +305,7 @@ export function SlideHeadlineMetrics() {
 			subscriptionName: string;
 			amountCents: number;
 			date: string;
-			source: 'stripe' | 'monday';
+			source: 'stripe' | 'monday' | 'rai';
 			webspacesCount?: number;
 		}>();
 		
@@ -304,6 +354,30 @@ export function SlideHeadlineMetrics() {
 				}
 			}
 		}
+
+		// Processa RAI
+		if (filteredRaiNewSubs) {
+			for (const point of filteredRaiNewSubs) {
+				const pointDate = new Date(point.date + 'T00:00:00Z');
+				if (pointDate > range.to) continue;
+				
+				for (const purchase of point.purchases) {
+					if (!purchase.email) continue;
+					const key = purchase.email.toLowerCase();
+					const existing = subscriptions.get(key);
+					if (!existing || pointDate > new Date(existing.date + 'T00:00:00Z')) {
+						subscriptions.set(key, {
+							email: purchase.email,
+							subscriptionName: purchase.subscriptionName || 'Unknown',
+							amountCents: purchase.amountCents || 0,
+							date: point.date,
+							source: 'rai',
+							webspacesCount: purchase.webspacesCount ?? (purchase.subscriptionName ? WEBSPACES_COUNT_MAP[purchase.subscriptionName] : undefined)
+						});
+					}
+				}
+			}
+		}
 		
 		// Rimuovi cancellazioni
 		for (const point of filtered.cancellations) {
@@ -335,11 +409,27 @@ export function SlideHeadlineMetrics() {
 				}
 			}
 		}
+
+		if (filteredRaiCancellations) {
+			for (const point of filteredRaiCancellations) {
+				const cancelDate = new Date(point.date + 'T00:00:00Z');
+				if (cancelDate > range.to) continue;
+				
+				for (const cancellation of point.cancellations) {
+					if (!cancellation.email) continue;
+					const key = cancellation.email.toLowerCase();
+					const existing = subscriptions.get(key);
+					if (existing && cancelDate >= new Date(existing.date + 'T00:00:00Z')) {
+						subscriptions.delete(key);
+					}
+				}
+			}
+		}
 		
 		return Array.from(subscriptions.values())
 			.sort((a, b) => b.amountCents - a.amountCents)
 			.slice(0, 50); // Limita a 50 per performance
-	}, [newSubs, cancellations, mondayNewSubs, mondayCancellations, selectedPlanTier, selectedWebspacesCount, range, excludeMonday, excludeStripe]);
+	}, [newSubs, cancellations, mondayNewSubs, mondayCancellations, raiNewSubs, raiCancellations, selectedPlanTier, selectedWebspacesCount, range, excludeMonday, excludeStripe, excludeRai]);
 
 	// Calcola clienti attivi per categoria alla fine del periodo (usando i dati filtrati)
 	const customersByCategory = useMemo(() => {
@@ -372,7 +462,7 @@ export function SlideHeadlineMetrics() {
 		return [Math.max(0, min - padding), max + padding];
 	};
 
-	const loading = loadingNew || loadingCanc || loadingMondayNew || loadingMondayCanc;
+	const loading = loadingNew || loadingCanc || loadingMondayNew || loadingMondayCanc || loadingRaiNew || loadingRaiCanc;
 
 	if (loading) return <div className="container"><div style={{ padding: 48, textAlign: 'center' }}>Caricamento...</div></div>;
 	if (!kpis) return <div className="container"><div style={{ padding: 48, textAlign: 'center' }}>Nessun dato disponibile</div></div>;
@@ -454,12 +544,14 @@ export function SlideHeadlineMetrics() {
 				<div>
 					<SlideTitle>Headline Metrics</SlideTitle>
 					<SourceLabel 
-						label="Stripe / Monday"
+						label="Stripe / Monday / RAI"
 						sources={[
 							{ label: 'Stripe - Nuove Sottoscrizioni', url: 'data/avacy/json/stripe/new-subscriptions.json', lastUpdated: lastUpdated['avacy/json/stripe/new-subscriptions.json'] || undefined },
 							{ label: 'Stripe - Cancellazioni', url: 'data/avacy/json/stripe/cancellations.json', lastUpdated: lastUpdated['avacy/json/stripe/cancellations.json'] || undefined },
 							{ label: 'Monday - Nuove Sottoscrizioni', url: 'data/avacy/json/monday/new-subscriptions.json', lastUpdated: lastUpdated['avacy/json/monday/new-subscriptions.json'] || undefined },
-							{ label: 'Monday - Cancellazioni', url: 'data/avacy/json/monday/cancellations.json', lastUpdated: lastUpdated['avacy/json/monday/cancellations.json'] || undefined }
+							{ label: 'Monday - Cancellazioni', url: 'data/avacy/json/monday/cancellations.json', lastUpdated: lastUpdated['avacy/json/monday/cancellations.json'] || undefined },
+							{ label: 'RAI - Nuove Sottoscrizioni', url: 'data/avacy/json/rai/new-subscriptions.json', lastUpdated: lastUpdated['avacy/json/rai/new-subscriptions.json'] || undefined },
+							{ label: 'RAI - Cancellazioni', url: 'data/avacy/json/rai/cancellations.json', lastUpdated: lastUpdated['avacy/json/rai/cancellations.json'] || undefined }
 						]}
 					/>
 				</div>
@@ -467,7 +559,7 @@ export function SlideHeadlineMetrics() {
 			</header>
 
         {/* Sezione 0: KPI Cards in alto */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 24 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 24 }}>
             {/* MRR Totale */}
             <div className={styles.panel} style={{ padding: 20 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
@@ -512,17 +604,6 @@ export function SlideHeadlineMetrics() {
                 </div>
                 <div style={{ fontSize: 13, color: 'var(--muted)' }}>
                     {formatDelta(kpis.arpaDelta.absolute, kpis.arpaDelta.percent)}
-                </div>
-            </div>
-
-            {/* Net New MRR */}
-            <div className={styles.panel} style={{ padding: 20 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-                    <h3 style={{ margin: 0, fontSize: 14, fontWeight: 600, color: 'var(--muted)' }}>Net New MRR</h3>
-                    <Info text="Net New MRR: La crescita (o perdita) netta dell'MRR nel periodo selezionato. Formula: (New MRR + Expansion MRR) - (Churn MRR + Contraction MRR)." />
-                </div>
-                <div style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: 'var(--text)' }}>
-                    {formatCurrency(kpis.netNewMrr)}
                 </div>
             </div>
         </div>
@@ -675,6 +756,15 @@ export function SlideHeadlineMetrics() {
 									/>
 									<span style={{ color: 'var(--muted)' }}>Escludi Stripe</span>
 								</label>
+								<label style={{ display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer', fontSize: 14 }}>
+									<input
+										type="checkbox"
+										checked={excludeRai}
+										onChange={(e) => setExcludeRai(e.target.checked)}
+										style={{ cursor: 'pointer' }}
+									/>
+									<span style={{ color: 'var(--muted)' }}>Escludi RAI</span>
+								</label>
 							</div>
 						</div>
 					</>
@@ -685,7 +775,7 @@ export function SlideHeadlineMetrics() {
 			<div className={styles.panel} style={{ marginBottom: 32, padding: 24 }}>
 				<h2 style={{ marginTop: 0, marginBottom: 16, fontSize: 18, fontWeight: 600 }}>Andamento Metrica</h2>
 				<div style={{ display: 'flex', gap: 8, marginBottom: 24, borderBottom: '1px solid rgba(255,255,255,0.12)', paddingBottom: 8 }}>
-					{(['mrr', 'customers', 'arpa', 'netNew'] as MetricTab[]).map((tab) => (
+					{(['mrr', 'customers', 'arpa'] as MetricTab[]).map((tab) => (
 						<button
 							key={tab}
 							onClick={() => setSelectedTab(tab)}
@@ -700,49 +790,34 @@ export function SlideHeadlineMetrics() {
 								fontSize: 14,
 							}}
 						>
-							{tab === 'mrr' ? 'MRR' : tab === 'customers' ? 'Clienti Attivi' : tab === 'arpa' ? 'ARPA' : 'Net New MRR'}
+							{tab === 'mrr' ? 'MRR' : tab === 'customers' ? 'Clienti Attivi' : 'ARPA'}
 						</button>
 					))}
 				</div>
 				<div style={{ height: 400 }}>
-					{selectedTab === 'netNew' ? (
-						<ResponsiveContainer width="100%" height="100%">
-							<BarChart data={series}>
-								<CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-								<XAxis dataKey="date" stroke="var(--muted)" style={{ fontSize: 12 }} />
-								<YAxis domain={getYDomain('netNewMrr')} tickFormatter={(v) => formatCurrency(v)} stroke="var(--muted)" style={{ fontSize: 12 }} />
-								<Tooltip
-									contentStyle={{ background: 'var(--panel)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6 }}
-									formatter={(v: number) => formatCurrency(v)}
-								/>
-								<Bar dataKey="netNewMrr" fill="var(--primary-2)" />
-							</BarChart>
-						</ResponsiveContainer>
-					) : (
-						<ResponsiveContainer width="100%" height="100%">
-							<LineChart data={series}>
-								<CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-								<XAxis dataKey="date" stroke="var(--muted)" style={{ fontSize: 12 }} />
-								<YAxis
-									domain={getYDomain(selectedTab === 'mrr' ? 'mrr' : selectedTab === 'customers' ? 'activeCustomers' : 'arpa')}
-									tickFormatter={(v) => selectedTab === 'customers' ? String(Math.round(v)) : formatCurrency(v)}
-									stroke="var(--muted)"
-									style={{ fontSize: 12 }}
-								/>
-								<Tooltip
-									contentStyle={{ background: 'var(--panel)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6 }}
-									formatter={(v: number) => selectedTab === 'customers' ? String(Math.round(v)) : formatCurrency(v)}
-								/>
-								<Line
-									type="monotone"
-									dataKey={selectedTab === 'mrr' ? 'mrr' : selectedTab === 'customers' ? 'activeCustomers' : 'arpa'}
-									stroke="var(--primary-2)"
-									strokeWidth={2}
-									dot={false}
-								/>
-							</LineChart>
-						</ResponsiveContainer>
-					)}
+					<ResponsiveContainer width="100%" height="100%">
+						<LineChart data={series}>
+							<CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+							<XAxis dataKey="date" stroke="var(--muted)" style={{ fontSize: 12 }} />
+							<YAxis
+								domain={getYDomain(selectedTab === 'mrr' ? 'mrr' : selectedTab === 'customers' ? 'activeCustomers' : 'arpa')}
+								tickFormatter={(v) => selectedTab === 'customers' ? String(Math.round(v)) : formatCurrency(v)}
+								stroke="var(--muted)"
+								style={{ fontSize: 12 }}
+							/>
+							<Tooltip
+								contentStyle={{ background: 'var(--panel)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6 }}
+								formatter={(v: number) => selectedTab === 'customers' ? String(Math.round(v)) : formatCurrency(v)}
+							/>
+							<Line
+								type="monotone"
+								dataKey={selectedTab === 'mrr' ? 'mrr' : selectedTab === 'customers' ? 'activeCustomers' : 'arpa'}
+								stroke="var(--primary-2)"
+								strokeWidth={2}
+								dot={false}
+							/>
+						</LineChart>
+					</ResponsiveContainer>
 				</div>
 			</div>
 

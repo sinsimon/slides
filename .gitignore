@@ -730,6 +730,7 @@ Thumbs.db
 .venv/lib/python3.9/site-packages/typing_extensions-4.15.0.dist-info/RECORD
 .venv/lib/python3.9/site-packages/typing_extensions-4.15.0.dist-info/WHEEL
 .venv/lib/python3.9/site-packages/typing_extensions-4.15.0.dist-info/licenses/LICENSE
+src/data/avacy/json/active-campaign/contacts.json
 src/data/avacy/json/monday/cancellations.json
 src/data/avacy/json/monday/new-subscriptions.json
 src/data/avacy/json/stripe/cancellations.json

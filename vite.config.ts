@@ -12,8 +12,11 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           const url = req.url || ''
-          if (url.startsWith('/data/avacy/json/')) {
-            const relativePath = url.replace(/^\//, '')
+          // Rimuovi query string per il path resolution
+          const [pathOnly] = url.split('?')
+          
+          if (pathOnly.startsWith('/data/avacy/json/')) {
+            const relativePath = pathOnly.replace(/^\//, '')
             const filePath = path.resolve(__dirname, 'src', relativePath)
 
             fs.stat(filePath, (statErr, stats) => {
