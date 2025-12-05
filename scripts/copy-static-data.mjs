@@ -33,7 +33,7 @@ async function copyTree(from, to) {
     console.log(`[copy-data] Saltato ${path.relative(projectRoot, from)} (non esiste)`);
     return;
   }
-  
+
   await mkdir(path.dirname(to), { recursive: true });
   await cp(from, to, { recursive: true });
   console.log(`[copy-data] Copiato ${path.relative(projectRoot, from)} → ${path.relative(projectRoot, to)}`);
