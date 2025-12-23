@@ -74,7 +74,7 @@ export function buildConfig(opts: {
   const examples = loadExamples(examplesFile);
   const useAI = Boolean(opts.useAIArg || (process.env.USE_AI === 'true'));
   const geminiApiKey = process.env.GEMINI_API_KEY;
-  const geminiModel = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+  const geminiModel = process.env.GEMINI_MODEL || 'gemini-3-pro-preview';
   const aiBatchSize = Number(process.env.AI_BATCH_SIZE || 50);
 
   return {
